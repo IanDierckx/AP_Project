@@ -8,7 +8,19 @@ using namespace std;
 //Base class of hierarchy
 class Entity {
 private:
-    map<char, int> position;
+    pair<int,int> position;
+
+    string type;
+protected:
+    void setType(string type);
+public:
+    Entity(const pair<int,int> &position);
+
+    int getX();
+
+    int getY();
+
+    string getType();
 };
 
 

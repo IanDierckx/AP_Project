@@ -6,13 +6,16 @@
 #define AP_PROJECT_SHIP_H
 
 #include <map>
+#include "Entity.h"
 
 using namespace std;
 
-class Ship {
+class Ship : public Entity{
 private:
-    int health;
-    int speed;
+    int health{};
+    int speed{};
+public:
+    Ship(const pair<int,int> &position, int health, int speed);
 };
 
 
