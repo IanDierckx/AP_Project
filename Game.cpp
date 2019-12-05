@@ -13,8 +13,8 @@ void Game::initializeLevel() {
 }
 
 void Game::printLevel() {
-    for (int x = 0; x < grid_x; ++x) {
-        for (int y = 0; y < grid_y; ++y) {
+    for (int x = 0; x < grid_y; ++x) {
+        for (int y = 0; y < grid_x; ++y) {
             if (!grid[x][y].first) {
                 cout << ".";
             } else {
