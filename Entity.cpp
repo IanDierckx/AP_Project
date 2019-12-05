@@ -21,3 +21,14 @@ void Entity::setType(string type) {
 string Entity::getType() {
     return type;
 }
+
+void Entity::setX(int x) {
+    position.first = x;
+}
+
+void Entity::setY(int y) {
+    position.second = y;
+}
+
+
+

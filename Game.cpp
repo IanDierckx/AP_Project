@@ -1,5 +1,6 @@
 #include "Game.h"
 #include "Ship.h"
+#include "PlayerShip.h"
 
 #include <iostream>
 
@@ -13,8 +14,9 @@ void Game::initializeLevel() {
     }
 
     Ship* testship = new Ship(make_pair(1,1),1,1);
-    grid[testship->getX()][testship->getY()].first = true;
-    grid[testship->getX()][testship->getY()].second = testship;
+    addEntityToGrid(testship);
+    PlayerShip* player = new PlayerShip(make_pair(0,0),5,1);
+    addEntityToGrid(player);
 }
 
 void Game::printLevel() {
@@ -31,4 +33,9 @@ void Game::printLevel() {
         }
         cout << endl;
     }
+}
+
+void Game::addEntityToGrid(Entity *entity) {
+    grid[entity->getX()][entity->getY()].first = true;
+    grid[entity->getX()][entity->getY()].second = entity;
 }

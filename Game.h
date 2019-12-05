@@ -18,6 +18,8 @@ private:
 public:
     void initializeLevel();
 
+    void addEntityToGrid(Entity* entity);
+
     void printLevel();
 };
 

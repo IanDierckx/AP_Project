@@ -21,6 +21,10 @@ public:
     int getY();
 
     string getType();
+
+    void setX(int x);
+
+    void setY(int y);
 };
 
 
