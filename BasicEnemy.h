@@ -15,7 +15,7 @@ private:
 public:
     explicit BasicEnemy(const pair<int, int> &position);
 
-    void move(vector<vector<pair<bool, Entity *>>> &grid) override;
+    void move() override;
 };
 
 

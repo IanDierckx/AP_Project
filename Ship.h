@@ -17,7 +17,7 @@ private:
 public:
     Ship(const pair<int,int> &position, int health = 1, int speed = 1);
 
-    virtual void move(vector<vector<pair<bool, Entity *>>> &grid);
+    virtual void move();
 
     int getHealth() const;
 

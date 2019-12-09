@@ -20,8 +20,8 @@ int main() {
 //    }
 
     Game game = Game();
-    game.initializeLevel();
-    game.printLevel();
+    game.initializeLevel("testLevel.json");
+//    game.printLevel();
     game.run();
 
     return 0;

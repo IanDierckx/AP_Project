@@ -1,0 +1,15 @@
+{
+  "grid_x" : 9,
+  "grid_y" : 7,
+
+  "enemies" : [
+    {
+      "type" : "basicEnemy",
+      "position" : [1,1]
+    },
+    {
+      "type" : "basicEnemy",
+      "position" : [1,2]
+    }
+  ]
+}

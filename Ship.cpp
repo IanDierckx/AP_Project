@@ -17,7 +17,7 @@ void Ship::setHealth(int health) {
     Ship::health = health;
 }
 
-void Ship::move(vector<vector<pair<bool, Entity *>>> &grid) {
+void Ship::move() {
     //virtual move class of base ship class
 }
 
