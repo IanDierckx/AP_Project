@@ -6,6 +6,7 @@
 #define AP_PROJECT_SHIP_H
 
 #include <map>
+#include <vector>
 #include "Entity.h"
 
 using namespace std;
@@ -13,9 +14,14 @@ using namespace std;
 class Ship : public Entity{
 private:
     int health{};
-    int speed{};
 public:
-    Ship(const pair<int,int> &position, int health, int speed);
+    Ship(const pair<int,int> &position, int health = 1, int speed = 1);
+
+    virtual void move(vector<vector<pair<bool, Entity *>>> &grid);
+
+    int getHealth() const;
+
+    void setHealth(int health);
 };
 
 

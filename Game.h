@@ -3,6 +3,7 @@
 
 #include "Stopwatch.h"
 #include "Entity.h"
+#include "Ship.h"
 
 #include <vector>
 
@@ -15,12 +16,18 @@ private:
 
     int grid_x = 9;
     int grid_y = 7;
+
+    vector<Ship*> enemyShips;
 public:
     void initializeLevel();
 
     void addEntityToGrid(Entity* entity);
 
     void printLevel();
+
+    void run();
+
+    void moveEntity(Entity* entity);
 };
 
 

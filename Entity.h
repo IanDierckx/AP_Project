@@ -11,6 +11,8 @@ private:
     pair<int,int> position;
 
     string type;
+
+    int speed{};
 protected:
     void setType(string type);
 public:
@@ -25,6 +27,10 @@ public:
     void setX(int x);
 
     void setY(int y);
+
+    void setSpeed(int speed);
+
+    int getSpeed();
 };
 
 

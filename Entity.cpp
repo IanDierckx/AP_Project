@@ -4,7 +4,7 @@
 
 #include "Entity.h"
 
-Entity::Entity(const pair<int,int> &position) : position(position), type("Basic") {}
+Entity::Entity(const pair<int,int> &position) : position(position), type("Basic"), speed(0) {}
 
 int Entity::getX() {
     return position.first;
@@ -28,6 +28,14 @@ void Entity::setX(int x) {
 
 void Entity::setY(int y) {
     position.second = y;
+}
+
+void Entity::setSpeed(int speed) {
+    this->speed = speed;
+}
+
+int Entity::getSpeed() {
+    return speed;
 }
 
 

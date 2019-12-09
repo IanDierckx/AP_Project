@@ -8,7 +8,7 @@ Stopwatch *Stopwatch::instance = 0;
 
 int main() {
     //Initialise stopwatch
-    Stopwatch *watch = Stopwatch::getInstance();
+//    Stopwatch *watch = Stopwatch::getInstance();
 
 //    int n = 0;
 //    while (n<=5) {
@@ -22,6 +22,7 @@ int main() {
     Game game = Game();
     game.initializeLevel();
     game.printLevel();
+    game.run();
 
     return 0;
 }
