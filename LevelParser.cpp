@@ -6,6 +6,7 @@
 #include <iostream>
 #include "LevelParser.h"
 #include "BasicEnemy.h"
+#include "PlayerShip.h"
 
 
 //Getter and setters of Level Class
@@ -79,6 +80,17 @@ void Level::updateGrid() {
         grid[enemy->getY()][enemy->getX()].first = true;
         grid[enemy->getY()][enemy->getX()].second = enemy;
     }
+
+    grid[player->getY()][player->getX()].first = true;
+    grid[player->getY()][player->getX()].second = player;
+}
+
+PlayerShip *Level::getPlayer() const {
+    return player;
+}
+
+void Level::setPlayer(PlayerShip *player) {
+    Level::player = player;
 }
 
 
@@ -116,6 +128,8 @@ Level LevelParser::parseJson() {
         }
     }
 
+    level.setPlayer(new PlayerShip(make_pair(6,4)));
+    level.addEntityToGrid(level.getPlayer());
 
     return level;
 }

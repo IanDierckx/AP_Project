@@ -4,8 +4,6 @@
 
 #include "PlayerShip.h"
 
-PlayerShip::PlayerShip(const pair<int, int> &position, int health, int speed) : Ship(position, health, speed) {
+PlayerShip::PlayerShip(const pair<int, int> &position) : Ship(position) {
     setType("Player");
-    this->setX(6);
-    this->setY(4);
 }

@@ -12,7 +12,7 @@ class PlayerShip : public Ship {
 private:
 
 public:
-    PlayerShip(const pair<int, int> &position, int health, int speed);
+    PlayerShip(const pair<int, int> &position);
 };
 
 

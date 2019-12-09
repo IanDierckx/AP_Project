@@ -3,6 +3,7 @@
 
 #include "json.hpp"
 #include "Ship.h"
+#include "PlayerShip.h"
 
 // for convenience
 using json = nlohmann::json;
@@ -16,6 +17,8 @@ private:
 
     int grid_x = 9;
     int grid_y = 7;
+
+    PlayerShip* player;
 public:
     const vector<Ship *> &getEnemyShips() const;
 
@@ -40,6 +43,10 @@ public:
     void addEntityToGrid(Entity* entity);
 
     void printLevel();
+
+    PlayerShip *getPlayer() const;
+
+    void setPlayer(PlayerShip *player);
 };
 
 class LevelParser {
