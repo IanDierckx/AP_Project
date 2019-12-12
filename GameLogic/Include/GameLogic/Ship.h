@@ -11,18 +11,22 @@
 
 using namespace std;
 
-class Ship : public Entity{
-private:
-    int health{};
-public:
-    Ship(const pair<int,int> &position, int health = 1, int speed = 1);
+namespace GameLogic{
+    class Ship : public Entity{
+    private:
+        int health{};
+    public:
+        Ship(const pair<int,int> &position, int health = 1, int speed = 1);
 
-    virtual void move();
+        virtual void move();
 
-    int getHealth() const;
+        int getHealth() const;
 
-    void setHealth(int health);
-};
+        void setHealth(int health);
+    };
+
+}
+
 
 
 #endif //AP_PROJECT_SHIP_H

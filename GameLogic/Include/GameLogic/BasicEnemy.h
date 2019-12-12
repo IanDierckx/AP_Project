@@ -9,14 +9,18 @@
 #include <vector>
 #include "Ship.h"
 
-class BasicEnemy : public Ship {
-private:
+namespace GameLogic{
+    class BasicEnemy : public Ship {
+    private:
 
-public:
-    explicit BasicEnemy(const pair<int, int> &position);
+    public:
+        explicit BasicEnemy(const pair<int, int> &position);
 
-    void move() override;
-};
+        void move() override;
+    };
+}
+
+
 
 
 #endif //AP_PROJECT_BASICENEMY_H

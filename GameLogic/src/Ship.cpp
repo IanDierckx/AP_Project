@@ -4,22 +4,25 @@
 
 #include "../Include/GameLogic/Ship.h"
 
-Ship::Ship(const pair<int,int> &position, int health, int speed) : Entity(position), health(health) {
-    setType("Ship");
-    setSpeed(1);
+namespace GameLogic{
+    Ship::Ship(const pair<int,int> &position, int health, int speed) : Entity(position), health(health) {
+        setType("Ship");
+        setSpeed(1);
+    }
+
+    int Ship::getHealth() const {
+        return health;
+    }
+
+    void Ship::setHealth(int health) {
+        Ship::health = health;
+    }
+
+    void Ship::move() {
+        //virtual move class of base ship class
+    }
 }
 
-int Ship::getHealth() const {
-    return health;
-}
-
-void Ship::setHealth(int health) {
-    Ship::health = health;
-}
-
-void Ship::move() {
-    //virtual move class of base ship class
-}
 
 
 

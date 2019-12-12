@@ -8,55 +8,58 @@
 // for convenience
 using json = nlohmann::json;
 
+namespace GameLogic{
+    class Level {
+    private:
+        vector<Ship*> enemyShips;
 
-class Level {
-private:
-    vector<Ship*> enemyShips;
+        vector<vector<pair<bool,Entity*>>> grid;
 
-    vector<vector<pair<bool,Entity*>>> grid;
+        int grid_x = 9;
+        int grid_y = 7;
 
-    int grid_x = 9;
-    int grid_y = 7;
+        PlayerShip* player;
+    public:
+        const vector<Ship *> &getEnemyShips() const;
 
-    PlayerShip* player;
-public:
-    const vector<Ship *> &getEnemyShips() const;
+        void setEnemyShips(const vector<Ship *> &enemyShips);
 
-    void setEnemyShips(const vector<Ship *> &enemyShips);
+        void addEnemyShip(Ship* ship);
 
-    void addEnemyShip(Ship* ship);
+        const vector<vector<pair<bool, Entity *>>> &getGrid() const;
 
-    const vector<vector<pair<bool, Entity *>>> &getGrid() const;
+        void updateGrid();
 
-    void updateGrid();
+        void addRow(vector<pair<bool, Entity *>> row);
 
-    void addRow(vector<pair<bool, Entity *>> row);
+        int getGrid_x() const;
 
-    int getGrid_x() const;
+        void setGrid_x(int grid_x);
 
-    void setGrid_x(int grid_x);
+        int getGrid_y() const;
 
-    int getGrid_y() const;
+        void setGrid_y(int grid_y);
 
-    void setGrid_y(int grid_y);
+        void addEntityToGrid(Entity* entity);
 
-    void addEntityToGrid(Entity* entity);
+        void printLevel();
 
-    void printLevel();
+        PlayerShip *getPlayer() const;
 
-    PlayerShip *getPlayer() const;
+        void setPlayer(PlayerShip *player);
+    };
 
-    void setPlayer(PlayerShip *player);
-};
+    class LevelParser {
+    private:
+        json imported_json;
+    public:
+        explicit LevelParser(string levelFile);
 
-class LevelParser {
-private:
-    json imported_json;
-public:
-    explicit LevelParser(string levelFile);
+        Level parseJson();
+    };
+}
 
-    Level parseJson();
-};
+
 
 
 #endif //AP_PROJECT_LEVELPARSER_H

@@ -8,12 +8,15 @@
 
 #include "Ship.h"
 
-class PlayerShip : public Ship {
-private:
+namespace GameLogic{
+    class PlayerShip : public Ship {
+    private:
 
-public:
-    PlayerShip(const pair<int, int> &position);
-};
+    public:
+        PlayerShip(const pair<int, int> &position);
+    };
+}
+
 
 
 #endif //AP_PROJECT_PLAYERSHIP_H

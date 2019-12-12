@@ -10,17 +10,20 @@
 
 using namespace std;
 
-//Class that combines all parts
-class Game {
-private:
-    Level currentLevel;
+namespace GameLogic{
+    //Class that combines all parts
+    class Game {
+    private:
+        Level currentLevel;
 
-public:
-    void initializeLevel(string levelFile);
+    public:
+        void initializeLevel(string levelFile);
 
-    void run();
+        void run();
 
-};
+    };
+}
+
 
 
 #endif //AP_PROJECT_GAME_H

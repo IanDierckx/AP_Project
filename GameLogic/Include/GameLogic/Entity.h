@@ -5,33 +5,35 @@
 
 using namespace std;
 
-//Base class of hierarchy
-class Entity {
-private:
-    pair<int,int> position;
+namespace GameLogic{
+    //Base class of hierarchy
+    class Entity {
+    private:
+        pair<int,int> position;
 
-    string type;
+        string type;
 
-    int speed{};
-protected:
-    void setType(string type);
-public:
-    Entity(const pair<int,int> &position);
+        int speed{};
+    protected:
+        void setType(string type);
+    public:
+        Entity(const pair<int,int> &position);
 
-    int getX();
+        int getX();
 
-    int getY();
+        int getY();
 
-    string getType();
+        string getType();
 
-    void setX(int x);
+        void setX(int x);
 
-    void setY(int y);
+        void setY(int y);
 
-    void setSpeed(int speed);
+        void setSpeed(int speed);
 
-    int getSpeed();
-};
+        int getSpeed();
+    };
+}
 
 
 #endif //AP_PROJECT_ENTITY_H
