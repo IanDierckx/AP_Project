@@ -4,13 +4,14 @@
 #include "../Include/GameLogic/Ship.h"
 #include "../Include/GameLogic/PlayerShip.h"
 #include "../Include/GameLogic/BasicEnemy.h"
+#include "../../SFML/Include/Game.h"
+
 
 #include <iostream>
 
 namespace GameLogic {
     void Game::run() {
         bool gameOver = false;
-        int temp = 1;
         while (!gameOver) {
             Stopwatch *watch = Stopwatch::getInstance();
             if (watch->getTimePassed() == 1)  {
@@ -25,7 +26,6 @@ namespace GameLogic {
                 cout << string( 5, '\n' );
                 currentLevel.printLevel();
                 watch->reset();
-                temp++;
             }
         }
     }
@@ -39,6 +39,4 @@ namespace GameLogic {
         currentLevel.printLevel();
     }
 }
-
-
 

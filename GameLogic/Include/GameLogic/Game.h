@@ -15,7 +15,6 @@ namespace GameLogic{
     class Game {
     private:
         Level currentLevel;
-
     public:
         void initializeLevel(string levelFile);
 
