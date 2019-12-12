@@ -1,9 +1,9 @@
 #include <utility>
 
-#include "Game.h"
-#include "Ship.h"
-#include "PlayerShip.h"
-#include "BasicEnemy.h"
+#include "../Include/GameLogic/Game.h"
+#include "../Include/GameLogic/Ship.h"
+#include "../Include/GameLogic/PlayerShip.h"
+#include "../Include/GameLogic/BasicEnemy.h"
 
 #include <iostream>
 

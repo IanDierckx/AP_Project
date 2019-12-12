@@ -2,7 +2,7 @@
 // Created by Ian on 12/5/2019.
 //
 
-#include "Ship.h"
+#include "../Include/GameLogic/Ship.h"
 
 Ship::Ship(const pair<int,int> &position, int health, int speed) : Entity(position), health(health) {
     setType("Ship");

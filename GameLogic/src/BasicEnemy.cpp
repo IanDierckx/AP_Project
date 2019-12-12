@@ -2,7 +2,7 @@
 // Created by Ian on 12/9/2019.
 //
 
-#include "BasicEnemy.h"
+#include "../Include/GameLogic/BasicEnemy.h"
 
 void BasicEnemy::move() {
     if ((getX() == 0 and getSpeed() < 0) or (getX() == 8 and getSpeed() > 0)) {

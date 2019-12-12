@@ -1,6 +1,6 @@
 #include <iostream>
-#include "Stopwatch.h"
-#include "Game.h"
+#include "GameLogic/Include/GameLogic/Stopwatch.h"
+#include "GameLogic/Include/GameLogic/Game.h"
 
 //Initialize pointer to zero so that it can be initialized in first call to getInstance
 Stopwatch *Stopwatch::instance = 0;
@@ -20,7 +20,7 @@ int main() {
 //    }
 
     Game game = Game();
-    game.initializeLevel("testLevel.json");
+    game.initializeLevel("./testLevel.json");
 //    game.printLevel();
     game.run();
 

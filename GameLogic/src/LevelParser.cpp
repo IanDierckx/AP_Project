@@ -4,9 +4,9 @@
 
 #include <fstream>
 #include <iostream>
-#include "LevelParser.h"
-#include "BasicEnemy.h"
-#include "PlayerShip.h"
+#include "../Include/GameLogic/LevelParser.h"
+#include "../Include/GameLogic/BasicEnemy.h"
+#include "../Include/GameLogic/PlayerShip.h"
 
 
 //Getter and setters of Level Class

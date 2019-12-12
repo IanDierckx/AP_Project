@@ -4,7 +4,7 @@
 // Created by Ian on 12/4/2019.
 //
 
-#include "Entity.h"
+#include "../Include/GameLogic/Entity.h"
 
 Entity::Entity(const pair<int,int> &position) : position(position), type("Basic"), speed(0) {}
 

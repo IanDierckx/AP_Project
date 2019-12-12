@@ -1,7 +1,7 @@
 #ifndef AP_PROJECT_LEVELPARSER_H
 #define AP_PROJECT_LEVELPARSER_H
 
-#include "json.hpp"
+#include "../lib/json.hpp"
 #include "Ship.h"
 #include "PlayerShip.h"
 
