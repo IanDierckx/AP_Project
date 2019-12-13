@@ -16,7 +16,7 @@ namespace GameSFML{
         public:
             Game(const string& title = "Space Invaders");
 
-            void run();
+            void run() override;
     };
 }
 

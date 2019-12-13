@@ -13,12 +13,12 @@ using namespace std;
 namespace GameLogic{
     //Class that combines all parts
     class Game {
-    private:
+    protected:
         Level currentLevel;
     public:
         void initializeLevel(string levelFile);
 
-        void run();
+        virtual void run();
 
     };
 }

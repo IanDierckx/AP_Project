@@ -7,7 +7,8 @@ GameLogic::Stopwatch* GameLogic::Stopwatch::instance = 0;
 
 
 int main() {
-    GameSFML::Game game();
+    GameSFML::Game game = GameSFML::Game();
+    game.run();
 //    GameLogic::Game game = GameLogic::Game();
 //    game.initializeLevel("./testLevel.json");
 //    game.run();
