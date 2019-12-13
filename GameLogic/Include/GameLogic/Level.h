@@ -19,13 +19,7 @@ namespace GameLogic{
 
             PlayerShip* player;
         public:
-            const vector<Ship *> &getEnemyShips() const;
-
-            void setEnemyShips(const vector<Ship *> &enemyShips);
-
             void addEnemyShip(Ship* ship);
-
-            const vector<vector<pair<bool, Entity *>>> &getGrid() const;
 
             void updateGrid();
 
@@ -46,6 +40,10 @@ namespace GameLogic{
             PlayerShip *getPlayer() const;
 
             void setPlayer(PlayerShip *player);
+
+            void update();
+
+            bool gameOver();
     };
 }
 

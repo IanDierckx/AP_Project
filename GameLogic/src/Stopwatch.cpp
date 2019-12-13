@@ -15,8 +15,8 @@ namespace GameLogic{
         this->start_clock = clock();
     }
 
-    clock_t Stopwatch::getTimePassed() {
-        return (clock() - start_clock) /CLOCKS_PER_SEC;
+    double Stopwatch::getTimePassed() {
+        return static_cast<double>(clock() - start_clock) /CLOCKS_PER_SEC;
     }
 }
 

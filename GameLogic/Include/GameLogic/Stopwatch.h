@@ -21,7 +21,7 @@ namespace GameLogic{
 
         void reset();
 
-        clock_t getTimePassed();
+        double getTimePassed();
     };
 }
 

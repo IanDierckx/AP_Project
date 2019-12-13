@@ -16,6 +16,8 @@ namespace GameSFML{
 
     void Game::run() {
         GameLogic::Stopwatch *watch = GameLogic::Stopwatch::getInstance();
+        double tick = 1.0/1.5;
+
 
         while (window->isOpen()) {
             Event event;
@@ -26,8 +28,15 @@ namespace GameSFML{
                 }
                 break;
             }
-            if (watch->getTimePassed()>1) {
-//                currentLevel.updateGrid();
+            if (currentLevel.gameOver()) {
+                if (Keyboard::isKeyPressed(Keyboard::Return)) {
+                    window->close();
+                   }
+            } else {
+                if (watch->getTimePassed()>=tick) {
+                    currentLevel.update();
+                    watch->reset();
+                }
             }
         }
         window->clear(sf::Color::White);

@@ -7,19 +7,6 @@
 #include <iostream>
 
 namespace GameLogic{
-    //Getter and setters of Level Class
-    const vector<Ship *> &Level::getEnemyShips() const {
-        return enemyShips;
-    }
-
-    void Level::setEnemyShips(const vector<Ship *> &enemyShips) {
-        Level::enemyShips = enemyShips;
-    }
-
-    const vector<vector<pair<bool, Entity *>>> &Level::getGrid() const {
-        return grid;
-    }
-
     int Level::getGrid_x() const {
         return grid_x;
     }
@@ -89,6 +76,26 @@ namespace GameLogic{
 
     void Level::setPlayer(PlayerShip *player) {
         Level::player = player;
+    }
+
+    void Level::update() {
+        for (int i = 0; i < enemyShips.size(); ++i) {
+            enemyShips[i]->move();
+        }
+        updateGrid();
+        printLevel();
+    }
+
+    bool Level::gameOver() {
+        if (enemyShips.empty()) {
+            return true;
+        }
+        for (int i = 0; i < enemyShips.size(); ++i) {
+            if (enemyShips[i]->getY() == 6) {
+                return true;
+            }
+        }
+        return false;
     }
 }
 
