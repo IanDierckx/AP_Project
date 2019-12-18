@@ -1,22 +1,21 @@
 #ifndef AP_PROJECT_LEVELPARSER_H
 #define AP_PROJECT_LEVELPARSER_H
 
-#include "../lib/json.hpp"
-#include "Ship.h"
-#include "PlayerShip.h"
+#include "../../GameLogic/Include/lib/json.hpp"
 #include "Level.h"
 
 // for convenience
 using json = nlohmann::json;
 
-namespace GameLogic{
+namespace GameSFML{
     class LevelParser {
         private:
             json imported_json;
+            window_ptr window;
         public:
-            explicit LevelParser(string levelFile);
+            explicit LevelParser(string levelFile, window_ptr window);
 
-            Level parseJson();
+            shared_ptr<GameSFML::Level> parseJson();
         };
 }
 

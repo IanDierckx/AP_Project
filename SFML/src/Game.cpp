@@ -3,6 +3,7 @@
 //
 
 #include "../Include/Game.h"
+#include "../../GameLogic/Include/GameLogic/Transformation.h"
 
 using namespace sf;
 
@@ -12,6 +13,8 @@ namespace GameSFML{
         window = make_shared<RenderWindow>(VideoMode(900, 600), title,
                                                  Style::Titlebar | Style::Close);
         initializeLevel("testLevel.json");
+        auto transf = GameLogic::Transformation::getInstance();
+        transf->setScreenSize(window->getSize().x, window->getSize().y);
     }
 
     void Game::run() {
@@ -28,18 +31,30 @@ namespace GameSFML{
                 }
                 break;
             }
-            if (currentLevel.gameOver()) {
+            if (currentLevel->gameOver()) {
                 if (Keyboard::isKeyPressed(Keyboard::Return)) {
                     window->close();
                    }
             } else {
                 if (watch->getTimePassed()>=tick) {
-                    currentLevel.update();
+                    currentLevel->update();
+                    currentLevel->draw();
                     watch->reset();
                 }
             }
+
+            window->clear(sf::Color::Black);
+            currentLevel->draw();
+            window->display();
         }
-        window->clear(sf::Color::White);
-        window->display();
+
+    }
+
+    void Game::initializeLevel(string levelFile) {
+        GameSFML::LevelParser parser = GameSFML::LevelParser(std::move(levelFile), window);
+
+        currentLevel = parser.parseJson();
+
+        currentLevel->printLevel();
     }
 }

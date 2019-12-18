@@ -19,9 +19,11 @@ namespace GameSFML{
             Sprite sprite;
         public:
             BasicEnemy(const pair<int, int> &position, const string &fileName,
-                       GameSFML::window_ptr window, const shared_ptr<GameLogic::Level> &level);
+                       GameSFML::window_ptr window);
 
+            void draw();
 
+            void updateSprite();
     };
 }
 

@@ -7,10 +7,10 @@
 GameLogic::Transformation::Transformation()
     :screenWidth(0),
     screenHeight(0),
-    xMin(-4),
-    xMax(4),
-    yMin(-3),
-    yMax(3){}
+    xMin(0),
+    xMax(9),
+    yMin(0),
+    yMax(7){}
 
 shared_ptr<GameLogic::Transformation> GameLogic::Transformation::getInstance() {
     if (!instance)
@@ -33,7 +33,7 @@ void GameLogic::Transformation::setXMax(int xMax) {
 }
 
 void GameLogic::Transformation::setYMin(int yMin) {
-    Transformation::yMin = yMin;xMin
+    Transformation::yMin = yMin;
 }
 
 void GameLogic::Transformation::setYMax(int yMax) {

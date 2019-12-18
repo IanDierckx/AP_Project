@@ -20,6 +20,8 @@ namespace GameLogic{
 
         virtual void move();
 
+        virtual void draw();
+
         int getHealth() const;
 
         void setHealth(int health);

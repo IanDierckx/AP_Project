@@ -21,6 +21,10 @@ namespace GameLogic{
     void Ship::move() {
         //virtual move class of base ship class
     }
+
+    void Ship::draw() {
+        //virtual draw function of base ship class
+    }
 }
 
 

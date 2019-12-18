@@ -3,6 +3,8 @@
 //
 
 #include "../Include/GameLogic/Level.h"
+#include "../../SFML/Include/Level.h"
+
 
 #include <iostream>
 
@@ -23,15 +25,15 @@ namespace GameLogic{
         Level::grid_y = grid_y;
     }
 
-    void Level::addRow(vector<pair<bool, Entity *>> row) {
+    void Level::addRow(vector<pair<bool, shared_ptr<Entity>>> row) {
         grid.emplace_back(row);
     }
 
-    void Level::addEnemyShip(Ship *ship) {
+    void Level::addEnemyShip(shared_ptr<Ship>ship) {
         enemyShips.emplace_back(ship);
     }
 
-    void Level::addEntityToGrid(Entity *entity) {
+    void Level::addEntityToGrid(shared_ptr<Entity> entity) {
         grid[entity->getY()][entity->getX()].first = true;
         grid[entity->getY()][entity->getX()].second = entity;
     }
@@ -70,11 +72,11 @@ namespace GameLogic{
         grid[player->getY()][player->getX()].second = player;
     }
 
-    PlayerShip *Level::getPlayer() const {
+    shared_ptr<PlayerShip> Level::getPlayer() const {
         return player;
     }
 
-    void Level::setPlayer(PlayerShip *player) {
+    void Level::setPlayer(shared_ptr<PlayerShip> player) {
         Level::player = player;
     }
 

@@ -24,7 +24,7 @@ namespace GameLogic{
         Transformation();
 
     public:
-        shared_ptr<Transformation> getInstance();
+        static shared_ptr<Transformation> getInstance();
 
         void setScreenSize(unsigned int width, unsigned int height);
 

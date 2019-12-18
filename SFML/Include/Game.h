@@ -12,9 +12,11 @@ namespace GameSFML{
     class Game : public GameLogic::Game{
         private:
             shared_ptr<sf::RenderWindow> window;
-
+            shared_ptr<Level> currentLevel;
         public:
             Game(const string& title = "Space Invaders");
+
+            void initializeLevel(string levelFile) override;
 
             void run() override;
     };

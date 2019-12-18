@@ -3,14 +3,20 @@
 //
 
 #include "../Include/GameLogic/BasicEnemy.h"
+#include "../Include/GameLogic/Transformation.h"
 
 namespace GameLogic{
     void BasicEnemy::move() {
+        auto transf = Transformation::getInstance();
         if ((getX() == 0 and getSpeed() < 0) or (getX() == 8 and getSpeed() > 0)) {
-            setY(getY()+1);
-            setSpeed(-getSpeed());
+            if (transf->isInGrid(make_pair(getY()+1, getX()))) {
+                setY(getY()+1);
+                setSpeed(-getSpeed());
+            }
         } else {
-            setX(getX()+getSpeed());
+            if (transf->isInGrid(make_pair(getY(), getX() + getSpeed()))) {
+                setX(getX() + getSpeed());
+            }
         }
     }
 

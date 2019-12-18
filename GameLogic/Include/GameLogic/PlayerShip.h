@@ -13,7 +13,7 @@ namespace GameLogic{
     private:
 
     public:
-        PlayerShip(const pair<int, int> &position);
+        explicit PlayerShip(const pair<int, int> &position);
     };
 }
 

@@ -7,23 +7,25 @@
 
 #include "PlayerShip.h"
 
+#include <memory>
+
 namespace GameLogic{
     class Level {
-        private:
-            vector<Ship*> enemyShips;
+        protected:
+            vector<shared_ptr<Ship>> enemyShips;
 
-            vector<vector<pair<bool,Entity*>>> grid;
+            vector<vector<pair<bool,shared_ptr<Entity>>>> grid;
 
             int grid_x = 9;
             int grid_y = 7;
 
-            PlayerShip* player;
+            shared_ptr<PlayerShip> player;
         public:
-            void addEnemyShip(Ship* ship);
+            void addEnemyShip(shared_ptr<Ship> ship);
 
             void updateGrid();
 
-            void addRow(vector<pair<bool, Entity *>> row);
+            void addRow(vector<pair<bool, shared_ptr<Entity>>> row);
 
             int getGrid_x() const;
 
@@ -33,13 +35,13 @@ namespace GameLogic{
 
             void setGrid_y(int grid_y);
 
-            void addEntityToGrid(Entity* entity);
+            void addEntityToGrid(shared_ptr<Entity> entity);
 
             void printLevel();
 
-            PlayerShip *getPlayer() const;
+            shared_ptr<PlayerShip> getPlayer() const;
 
-            void setPlayer(PlayerShip *player);
+            void setPlayer(shared_ptr<PlayerShip> player);
 
             void update();
 

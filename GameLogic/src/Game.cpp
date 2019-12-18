@@ -16,11 +16,7 @@ namespace GameLogic {
 
 
     void Game::initializeLevel(string levelFile) {
-        LevelParser parser = LevelParser(std::move(levelFile));
 
-        currentLevel = parser.parseJson();
-
-        currentLevel.printLevel();
     }
 }
 

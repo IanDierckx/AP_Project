@@ -3,14 +3,26 @@
 //
 
 #include "../Include/BasicEnemy.h"
+#include "../../GameLogic/Include/GameLogic/Transformation.h"
 
 namespace GameSFML{
     BasicEnemy::BasicEnemy(const pair<int, int> &position, const string &fileName,
-             const GameSFML::window_ptr window, const shared_ptr<GameLogic::Level> &level)
-            : GameLogic::BasicEnemy(position){
-        string spritesPath = "./res/sprites/";
+             const GameSFML::window_ptr window)
+            : GameLogic::BasicEnemy(position), window(window){
+        string spritesPath = "./SFML/res/sprites/";
         texture.loadFromFile(spritesPath+fileName);
         sprite = Sprite(texture);
         sprite.setOrigin(sprite.getLocalBounds().width/2, sprite.getLocalBounds().height/2);
+    }
+
+    void BasicEnemy::draw() {
+        updateSprite();
+        window->draw(sprite);
+    }
+
+    void BasicEnemy::updateSprite() {
+        auto transf = GameLogic::Transformation::getInstance();
+        pair<double, double> screenPos = transf->convertToScreen(this->getX(), this->getY());
+        sprite.setPosition(static_cast<float>(screenPos.first), static_cast<float>(screenPos.second));
     }
 }

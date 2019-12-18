@@ -4,7 +4,7 @@
 #include "Stopwatch.h"
 #include "Entity.h"
 #include "Ship.h"
-#include "LevelParser.h"
+#include "../../../SFML/Include/LevelParser.h"
 
 #include <vector>
 
@@ -14,9 +14,9 @@ namespace GameLogic{
     //Class that combines all parts
     class Game {
     protected:
-        Level currentLevel;
+
     public:
-        void initializeLevel(string levelFile);
+        virtual void initializeLevel(string levelFile);
 
         virtual void run();
 
