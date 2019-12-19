@@ -11,7 +11,7 @@ using namespace sf;
 namespace GameSFML{
     GameSFML::Game::Game(const string &title) {
         VideoMode videoMode = VideoMode::getDesktopMode();
-        window = make_shared<RenderWindow>(VideoMode(700, 900), title,
+        window = make_shared<RenderWindow>(VideoMode(350, 450), title,
                                                  Style::Titlebar | Style::Close);
         initializeLevel("testLevel.json");
         auto transf = GameLogic::Transformation::getInstance();
@@ -30,10 +30,10 @@ namespace GameSFML{
                 if (event.type == Event::EventType::Closed) {
                     window->close();
                 }
-                if (event.type == Event::EventType::MouseButtonPressed) {
-                    cout << Mouse::getPosition().x << endl;
-                    cout << Mouse::getPosition().y << endl;
-                }
+//                if (event.type == Event::EventType::MouseButtonPressed) {
+//                    cout << Mouse::getPosition().x << endl;
+//                    cout << Mouse::getPosition().y << endl;
+//                }
                 break;
             }
             if (currentLevel->gameOver()) {
