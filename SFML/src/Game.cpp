@@ -2,6 +2,7 @@
 // Created by student on 12.12.19.
 //
 
+#include <iostream>
 #include "../Include/Game.h"
 #include "../../GameLogic/Include/GameLogic/Transformation.h"
 
@@ -10,7 +11,7 @@ using namespace sf;
 namespace GameSFML{
     GameSFML::Game::Game(const string &title) {
         VideoMode videoMode = VideoMode::getDesktopMode();
-        window = make_shared<RenderWindow>(VideoMode(900, 600), title,
+        window = make_shared<RenderWindow>(VideoMode(700, 900), title,
                                                  Style::Titlebar | Style::Close);
         initializeLevel("testLevel.json");
         auto transf = GameLogic::Transformation::getInstance();
@@ -28,6 +29,10 @@ namespace GameSFML{
             while (window->pollEvent(event)) {
                 if (event.type == Event::EventType::Closed) {
                     window->close();
+                }
+                if (event.type == Event::EventType::MouseButtonPressed) {
+                    cout << Mouse::getPosition().x << endl;
+                    cout << Mouse::getPosition().y << endl;
                 }
                 break;
             }
