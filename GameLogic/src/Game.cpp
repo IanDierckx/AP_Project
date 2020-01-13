@@ -16,7 +16,7 @@ namespace GameLogic {
 
 
     void Game::initializeLevel(string levelFile) {
-
+        //Pure virtual function
     }
 }
 

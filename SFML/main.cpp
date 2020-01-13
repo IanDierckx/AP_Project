@@ -7,7 +7,9 @@
 GameLogic::Stopwatch* GameLogic::Stopwatch::instance = 0;
 shared_ptr<GameLogic::Transformation> GameLogic::Transformation::instance = 0;
 
-
+/** The main function
+ *  Here is where the program starts
+ */
 int main() {
     GameSFML::Game game = GameSFML::Game();
     game.run();
