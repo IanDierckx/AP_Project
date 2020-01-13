@@ -18,7 +18,7 @@ namespace GameSFML{
             Texture texture;
             Sprite sprite;
         public:
-            BasicEnemy(const pair<int, int> &position, const string &fileName,
+            BasicEnemy(const pair<int, int> &position, double width, double height, const string &fileName,
                        GameSFML::window_ptr window);
 
             void draw();

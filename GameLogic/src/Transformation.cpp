@@ -42,8 +42,8 @@ void GameLogic::Transformation::setYMax(int yMax) {
 
 pair<int, int> GameLogic::Transformation::convertToGrid(double screenX, double screenY) {
     pair<double, double> scaleFactor = getScaleFactor();
-    int gridX = scaleFactor.second*screenX - screenWidth/2.0;
-    int gridY = -scaleFactor.first*screenY + screenHeight/2.0;
+    int gridX = (scaleFactor.second*screenX) - (screenWidth/2.0)+74;
+    int gridY = -scaleFactor.first*screenY + screenHeight/2.0+5;
     return make_pair(gridY, gridX);
 }
 
@@ -51,8 +51,11 @@ pair<double, double> GameLogic::Transformation::convertToScreen(int gridX, int g
 //    pair<double, double> scaleFactor = getScaleFactor();
 //    double screenY = -(gridY+scaleFactor.first/2)/scaleFactor.first*screenHeight;
 //    double screenX = (gridX+scaleFactor.second/2)/scaleFactor.second*screenWidth;
-    double screenX = static_cast<double>(gridX - xMin)/(xMax-xMin)*screenWidth+((screenWidth/100)*5);
-    double screenY = static_cast<double>(gridY - yMin)/(yMax-yMin)*screenHeight;
+    double test1 = static_cast<double>(gridX - xMin);
+    double test2 = static_cast<double>(xMax-xMin);
+//    double test3 = static_cast<double>
+    double screenX = static_cast<double>(gridX+1 - xMin)/(xMax-xMin)*screenWidth;
+    double screenY = static_cast<double>(gridY+1 - yMin)/(yMax-yMin)*screenHeight;
     return make_pair(screenX, screenY);
 }
 

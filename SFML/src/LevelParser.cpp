@@ -39,13 +39,14 @@ namespace GameSFML{
             if (enemy.at("type").get<string>() == "basicEnemy") {
                 int posX = enemy.at("position")[1].get<int>();
                 int posY = enemy.at("position")[0].get<int>();
-                shared_ptr<BasicEnemy> newEnemy = make_shared<BasicEnemy>(make_pair(posY,posX),"testEnemy.png", window);
+                shared_ptr<BasicEnemy> newEnemy = make_shared<BasicEnemy>(make_pair(posY,posX), 64, 50,
+                        "BasicEnemy.png", window);
                 level->addEnemyShip(newEnemy);
                 level->addEntityToGrid(newEnemy);
             }
         }
 
-        level->setPlayer(make_shared<GameLogic::PlayerShip>(make_pair(6,4)));
+        level->setPlayer(make_shared<GameLogic::PlayerShip>(make_pair(6,4), 50, 50));
         level->addEntityToGrid(level->getPlayer());
 
         return level;

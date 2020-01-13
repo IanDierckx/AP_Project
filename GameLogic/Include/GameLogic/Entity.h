@@ -11,13 +11,17 @@ namespace GameLogic{
     private:
         pair<int,int> position;
 
+        double width;
+
+        double height;
+
         string type;
 
         int speed{};
     protected:
         void setType(string type);
     public:
-        Entity(const pair<int,int> &position);
+        Entity(const pair<int,int> &position, double width, double height);
 
         int getX();
 

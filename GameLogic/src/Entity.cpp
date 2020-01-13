@@ -3,7 +3,8 @@
 #include "../Include/GameLogic/Entity.h"
 
 namespace GameLogic{
-    Entity::Entity(const pair<int,int> &position) : position(position), type("Basic"), speed(0) {}
+    Entity::Entity(const pair<int,int> &position, double width, double height)
+    : position(position), width(width), height(height), type("Basic"), speed(0) {}
 
     int Entity::getX() {
         return position.second;

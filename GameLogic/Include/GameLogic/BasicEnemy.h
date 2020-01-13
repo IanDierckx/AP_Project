@@ -14,7 +14,7 @@ namespace GameLogic{
     private:
 
     public:
-        BasicEnemy(const pair<int, int> &position);
+        BasicEnemy(const pair<int, int> &position, double width, double height);
 
         void move() override;
     };

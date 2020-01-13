@@ -11,11 +11,11 @@ using namespace sf;
 namespace GameSFML{
     GameSFML::Game::Game(const string &title) {
         VideoMode videoMode = VideoMode::getDesktopMode();
-        window = make_shared<RenderWindow>(VideoMode(350, 450), title,
+        window = make_shared<RenderWindow>(VideoMode(9*64+10, 7*64+10), title,
                                                  Style::Titlebar | Style::Close);
         initializeLevel("testLevel.json");
         auto transf = GameLogic::Transformation::getInstance();
-        transf->setScreenSize(window->getSize().x, window->getSize().y);
+        transf->setScreenSize(window->getSize().x-64, window->getSize().y-64);
     }
 
     void Game::run() {

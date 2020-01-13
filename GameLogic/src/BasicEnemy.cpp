@@ -20,7 +20,7 @@ namespace GameLogic{
         }
     }
 
-    BasicEnemy::BasicEnemy(const pair<int, int> &position) : Ship(position) {
+    BasicEnemy::BasicEnemy(const pair<int, int> &position, double width, double height) : Ship(position, width, height) {
         setSpeed(1);
         setType("BasicEnemy");
         setHealth(1);
