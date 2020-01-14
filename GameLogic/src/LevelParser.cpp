@@ -8,8 +8,8 @@
 
 #include <fstream>
 #include <iostream>
-#include "../Include/LevelParser.h"
-#include "../../GameLogic/Include/GameLogic/PlayerShip.h"
+#include "../Include/GameLogic/LevelParser.h"
+#include "../Include/GameLogic/PlayerShip.h"
 
 namespace GameSFML{
 //Actual parser class methods

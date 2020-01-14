@@ -5,11 +5,11 @@
   "enemies" : [
     {
       "type" : "basicEnemy",
-      "position" : [1,1]
+      "position" : [4,1]
     },
     {
       "type" : "basicEnemy",
-      "position" : [1,2]
+      "position" : [4,2]
     },
     {
       "type" : "basicEnemy",

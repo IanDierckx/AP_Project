@@ -3,7 +3,7 @@
 //
 
 #include <cmath>
-#include "LogicUtils.h"
+#include "../Include/GameLogic/LogicUtils.h"
 
 namespace GameLogic{
     bool isDoubleEqualToInt(double dbl, int i, double rounding){

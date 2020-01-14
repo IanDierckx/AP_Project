@@ -1,8 +1,8 @@
 #ifndef AP_PROJECT_LEVELPARSER_H
 #define AP_PROJECT_LEVELPARSER_H
 
-#include "../../GameLogic/Include/lib/json.hpp"
-#include "Level.h"
+#include "../lib/json.hpp"
+#include "../../../SFML/Include/Level.h"
 
 // for convenience
 using json = nlohmann::json;

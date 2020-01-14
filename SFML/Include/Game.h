@@ -4,7 +4,7 @@
 #include <SFML/Graphics.hpp>
 #include <memory>
 #include "../../GameLogic/Include/GameLogic/Game.h"
-#include "Game.h"
+
 
 using namespace std;
 

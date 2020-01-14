@@ -4,7 +4,7 @@
 #include "Stopwatch.h"
 #include "Entity.h"
 #include "Ship.h"
-#include "../../../SFML/Include/LevelParser.h"
+#include "LevelParser.h"
 
 #include <vector>
 

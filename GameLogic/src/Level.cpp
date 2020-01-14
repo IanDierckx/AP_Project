@@ -93,7 +93,7 @@ namespace GameLogic{
             return true;
         }
         for (int i = 0; i < enemyShips.size(); ++i) {
-            if (enemyShips[i]->getY() == 6) {
+            if (std::abs(enemyShips[i]->getMovingY() - 6) < 0.001) {
                 return true;
             }
         }
