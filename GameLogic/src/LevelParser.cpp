@@ -10,7 +10,7 @@
 #include <iostream>
 #include <utility>
 #include "../Include/GameLogic/LevelParser.h"
-#include "../Include/GameLogic/PlayerShip.h"
+#include "../Include/GameLogic/Player.h"
 
 namespace GameSFML{
 //Actual parser class methods
