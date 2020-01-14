@@ -87,7 +87,7 @@ namespace GameLogic{
             enemyShip->move();
         }
         updateGrid();
-        printLevel();
+//        printLevel();
     }
 
     bool Level::gameOver() {

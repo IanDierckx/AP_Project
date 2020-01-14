@@ -4,8 +4,8 @@
 // Created by student on 14.01.20.
 //
 
-#include "Player.h"
-#include "utils.h"
+#include "../Include/Player.h"
+#include "../Include/utils.h"
 #include "../../GameLogic/Include/GameLogic/Transformation.h"
 
 GameSFML::Player::Player(const pair<int, int> &position, double width, double height, const string &fileName,

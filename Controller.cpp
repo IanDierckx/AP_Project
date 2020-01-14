@@ -18,9 +18,13 @@ void Controller::handleInput() {
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Return)) {
             window->close();
         }
-    }
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
-        currentLevel->getPlayer()->moveLeft();
+    } else {
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
+            currentLevel->getPlayer()->moveLeft();
+        }
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
+            currentLevel->getPlayer()->moveRight();
+        }
     }
 }
 
