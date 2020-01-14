@@ -16,7 +16,7 @@ namespace GameLogic{
     private:
         int health{};
     public:
-        Ship(const pair<int,int> &position, double width, double height, int health = 1, int speed = 1);
+        Ship(const pair<int,int> &position, double width, double height, int health = 1, double speed = 1);
 
         virtual void move();
 

@@ -33,7 +33,7 @@ namespace GameSFML{
      */
     void Game::run() {
         GameLogic::Stopwatch *watch = GameLogic::Stopwatch::getInstance();
-        double tick = 1.0/1.5;
+        double tick = 0.1;
 
 
         while (window->isOpen()) {

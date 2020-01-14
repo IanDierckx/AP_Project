@@ -4,6 +4,8 @@
 
 #include "../Include/GameLogic/BasicEnemy.h"
 #include "../Include/GameLogic/Transformation.h"
+#include "../Include/GameLogic/LogicUtils.h"
+
 
 namespace GameLogic{
 
@@ -14,14 +16,30 @@ namespace GameLogic{
      */
     void BasicEnemy::move() {
         auto transf = Transformation::getInstance();
-        if ((getX() == 0 and getSpeed() < 0) or (getX() == 8 and getSpeed() > 0)) {
-            if (transf->isInGrid(make_pair(getY()+1, getX()))) {
-                setY(getY()+1);
-                setSpeed(-getSpeed());
+        if (isDoubleEqualToInt(getMovingX(),getX()) and isDoubleEqualToInt(getMovingY(), getY())) {
+            if ((getX() == 0 and getSpeed() < 0) or (getX() == 8 and getSpeed() > 0)) {
+                if (transf->isInGrid(make_pair(getY()+1, getX()))) {
+                    setY(getY()+1);
+                    setSpeed(-getSpeed());
+                }
+            } else {
+                if (transf->isInGrid(make_pair(getY(), getX() + getSpeed()))) {
+                    if (getSpeed() > 0) {
+                        setX(getX()+1);
+                    } else {
+                        setX(getX()-1);
+                    }
+                }
             }
         } else {
-            if (transf->isInGrid(make_pair(getY(), getX() + getSpeed()))) {
-                setX(getX() + getSpeed());
+            if (getMovingY() < getY()) {
+                if (getSpeed() < 0) {
+                    addMovingY(-getSpeed());
+                } else {
+                    addMovingY(getSpeed());
+                }
+            } else {
+                addMovingX(getSpeed());
             }
         }
     }
@@ -34,7 +52,7 @@ namespace GameLogic{
      * @param height The height of the basic enemy
      */
     BasicEnemy::BasicEnemy(const pair<int, int> &position, double width, double height) : Ship(position, width, height) {
-        setSpeed(1);
+        setSpeed(0.1);
         setType("BasicEnemy");
         setHealth(1);
     }

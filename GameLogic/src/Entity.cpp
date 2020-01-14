@@ -12,7 +12,8 @@ namespace GameLogic{
      * @param height The height of the entity
      */
     Entity::Entity(const pair<int,int> &position, double width, double height)
-    : position(position), width(width), height(height), type("Basic"), speed(0) {}
+    : position(position), width(width), height(height), type("Basic"), speed(0), movingX(position.second)
+    , movingY(position.first) {}
 
     /// Function to return the x coordinate
     /***
@@ -73,17 +74,53 @@ namespace GameLogic{
      * Function that sets the speed of the entity
      * @param speed the entity's speed
      */
-    void Entity::setSpeed(int speed) {
+    void Entity::setSpeed(double speed) {
         this->speed = speed;
     }
 
     /// Function that gets the entity's speed
     /**
      * Function that returns the speed of the entity
-     * @return Integer value of the speed of the entity
+     * @return Double value of the speed of the entity
      */
-    int Entity::getSpeed() {
+    double Entity::getSpeed() {
         return speed;
+    }
+
+    /// Function to return the moving x coordinate
+    /***
+     * Function to get the x position used for fluid movement on screen
+     * @return Integer value of the moving x coordinate of the entity
+     */
+    double Entity::getMovingX() const {
+        return movingX;
+    }
+
+    /// Function to add to the moving x coordinate
+    /***
+     * Function to add to the x position used for fluid movement on screen
+     * @param movingX Double value to be added (or subtracted using a negative value) to the existing moving x value
+     */
+    void Entity::addMovingX(double addedX) {
+        Entity::movingX += addedX;
+    }
+
+    /// Function to return the moving y coordinate
+    /***
+     * Function to get the y position used for fluid movement on screen
+     * @return Integer value of the moving y coordinate of the entity
+     */
+    double Entity::getMovingY() const {
+        return movingY;
+    }
+
+    /// Function to add to the moving x coordinate
+    /***
+     * Function to add to the x position used for fluid movement on screen
+     * @param movingX Double value to be added (or subtracted using a negative value) to the existing moving x value
+     */
+    void Entity::addMovingY(double addedY) {
+        Entity::movingY += addedY;
     }
 }
 

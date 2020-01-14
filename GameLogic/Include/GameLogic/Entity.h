@@ -21,7 +21,11 @@ namespace GameLogic{
 
         string type;
 
-        int speed{};
+        double speed;
+
+        double movingX;
+
+        double movingY;
     protected:
         /// Funtion to set the type of the Entity
         /***
@@ -79,14 +83,44 @@ namespace GameLogic{
          * Function that sets the speed of the entity
          * @param speed the entity's speed
          */
-        void setSpeed(int speed);
+        void setSpeed(double speed);
 
         /// Function that gets the entity's speed
         /***
          * Function that returns the speed of the entity
-         * @return Integer value of the speed of the entity
+         * @return Double value of the speed of the entity
          */
-        int getSpeed();
+        double getSpeed();
+
+        /// Function to return the moving x coordinate
+        /***
+         * Function to get the x position used for fluid movement on screen
+         * @return Integer value of the moving x coordinate of the entity
+         */
+        double getMovingX() const;
+
+        /// Function to add to the moving x coordinate
+        /***
+         * Function to add to the x position used for fluid movement on screen
+         * @param movingX Double value to be added (or subtracted using a negative value) to the existing
+         * moving x value
+         */
+        void addMovingX(double addedX);
+
+        /// Function to return the moving y coordinate
+        /***
+         * Function to get the y position used for fluid movement on screen
+         * @return Integer value of the moving y coordinate of the entity
+         */
+        double getMovingY() const;
+
+        /// Function to add to the moving y coordinate
+        /***
+         * Function to add to the y position used for fluid movement on screen
+         * @param movingX Double value to be added (or subtracted using a negative value) to the existing
+         * moving y value
+         */
+        void addMovingY(double addedY);
     };
 }
 

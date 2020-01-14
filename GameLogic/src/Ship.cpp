@@ -5,10 +5,10 @@
 #include "../Include/GameLogic/Ship.h"
 
 namespace GameLogic{
-    Ship::Ship(const pair<int,int> &position, double width, double height, int health, int speed) :
+    Ship::Ship(const pair<int,int> &position, double width, double height, int health, double speed) :
     Entity(position, width, height), health(health) {
         setType("Ship");
-        setSpeed(1);
+        setSpeed(0.1);
     }
 
     int Ship::getHealth() const {

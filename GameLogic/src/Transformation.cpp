@@ -47,15 +47,9 @@ pair<int, int> GameLogic::Transformation::convertToGrid(double screenX, double s
     return make_pair(gridY, gridX);
 }
 
-pair<double, double> GameLogic::Transformation::convertToScreen(int gridX, int gridY) {
-//    pair<double, double> scaleFactor = getScaleFactor();
-//    double screenY = -(gridY+scaleFactor.first/2)/scaleFactor.first*screenHeight;
-//    double screenX = (gridX+scaleFactor.second/2)/scaleFactor.second*screenWidth;
-    double test1 = static_cast<double>(gridX - xMin);
-    double test2 = static_cast<double>(xMax-xMin);
-//    double test3 = static_cast<double>
-    double screenX = static_cast<double>(gridX+1 - xMin)/(xMax-xMin)*screenWidth;
-    double screenY = static_cast<double>(gridY+1 - yMin)/(yMax-yMin)*screenHeight;
+pair<double, double> GameLogic::Transformation::convertToScreen(double X, double Y) {
+    double screenX = (X+1 - xMin)/(xMax-xMin)*screenWidth;
+    double screenY = (Y+1 - yMin)/(yMax-yMin)*screenHeight;
     return make_pair(screenX, screenY);
 }
 

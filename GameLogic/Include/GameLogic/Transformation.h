@@ -38,7 +38,7 @@ namespace GameLogic{
 
         pair<int, int> convertToGrid(double screenX, double screenY);
 
-        pair<double, double> convertToScreen(int gridX, int gridY);
+        pair<double, double> convertToScreen(double X, double Y);
 
         pair<double, double> getScaleFactor();
 

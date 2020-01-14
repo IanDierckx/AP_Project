@@ -26,7 +26,7 @@ namespace GameSFML{
 
     void BasicEnemy::updateSprite() {
         auto transf = GameLogic::Transformation::getInstance();
-        pair<double, double> screenPos = transf->convertToScreen(this->getX(), this->getY());
+        pair<double, double> screenPos = transf->convertToScreen(this->getMovingX(), this->getMovingY());
         sprite.setPosition(static_cast<float>(screenPos.first), static_cast<float>(screenPos.second));
     }
 }
