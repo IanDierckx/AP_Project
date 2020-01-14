@@ -6,6 +6,7 @@
 #define AP_PROJECT_SFML_LEVEL_H
 
 #include "BasicEnemy.h"
+#include "Player.h"
 
 namespace GameSFML{
 

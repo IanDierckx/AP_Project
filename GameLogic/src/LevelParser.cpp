@@ -10,7 +10,6 @@
 #include <iostream>
 #include <utility>
 #include "../Include/GameLogic/LevelParser.h"
-#include "../Include/GameLogic/Player.h"
 
 namespace GameSFML{
 //Actual parser class methods
@@ -47,7 +46,7 @@ namespace GameSFML{
             }
         }
 
-        level->setPlayer(make_shared<GameLogic::PlayerShip>(make_pair(6,4), 50, 50));
+        level->setPlayer(make_shared<GameSFML::Player>(make_pair(6,4), 50, 50, "Player.png", window));
         level->addEntityToGrid(level->getPlayer());
 
         return level;

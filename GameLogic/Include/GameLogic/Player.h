@@ -9,11 +9,11 @@
 #include "Ship.h"
 
 namespace GameLogic{
-    class PlayerShip : public Ship {
+    class Player : public Ship {
     private:
 
     public:
-        explicit PlayerShip(const pair<int, int> &position, double width, double height);
+        explicit Player(const pair<int, int> &position, double width, double height);
     };
 }
 

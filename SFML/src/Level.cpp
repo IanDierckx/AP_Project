@@ -15,6 +15,7 @@ namespace GameSFML {
         for (const auto &enemy : enemyShips) {
             enemy->draw();
         }
+        player->draw();
     }
 
 }

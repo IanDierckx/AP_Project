@@ -74,11 +74,11 @@ namespace GameLogic{
         grid[player->getY()][player->getX()].second = player;
     }
 
-    shared_ptr<PlayerShip> Level::getPlayer() const {
+    shared_ptr<Player> Level::getPlayer() const {
         return player;
     }
 
-    void Level::setPlayer(shared_ptr<PlayerShip> player) {
+    void Level::setPlayer(shared_ptr<Player> player) {
         Level::player = std::move(player);
     }
 

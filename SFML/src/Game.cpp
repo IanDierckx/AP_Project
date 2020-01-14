@@ -58,8 +58,6 @@ namespace GameSFML{
                 }
             }
 
-//            }
-
             window->clear(sf::Color::Black);
             currentLevel->draw();
             window->display();

@@ -19,7 +19,7 @@ namespace GameLogic{
             int grid_x = 9;
             int grid_y = 7;
 
-            shared_ptr<PlayerShip> player;
+            shared_ptr<Player> player;
         public:
             void addEnemyShip(shared_ptr<Ship> ship);
 
@@ -39,9 +39,9 @@ namespace GameLogic{
 
             void printLevel();
 
-            shared_ptr<PlayerShip> getPlayer() const;
+            shared_ptr<Player> getPlayer() const;
 
-            void setPlayer(shared_ptr<PlayerShip> player);
+            void setPlayer(shared_ptr<Player> player);
 
             void update();
 

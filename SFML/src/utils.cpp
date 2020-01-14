@@ -7,8 +7,8 @@ namespace GameSFML{
     void scaleSprite(sf::Sprite& sprite, position upperLeft, position lowerRight) {
         double width = lowerRight.first-upperLeft.first;
         double heigth = lowerRight.second-upperLeft.second;
-        float scaleFactorX = static_cast<float>(width/sprite.getTexture()->getSize().x);
-        float scaleFactorY = static_cast<float>(heigth/sprite.getTexture()->getSize().y);
+        float scaleFactorX = static_cast<float>(width/sprite.getTextureRect().width);
+        float scaleFactorY = static_cast<float>(heigth/sprite.getTextureRect().height);
         sprite.scale(scaleFactorX,scaleFactorY);
     }
 }
