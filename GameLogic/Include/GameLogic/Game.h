@@ -16,7 +16,7 @@ namespace GameLogic{
     protected:
 
     public:
-        virtual void initializeLevel(string levelFile);
+        virtual void initializeLevel(const string &levelFile);
 
         virtual void run();
 

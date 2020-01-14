@@ -13,7 +13,7 @@ namespace GameSFML{
             json imported_json;
             window_ptr window;
         public:
-            explicit LevelParser(string levelFile, window_ptr window);
+            LevelParser(const string &levelFile, window_ptr window);
 
             shared_ptr<GameSFML::Level> parseJson();
         };

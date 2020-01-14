@@ -8,15 +8,16 @@
 
 #include <fstream>
 #include <iostream>
+#include <utility>
 #include "../Include/GameLogic/LevelParser.h"
 #include "../Include/GameLogic/PlayerShip.h"
 
 namespace GameSFML{
 //Actual parser class methods
 
-    LevelParser::LevelParser(string levelFile, window_ptr window) : window(window){
+    LevelParser::LevelParser(const string &levelFile, window_ptr window) : window(std::move(window)){
         // read a JSON file
-        std::ifstream file ("testLevel.json");
+        std::ifstream file ("./Levels/"+levelFile);
         file >> imported_json;
     }
 
@@ -37,8 +38,8 @@ namespace GameSFML{
 
         for (auto& enemy:imported_json.at("enemies")) {
             if (enemy.at("type").get<string>() == "basicEnemy") {
-                int posX = enemy.at("position")[1].get<int>();
-                int posY = enemy.at("position")[0].get<int>();
+                auto posX = enemy.at("position")[1].get<int>();
+                auto posY = enemy.at("position")[0].get<int>();
                 shared_ptr<BasicEnemy> newEnemy = make_shared<BasicEnemy>(make_pair(posY,posX), 64, 50,
                         "BasicEnemy.png", window);
                 level->addEnemyShip(newEnemy);

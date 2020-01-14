@@ -12,7 +12,7 @@ namespace GameSFML {
     }
 
     void Level::draw() {
-        for (auto enemy : enemyShips) {
+        for (const auto &enemy : enemyShips) {
             enemy->draw();
         }
     }

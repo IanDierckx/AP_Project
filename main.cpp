@@ -5,9 +5,9 @@
 #include "Controller.h"
 
 //Initialize pointer to zero so that it can be initialized in first call to getInstance
-GameLogic::Stopwatch* GameLogic::Stopwatch::instance = 0;
-shared_ptr<GameLogic::Transformation> GameLogic::Transformation::instance = 0;
-Controller* Controller::instance = 0;
+GameLogic::Stopwatch* GameLogic::Stopwatch::instance = nullptr;
+shared_ptr<GameLogic::Transformation> GameLogic::Transformation::instance = nullptr;
+Controller* Controller::instance = nullptr;
 
 /** The main function
  *  Here is where the program starts

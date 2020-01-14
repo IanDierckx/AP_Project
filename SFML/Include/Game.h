@@ -26,14 +26,14 @@ namespace GameSFML{
              * The Transformation singleton class gets the correct screen sizes (minus the borders of the screen)
              * @param title Gives the title of the window
              */
-            Game(const string& title = "Space Invaders");
+            explicit Game(const string& title = "Space Invaders");
 
             /// Initialize a new level in the game
             /**
              * Function initializes a new level by calling the Level Parser
              * @param levelFile the name of the json file of the new level
              */
-            void initializeLevel(string levelFile) override;
+            void initializeLevel(const string &levelFile) override;
 
             /// Function to run the actual game
             /**

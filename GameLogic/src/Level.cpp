@@ -1,3 +1,5 @@
+#include <utility>
+
 //
 // Created by student on 12.12.19.
 //
@@ -63,7 +65,7 @@ namespace GameLogic{
                 }
             }
         }
-        for (auto enemy:enemyShips) {
+        for (const auto &enemy:enemyShips) {
             grid[enemy->getY()][enemy->getX()].first = true;
             grid[enemy->getY()][enemy->getX()].second = enemy;
         }
@@ -77,12 +79,12 @@ namespace GameLogic{
     }
 
     void Level::setPlayer(shared_ptr<PlayerShip> player) {
-        Level::player = player;
+        Level::player = std::move(player);
     }
 
     void Level::update() {
-        for (int i = 0; i < enemyShips.size(); ++i) {
-            enemyShips[i]->move();
+        for (auto &enemyShip : enemyShips) {
+            enemyShip->move();
         }
         updateGrid();
         printLevel();
@@ -92,8 +94,8 @@ namespace GameLogic{
         if (enemyShips.empty()) {
             return true;
         }
-        for (int i = 0; i < enemyShips.size(); ++i) {
-            if (std::abs(enemyShips[i]->getMovingY() - 6) < 0.001) {
+        for (auto &enemyShip : enemyShips) {
+            if (std::abs(enemyShip->getMovingY() - 6) < 0.001) {
                 return true;
             }
         }

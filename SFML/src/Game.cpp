@@ -18,7 +18,7 @@ namespace GameSFML{
      * @param title Gives the title of the window
      */
     GameSFML::Game::Game(const string &title) {
-        VideoMode videoMode = VideoMode::getDesktopMode();
+//        VideoMode videoMode = VideoMode::getDesktopMode();
         window = make_shared<RenderWindow>(VideoMode(9*64+10, 7*64+10), title,
                                                  Style::Titlebar | Style::Close);
         initializeLevel("testLevel.json");
@@ -41,7 +41,7 @@ namespace GameSFML{
 
 
         while (window->isOpen()) {
-            Event event;
+            Event event{};
 
             while (window->pollEvent(event)) {
                 if (event.type == Event::EventType::Closed) {
@@ -72,8 +72,8 @@ namespace GameSFML{
      * Function initializes a new level by calling the Level Parser
      * @param levelFile the name of the json file of the new level
      */
-    void Game::initializeLevel(string levelFile) {
-        GameSFML::LevelParser parser = GameSFML::LevelParser(std::move(levelFile), window);
+    void Game::initializeLevel(const string &levelFile) {
+        GameSFML::LevelParser parser = GameSFML::LevelParser(levelFile, window);
 
         currentLevel = parser.parseJson();
 

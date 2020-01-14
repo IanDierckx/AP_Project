@@ -36,7 +36,7 @@ namespace GameLogic{
 
         void setYMax(int yMax);
 
-        pair<int, int> convertToGrid(double screenX, double screenY);
+//        pair<int, int> convertToGrid(double screenX, double screenY);
 
         pair<double, double> convertToScreen(double X, double Y);
 

@@ -21,7 +21,7 @@ namespace GameSFML{
             BasicEnemy(const pair<int, int> &position, double width, double height, const string &fileName,
                        GameSFML::window_ptr window);
 
-            void draw();
+            void draw() override;
 
             void updateSprite();
     };
