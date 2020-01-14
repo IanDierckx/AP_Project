@@ -14,6 +14,8 @@ namespace GameLogic{
 
     public:
         explicit Player(const pair<int, int> &position, double width, double height);
+
+        void moveLeft();
     };
 }
 

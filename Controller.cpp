@@ -19,6 +19,9 @@ void Controller::handleInput() {
             window->close();
         }
     }
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
+        currentLevel->getPlayer()->moveLeft();
+    }
 }
 
 void Controller::setCurrentLevel(shared_ptr<GameLogic::Level> newLevel) {
