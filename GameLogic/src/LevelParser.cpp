@@ -12,14 +12,19 @@
 #include "../Include/GameLogic/LevelParser.h"
 
 namespace GameSFML{
-//Actual parser class methods
 
+    /// Constructor of the parser class
     LevelParser::LevelParser(const string &levelFile, window_ptr window) : window(std::move(window)){
         // read a JSON file
         std::ifstream file ("./Levels/"+levelFile);
         file >> imported_json;
     }
 
+    /// The actual parsing function
+    /***
+     * Function parses the json file that was imported in the constructor
+     * @return Shared pointer to the created Level
+     */
     shared_ptr<Level> LevelParser::parseJson() {
         shared_ptr<Level> level = make_shared<Level>(GameSFML::Level(window));
 

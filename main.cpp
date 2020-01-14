@@ -1,8 +1,8 @@
 #include <iostream>
-#include "GameLogic/Include/GameLogic/Game.h"
 #include "SFML/Include/Game.h"
 #include "GameLogic/Include/GameLogic/Transformation.h"
 #include "Controller.h"
+#include "GameLogic/Include/GameLogic/Stopwatch.h"
 
 //Initialize pointer to zero so that it can be initialized in first call to getInstance
 GameLogic::Stopwatch* GameLogic::Stopwatch::instance = nullptr;

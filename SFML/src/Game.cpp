@@ -6,6 +6,8 @@
 #include "../Include/Game.h"
 #include "../../GameLogic/Include/GameLogic/Transformation.h"
 #include "../../Controller.h"
+#include "../../GameLogic/Include/GameLogic/Stopwatch.h"
+#include "../../GameLogic/Include/GameLogic/LevelParser.h"
 
 using namespace sf;
 
@@ -75,6 +77,6 @@ namespace GameSFML{
 
         currentLevel = parser.parseJson();
 
-        currentLevel->printLevel();
+//        currentLevel->printLevel();
     }
 }

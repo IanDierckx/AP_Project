@@ -3,7 +3,8 @@
 
 #include <SFML/Graphics.hpp>
 #include <memory>
-#include "../../GameLogic/Include/GameLogic/Game.h"
+#include "Level.h"
+
 
 
 using namespace std;
@@ -15,7 +16,8 @@ namespace GameSFML{
     /**
      *  This class represents the game
     */
-    class Game : public GameLogic::Game{
+//    class Game : public GameLogic::Game
+    class Game{
         private:
             shared_ptr<sf::RenderWindow> window;
             shared_ptr<Level> currentLevel;
@@ -33,7 +35,7 @@ namespace GameSFML{
              * Function initializes a new level by calling the Level Parser
              * @param levelFile the name of the json file of the new level
              */
-            void initializeLevel(const string &levelFile) override;
+            void initializeLevel(const string &levelFile); //override;
 
             /// Function to run the actual game
             /**
@@ -41,7 +43,7 @@ namespace GameSFML{
              * Game runs in a while loop with the condition of if the game window is still open
              * Inside the loop it checks for events and draws the game accordingly.
              */
-            void run() override;
+            void run(); // override;
     };
 }
 
