@@ -2,10 +2,12 @@
 #include "GameLogic/Include/GameLogic/Game.h"
 #include "SFML/Include/Game.h"
 #include "GameLogic/Include/GameLogic/Transformation.h"
+#include "Controller.h"
 
 //Initialize pointer to zero so that it can be initialized in first call to getInstance
 GameLogic::Stopwatch* GameLogic::Stopwatch::instance = 0;
 shared_ptr<GameLogic::Transformation> GameLogic::Transformation::instance = 0;
+Controller* Controller::instance = 0;
 
 /** The main function
  *  Here is where the program starts

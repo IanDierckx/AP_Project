@@ -5,6 +5,7 @@
 #include <iostream>
 #include "../Include/Game.h"
 #include "../../GameLogic/Include/GameLogic/Transformation.h"
+#include "../../Controller.h"
 
 using namespace sf;
 
@@ -33,6 +34,9 @@ namespace GameSFML{
      */
     void Game::run() {
         GameLogic::Stopwatch *watch = GameLogic::Stopwatch::getInstance();
+        Controller *controller = Controller::getInstance();
+        controller->setCurrentLevel(currentLevel);
+        controller->setWindow(window);
         double tick = 0.1;
 
 
@@ -43,23 +47,18 @@ namespace GameSFML{
                 if (event.type == Event::EventType::Closed) {
                     window->close();
                 }
-//                if (event.type == Event::EventType::MouseButtonPressed) {
-//                    cout << Mouse::getPosition().x << endl;
-//                    cout << Mouse::getPosition().y << endl;
-//                }
                 break;
             }
-            if (currentLevel->gameOver()) {
-                if (Keyboard::isKeyPressed(Keyboard::Return)) {
-                    window->close();
-                   }
-            } else {
+            controller->handleInput();
+            if (not currentLevel->gameOver()) {
                 if (watch->getTimePassed()>=tick) {
                     currentLevel->update();
                     currentLevel->draw();
                     watch->reset();
                 }
             }
+
+//            }
 
             window->clear(sf::Color::Black);
             currentLevel->draw();
