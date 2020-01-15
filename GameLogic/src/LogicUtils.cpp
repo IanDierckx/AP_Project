@@ -7,8 +7,7 @@
 
 namespace GameLogic{
 
-    /// Checks whether an int and a double are (close to) equal
-    /***
+    /** Checks whether an int and a double are (close to) equal.
      * Checks whether an int and a double are equal to each other within a specified rounding error
      * @param dbl The double that needs checking
      * @param i The int that needs checking

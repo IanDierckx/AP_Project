@@ -9,8 +9,7 @@
 
 namespace GameLogic{
 
-    /// Function that moves the Basic Enemy
-    /***
+    /** Function that moves the Basic Enemy.
      * Function that moves the Basic Enemy to it's next position in the grid and updates movingX and movingY.
      * The Basic Enemy moves from left to right, then lowers a row before moving from right to left.
      * It then lowers a row again before moving from left to right again.
@@ -45,8 +44,7 @@ namespace GameLogic{
         }
     }
 
-    /// Constructor of Basic Enemy
-    /***
+    /** Constructor of Basic Enemy.
      * The constructor of the GameLogic version of the Basic Enemy class. Sets the type to BasicEnemy and gives it health and speed of 1.
      * @param position The position of the basic enemy in the grid
      * @param width The width of the basic enemy

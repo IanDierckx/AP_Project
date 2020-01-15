@@ -8,8 +8,7 @@
 
 namespace GameLogic{
 
-    /// Constructor for the Player
-    /***
+    /** Constructor for the Player.
      * The constructor for the Player. Sets the Entity type to Player and
      * sets the speed to 0.01 (speed might need balancing).
      * @param position The position of the player in the grid
@@ -21,8 +20,7 @@ namespace GameLogic{
         setSpeed(0.01);
     }
 
-    /// Moves the player left
-    /***
+    /** Moves the player left.
      * Function moves the player left by decreasing the x value in position and movingX. Checks if player not
      * at the edge of the screen before moving.
      */
@@ -43,6 +41,10 @@ namespace GameLogic{
         addMovingX(getSpeed());
     }
 
+    /** Moves the player right.
+     * Function moves the player right by increasing the x value in position and movingX. Checks if player not
+     * at the edge of the screen before moving.
+     */
     void Player::moveRight() {
         if (getSpeed() < 0) {
             setSpeed(-getSpeed());

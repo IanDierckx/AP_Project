@@ -5,12 +5,11 @@
 #ifndef AP_PROJECT_LOGICUTILS_H
 #define AP_PROJECT_LOGICUTILS_H
 
-/// File used for functions that don't belong to any specific class in the Game Logic
+// File used for functions that don't belong to any specific class in the Game Logic
 
 namespace GameLogic{
 
-    /// Checks whether an int and a double are (close to) equal
-    /***
+    /** Checks whether an int and a double are (close to) equal.
      * Checks whether an int and a double are equal to each other within a specified rounding error
      * @param dbl The double that needs checking
      * @param i The int that needs checking

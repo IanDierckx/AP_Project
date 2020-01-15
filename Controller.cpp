@@ -2,14 +2,18 @@
 
 #include "Controller.h"
 
+
+/** Function to get the controller instance.
+ * Will return the controller instance if one already exists, if not it will create one.
+ * @return The controller instance
+ */
 Controller *Controller::getInstance() {
     if (!instance)
         instance = new Controller;
     return instance;
 }
 
-/// Main function to handle input
-/***
+/** Main function to handle input.
  * Function will handle all input given to the game window and decide what to do with it,
  * with exception of closing the window using the window's own close button.
  */
@@ -28,6 +32,10 @@ void Controller::handleInput() {
     }
 }
 
+/** Setter for the current level in the game.
+ * Setter for the current level in the game so the controller knows which entities to affect.
+ * @param newLevel The new current level.
+ */
 void Controller::setCurrentLevel(shared_ptr<GameLogic::Level> newLevel) {
     currentLevel = std::move(newLevel);
 }

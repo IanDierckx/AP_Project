@@ -7,20 +7,23 @@
 // for convenience
 using json = nlohmann::json;
 
-namespace GameSFML{
+namespace GameLogic{
 
     /// Class to help parse json files that represent the levels of the game
     class LevelParser {
         private:
             json imported_json;
-            window_ptr window;
+            GameSFML::window_ptr window;
         public:
 
-            /// Constructor of the parser class
-            LevelParser(const string &levelFile, window_ptr window);
+            /** Constructor of the parser class.
+             *
+             * @param levelFile name of the json file that contains the level.
+             * @param window the current game window.
+             */
+            LevelParser(const string &levelFile, GameSFML::window_ptr window);
 
-            /// The actual parsing function
-            /***
+            /** The actual parsing function.
              * Function parses the json file that was imported in the constructor
              * @return Shared pointer to the created Level
              */

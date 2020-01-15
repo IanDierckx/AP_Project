@@ -73,7 +73,7 @@ namespace GameSFML{
      * @param levelFile the name of the json file of the new level
      */
     void Game::initializeLevel(const string &levelFile) {
-        GameSFML::LevelParser parser = GameSFML::LevelParser(levelFile, window);
+        GameLogic::LevelParser parser = GameLogic::LevelParser(levelFile, window);
 
         currentLevel = parser.parseJson();
 
