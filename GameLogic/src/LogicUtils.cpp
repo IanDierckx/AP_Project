@@ -1,7 +1,3 @@
-//
-// Created by student on 14.01.20.
-//
-
 #include <cmath>
 #include "../Include/GameLogic/LogicUtils.h"
 

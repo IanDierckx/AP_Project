@@ -2,10 +2,6 @@
 
 #include <memory>
 
-//
-// Created by Ian on 12/9/2019.
-//
-
 #include <fstream>
 #include <iostream>
 #include <utility>

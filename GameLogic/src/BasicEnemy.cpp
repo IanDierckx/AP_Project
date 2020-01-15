@@ -1,7 +1,3 @@
-//
-// Created by Ian on 12/9/2019.
-//
-
 #include "../Include/GameLogic/BasicEnemy.h"
 #include "../Include/GameLogic/Transformation.h"
 #include "../Include/GameLogic/LogicUtils.h"
@@ -31,16 +27,15 @@ namespace GameLogic{
                     }
                 }
             }
-        } else {
-            if (getMovingY() < (double)getY() and !isDoubleEqualToInt(getMovingY(),getY())) {
-                if (getSpeed() < 0) {
-                    addMovingY(-getSpeed());
-                } else {
-                    addMovingY(getSpeed());
-                }
+        }
+        if (getMovingY() < (double)getY() and !isDoubleEqualToInt(getMovingY(),getY())) {
+            if (getSpeed() < 0) {
+                addMovingY(-getSpeed());
             } else {
-                addMovingX(getSpeed());
+                addMovingY(getSpeed());
             }
+        } else {
+            addMovingX(getSpeed());
         }
     }
 
@@ -54,6 +49,17 @@ namespace GameLogic{
         setSpeed(0.1);
         setType("BasicEnemy");
         setHealth(1);
+        shootDelay = generateShootInterval();
+    }
+
+    bool BasicEnemy::canShoot() {
+        if (shootDelay == 0) {
+            shootDelay = generateShootInterval();
+            return true;
+        } else {
+            shootDelay--;
+            return false;
+        }
     }
 }
 

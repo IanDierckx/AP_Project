@@ -1,7 +1,3 @@
-//
-// Created by student on 18.12.19.
-//
-
 #ifndef AP_PROJECT_TRANSFORMATION_H
 #define AP_PROJECT_TRANSFORMATION_H
 

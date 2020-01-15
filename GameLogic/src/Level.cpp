@@ -1,9 +1,5 @@
 #include <utility>
 
-//
-// Created by student on 12.12.19.
-//
-
 #include "../Include/GameLogic/Level.h"
 #include "../../SFML/Include/Level.h"
 
@@ -56,8 +52,8 @@ namespace GameLogic{
      * Function to add a new Ship entity to the vector of enemy ships
      * @param ship shared pointer to the new enemy ship to add
      */
-    void Level::addEnemyShip(shared_ptr<Ship>ship) {
-        enemyShips.emplace_back(ship);
+    void Level::addEnemyShip(shared_ptr<BasicEnemy>enemy) {
+        enemyShips.emplace_back(enemy);
     }
 
     /** Adds a new entity to the grid.
@@ -112,8 +108,17 @@ namespace GameLogic{
      * and updating the grid.
      */
     void Level::update() {
+        enemiesThatCanShoot.clear();
         for (auto &enemyShip : enemyShips) {
             enemyShip->move();
+            if (checkIfLowestEnemy(enemyShip)) {
+                if (enemyShip->canShoot()) {
+                    enemiesThatCanShoot.push_back(enemyShip);
+                }
+            }
+        }
+        for (auto bullet : flyingBullets) {
+            bullet->move();
         }
         updateGrid();
     }
@@ -132,6 +137,15 @@ namespace GameLogic{
             }
         }
         return false;
+    }
+
+    bool Level::checkIfLowestEnemy(shared_ptr<BasicEnemy> checkedEnemy) {
+        for (auto enemy : enemyShips) {
+            if (enemy->getY() > checkedEnemy->getY() and enemy != checkedEnemy) {
+                return false;
+            }
+        }
+        return true;
     }
 }
 

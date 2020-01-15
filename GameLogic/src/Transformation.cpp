@@ -1,7 +1,3 @@
-//
-// Created by student on 18.12.19.
-//
-
 #include "../Include/GameLogic/Transformation.h"
 
 GameLogic::Transformation::Transformation()

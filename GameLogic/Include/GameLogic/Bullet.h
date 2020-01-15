@@ -1,7 +1,3 @@
-//
-// Created by student on 15.01.20.
-//
-
 #ifndef AP_PROJECT_BULLET_H
 #define AP_PROJECT_BULLET_H
 
@@ -23,7 +19,7 @@ namespace GameLogic{
          * @param width the width of the bullet.
          * @param height the height of the bullet.
          */
-        Bullet(const pair<int, int> &position, double width = 32, double height = 32);
+        Bullet(const pair<int, int> &position, double width = 64, double height = 64);
 
         /** Virtual function determines what happens when the bullet hits an Entity.
          * Function determines what happens when the bullet hits an Entity. What exactly happens depends on
@@ -31,6 +27,11 @@ namespace GameLogic{
          * @param hitEntity Shared_ptr to the Entity that was hit.
          */
         virtual void hit(shared_ptr<Entity> hitEntity);
+
+        /** Moves the bullet up or down according to speed.
+         * Moves the bullet up or down according to speed.
+         */
+        void move();
     };
 }
 

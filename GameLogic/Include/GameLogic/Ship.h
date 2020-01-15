@@ -1,7 +1,3 @@
-//
-// Created by Ian on 12/5/2019.
-//
-
 #ifndef AP_PROJECT_SHIP_H
 #define AP_PROJECT_SHIP_H
 
@@ -36,11 +32,6 @@ namespace GameLogic{
          * Virtual move function in Ship.
          */
         virtual void move();
-
-        /** Virtual draw function in Ship.
-         * Virtual draw function in Ship.
-         */
-        virtual void draw();
 
         /** Getter for the health of the ship.
          * Getter for the health of the ship.

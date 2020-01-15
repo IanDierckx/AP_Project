@@ -1,14 +1,11 @@
-//
-// Created by student on 15.01.20.
-//
-
 #ifndef AP_PROJECT_BASICENEMYBULLET_H
 #define AP_PROJECT_BASICENEMYBULLET_H
 
 #include "Bullet.h"
 
 namespace GameLogic{
-    class BasicEnemyBullet : Bullet {
+
+    class BasicEnemyBullet : public Bullet {
     private:
 
     public:

@@ -1,12 +1,12 @@
-//
-// Created by Ian on 12/9/2019.
-//
-
 #ifndef AP_PROJECT_BASICENEMY_H
 #define AP_PROJECT_BASICENEMY_H
 
 
 #include <vector>
+#include <random>
+#include <iostream>
+#include <chrono>
+
 #include "Ship.h"
 
 /// Namespace used for the game logic (a.k.a. the module of the MVC pattern)
@@ -17,6 +17,8 @@ namespace GameLogic{
      */
     class BasicEnemy : public Ship {
         private:
+            int shootDelay;
+
 
         public:
 
@@ -35,6 +37,15 @@ namespace GameLogic{
              * It then lowers a row again before moving from left to right again.
              */
             void move() override;
+
+            bool canShoot();
+
+            int generateShootInterval() {
+                std::default_random_engine generator(std::chrono::system_clock::now().time_since_epoch().count());
+                std::uniform_int_distribution<int> distribution(20,100);
+                cout << distribution(generator) << endl;
+                return distribution(generator);
+            }
     };
 }
 

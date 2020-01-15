@@ -1,7 +1,3 @@
-//
-// Created by Ian on 12/5/2019.
-//
-
 #include "../Include/GameLogic/Player.h"
 #include "../Include/GameLogic/LogicUtils.h"
 

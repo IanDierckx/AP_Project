@@ -1,7 +1,3 @@
-//
-// Created by student on 13.12.19.
-//
-
 #include "../Include/BasicEnemy.h"
 #include "../../GameLogic/Include/GameLogic/Transformation.h"
 #include "../Include/utils.h"

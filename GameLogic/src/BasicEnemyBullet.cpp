@@ -1,7 +1,3 @@
-//
-// Created by student on 15.01.20.
-//
-
 #include "../Include/GameLogic/BasicEnemyBullet.h"
 #include "../Include/GameLogic/Player.h"
 

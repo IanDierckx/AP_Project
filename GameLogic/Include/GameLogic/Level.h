@@ -1,11 +1,9 @@
-//
-// Created by student on 12.12.19.
-//
-
 #ifndef AP_PROJECT_LEVEL_H
 #define AP_PROJECT_LEVEL_H
 
 #include "Player.h"
+#include "BasicEnemy.h"
+#include "Bullet.h"
 
 #include <memory>
 
@@ -14,7 +12,7 @@ namespace GameLogic{
     /// Class to represent the levels inside the game
     class Level {
         protected:
-            vector<shared_ptr<Ship>> enemyShips;
+            vector<shared_ptr<BasicEnemy>> enemyShips;
 
             vector<vector<pair<bool,shared_ptr<Entity>>>> grid;
 
@@ -22,13 +20,17 @@ namespace GameLogic{
             int grid_y = 7;
 
             shared_ptr<Player> player;
+
+            vector<shared_ptr<BasicEnemy>> enemiesThatCanShoot;
+
+            vector<shared_ptr<Bullet>> flyingBullets;
         public:
 
             /** Adds a new enemy ship to the level.
              * Function to add a new Ship entity to the vector of enemy ships
              * @param ship shared pointer to the new enemy ship to add
              */
-            void addEnemyShip(shared_ptr<Ship> ship);
+            void addEnemyShip(shared_ptr<BasicEnemy> enemy);
 
             /** Updates the grid to accurately represent the current state of the game.
              * Function updates the state of the grid so all entity are in the correct position of the grid
@@ -95,6 +97,8 @@ namespace GameLogic{
              * @return Boolean that equals true if one of the conditions is triggered
              */
             bool gameOver();
+
+            bool checkIfLowestEnemy(shared_ptr<BasicEnemy> checkedEnemy);
     };
 }
 

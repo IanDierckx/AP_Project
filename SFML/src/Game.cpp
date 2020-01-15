@@ -1,7 +1,3 @@
-//
-// Created by student on 12.12.19.
-//
-
 #include <iostream>
 #include "../Include/Game.h"
 #include "../../GameLogic/Include/GameLogic/Transformation.h"
@@ -54,8 +50,8 @@ namespace GameSFML{
             controller->handleInput();
             if (not currentLevel->gameOver()) {
                 if (watch->getTimePassed()>=tick) {
+                    srand(time(0));
                     currentLevel->update();
-                    currentLevel->draw();
                     watch->reset();
                 }
             }

@@ -1,8 +1,6 @@
-//
-// Created by student on 15.01.20.
-//
-
 #include "../Include/GameLogic/Bullet.h"
+#include "../Include/GameLogic/Transformation.h"
+#include "../Include/GameLogic/LogicUtils.h"
 
 namespace GameLogic {
     /** Constructor for Bullet class.
@@ -13,7 +11,7 @@ namespace GameLogic {
      */
     Bullet::Bullet(const pair<int, int> &position, double width, double height)
     : Entity(position, width, height) {
-        setSpeed(0.2);
+        setSpeed(0.125);
         setType("Bullet");
     }
 
@@ -25,4 +23,24 @@ namespace GameLogic {
     void Bullet::hit(shared_ptr<Entity> hitEntity) {
         ///Virtual function, actual implementation depends on the subclass of bullet.
     }
+
+    void Bullet::move() {
+        auto transf = Transformation::getInstance();
+        if (getMovingY() > 9) {
+
+        }
+        if (isDoubleEqualToInt(getMovingY(), getY())) {
+            setY(getY()+1);
+        }
+        if (getMovingY() < (double)getY() and !isDoubleEqualToInt(getMovingY(),getY())) {
+           addMovingY(getSpeed());
+        }
+    }
+
+//    /** Virtual draw function of the bullet class.
+//     * Virtual draw function of the bullet class.
+//     */
+//    void Bullet::draw() {
+//        // Virtual draw function of the bullet class.
+//    }
 }

@@ -1,7 +1,3 @@
-//
-// Created by Ian on 12/5/2019.
-//
-
 #include "../Include/GameLogic/Ship.h"
 
 namespace GameLogic{
@@ -41,13 +37,6 @@ namespace GameLogic{
      */
     void Ship::move() {
         //virtual move class of base ship class
-    }
-
-    /** Virtual draw function in Ship.
-     * Virtual draw function in Ship.
-     */
-    void Ship::draw() {
-        //virtual draw function of base ship class
     }
 }
 

@@ -1,7 +1,3 @@
-//
-// Created by Ian on 12/5/2019.
-//
-
 #ifndef AP_PROJECT_PLAYERSHIP_H
 #define AP_PROJECT_PLAYERSHIP_H
 
