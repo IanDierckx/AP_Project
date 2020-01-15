@@ -7,120 +7,118 @@ using namespace std;
 
 namespace GameLogic{
 
-    /// Base Entity class
-    /***
+    /** Base Entity class
      * Base entity class, most classes will be derived from this
      */
     class Entity {
-    private:
-        pair<int,int> position;
+        private:
+            pair<int,int> position;
 
-        double width;
+            double width;
 
-        double height;
+            double height;
 
-        string type;
+            string type;
 
-        double speed;
+            double speed;
 
-        double movingX;
+            double movingX;
 
-        double movingY;
-    protected:
-        /// Funtion to set the type of the Entity
-        /***
-         * Function to set the type of the entity. The type is used to quickly discern what derived class the entity is
-         * @param type The type this function will set.
-         */
-        void setType(string type);
-    public:
-        /// Constructor of Entity
-        /***
-         * Constructor of Entity
-         * @param position The position of the entity in the grid
-         * @param width The width of the entity
-         * @param height The height of the entity
-         */
-        Entity(const pair<int,int> &position, double width, double height);
+            double movingY;
 
-        /// Function to return the x coordinate
-        /***
-         * Function to get the x position in the grid
-         * @return Integer value of the x coordinate of the entity in the grid
-         */
-        int getX();
+            bool needsRemoving = false;
+        protected:
 
-        /// Function to return the y coordinate
-        /***
-         * Function to get the y position in the grid
-         * @return Integer value of the y coordinate of the entity in the grid
-         */
-        int getY();
+            /** Funtion to set the type of the Entity
+             * Function to set the type of the entity. The type is used to quickly discern what derived class the entity is
+             * @param type The type this function will set.
+             */
+            void setType(string type);
+        public:
+            /** Constructor of Entity
+             * Constructor of Entity
+             * @param position The position of the entity in the grid
+             * @param width The width of the entity
+             * @param height The height of the entity
+             */
+            Entity(const pair<int,int> &position, double width, double height);
 
-        /// Function that returns the type
-        /***
-         * Function that returns the type of Entity (e.g. Player)
-         * @return The type of entity
-         */
-        string getType();
+            /** Function to return the x coordinate
+             * Function to get the x position in the grid
+             * @return Integer value of the x coordinate of the entity in the grid
+             */
+            int getX();
 
-        /// Function to set the x coordinate
-        /***
-         * Function that sets the x coordinate in the grid
-         * @param x the new x coordinate
-         */
-        void setX(int x);
+            /** Function to return the y coordinate
+             * Function to get the y position in the grid
+             * @return Integer value of the y coordinate of the entity in the grid
+             */
+            int getY();
 
-        /// Function to set the y coordinate
-        /***
-         * Function that sets the y coordinate in the grid
-         * @param x the new y coordinate
-         */
-        void setY(int y);
+            /** Function that returns the type
+             * Function that returns the type of Entity (e.g. Player)
+             * @return The type of entity
+             */
+            string getType();
 
-        /// Function that sets the entity's speed
-        /***
-         * Function that sets the speed of the entity
-         * @param speed the entity's speed
-         */
-        void setSpeed(double speed);
+            /** Function to set the x coordinate
+             * Function that sets the x coordinate in the grid
+             * @param x the new x coordinate
+             */
+            void setX(int x);
 
-        /// Function that gets the entity's speed
-        /***
-         * Function that returns the speed of the entity
-         * @return Double value of the speed of the entity
-         */
-        double getSpeed();
+            /** Function to set the y coordinate
+             * Function that sets the y coordinate in the grid
+             * @param x the new y coordinate
+             */
+            void setY(int y);
 
-        /// Function to return the moving x coordinate
-        /***
-         * Function to get the x position used for fluid movement on screen
-         * @return Integer value of the moving x coordinate of the entity
-         */
-        double getMovingX() const;
+            /** Function that sets the entity's speed
+             * Function that sets the speed of the entity
+             * @param speed the entity's speed
+             */
+            void setSpeed(double speed);
 
-        /// Function to add to the moving x coordinate
-        /***
-         * Function to add to the x position used for fluid movement on screen
-         * @param movingX Double value to be added (or subtracted using a negative value) to the existing
-         * moving x value
-         */
-        void addMovingX(double addedX);
+            /** Function that gets the entity's speed
+             * Function that returns the speed of the entity
+             * @return Double value of the speed of the entity
+             */
+            double getSpeed();
 
-        /// Function to return the moving y coordinate
-        /***
-         * Function to get the y position used for fluid movement on screen
-         * @return Integer value of the moving y coordinate of the entity
-         */
-        double getMovingY() const;
+            /** Function to return the moving x coordinate
+             * Function to get the x position used for fluid movement on screen
+             * @return Integer value of the moving x coordinate of the entity
+             */
+            double getMovingX() const;
 
-        /// Function to add to the moving y coordinate
-        /***
-         * Function to add to the y position used for fluid movement on screen
-         * @param movingX Double value to be added (or subtracted using a negative value) to the existing
-         * moving y value
-         */
-        void addMovingY(double addedY);
+            /** Function to add to the moving x coordinate
+             * Function to add to the x position used for fluid movement on screen
+             * @param movingX Double value to be added (or subtracted using a negative value) to the existing
+             * moving x value
+             */
+            void addMovingX(double addedX);
+
+            /** Function to return the moving y coordinate
+             * Function to get the y position used for fluid movement on screen
+             * @return Integer value of the moving y coordinate of the entity
+             */
+            double getMovingY() const;
+
+            /** Function to add to the moving y coordinate
+             * Function to add to the y position used for fluid movement on screen
+             * @param movingX Double value to be added (or subtracted using a negative value) to the existing
+             * moving y value
+             */
+            void addMovingY(double addedY);
+
+            /** Virtual draw function in Entity.
+             * Virtual draw function in Entity.
+             */
+            virtual void draw() = 0;
+
+            bool checkIfRemovable();
+
+            void remove();
     };
 }
 

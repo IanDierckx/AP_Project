@@ -1,7 +1,3 @@
-//
-// Created by student on 14.01.20.
-//
-
 #ifndef AP_PROJECT_PLAYER_H
 #define AP_PROJECT_PLAYER_H
 

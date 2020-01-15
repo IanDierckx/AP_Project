@@ -1,9 +1,5 @@
 #include <utility>
 
-//
-// Created by student on 14.01.20.
-//
-
 #include "../Include/Player.h"
 #include "../Include/utils.h"
 #include "../../GameLogic/Include/GameLogic/Transformation.h"

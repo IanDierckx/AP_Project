@@ -1,7 +1,3 @@
-//
-// Created by student on 12.12.19.
-//
-
 #include <iostream>
 #include "../Include/Game.h"
 #include "../../GameLogic/Include/GameLogic/Transformation.h"
@@ -55,7 +51,6 @@ namespace GameSFML{
             if (not currentLevel->gameOver()) {
                 if (watch->getTimePassed()>=tick) {
                     currentLevel->update();
-                    currentLevel->draw();
                     watch->reset();
                 }
             }
@@ -73,7 +68,7 @@ namespace GameSFML{
      * @param levelFile the name of the json file of the new level
      */
     void Game::initializeLevel(const string &levelFile) {
-        GameSFML::LevelParser parser = GameSFML::LevelParser(levelFile, window);
+        GameLogic::LevelParser parser = GameLogic::LevelParser(levelFile, window);
 
         currentLevel = parser.parseJson();
 

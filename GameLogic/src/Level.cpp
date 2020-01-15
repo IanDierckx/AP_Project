@@ -1,9 +1,5 @@
 #include <utility>
 
-//
-// Created by student on 12.12.19.
-//
-
 #include "../Include/GameLogic/Level.h"
 #include "../../SFML/Include/Level.h"
 
@@ -12,28 +8,39 @@
 
 namespace GameLogic{
 
-    /// Getter for the max x value of the grid set by the grid_x value of the class
+    /** Getter for the max x value of the grid set by the grid_x value of the class.
+     *
+     * @return Integer that is the max x value of the grid
+     */
     int Level::getGrid_x() const {
         return grid_x;
     }
 
-    /// Setter for the max x value of the grid set by the grid_x value of the class
+    /** Setter for the max x value of the grid set by the grid_x value of the class.
+     *
+     * @param grid_x The integer value to set the max x value of the grid to.
+     */
     void Level::setGrid_x(int grid_x) {
         Level::grid_x = grid_x;
     }
 
-    /// Getter for the max y value of the grid set by the grid_y value of the class
+    /** Getter for the max y value of the grid set by the grid_y value of the class.
+     *
+     * @return Integer that is the max y value of the grid
+     */
     int Level::getGrid_y() const {
         return grid_y;
     }
 
-    /// Setter for the max y value of the grid set by the grid_y value of the class
+    /** Setter for the max y value of the grid set by the grid_y value of the class.
+     *
+     * @param grid_y The integer value to set the max y value of the grid to.
+     */
     void Level::setGrid_y(int grid_y) {
         Level::grid_y = grid_y;
     }
 
-    /// Adds a new row to the grid
-    /***
+    /** Adds a new row to the grid.
      * Function adds a new row to the grid, mostly used to add a empty row when setting up the grid
      * @param row Vector that represents the row that gets added to the grid
      */
@@ -41,17 +48,15 @@ namespace GameLogic{
         grid.emplace_back(row);
     }
 
-    /// Adds a new enemy ship to the level
-    /***
+    /** Adds a new enemy ship to the level.
      * Function to add a new Ship entity to the vector of enemy ships
      * @param ship shared pointer to the new enemy ship to add
      */
-    void Level::addEnemyShip(shared_ptr<Ship>ship) {
-        enemyShips.emplace_back(ship);
+    void Level::addEnemyShip(shared_ptr<BasicEnemy>enemy) {
+        enemyShips.emplace_back(enemy);
     }
 
-    /// Adds a new entity to the grid
-    /***
+    /** Adds a new entity to the grid.
      * Adds a new entity to the grid. Position in the grid is determined by the position value of the entity
      * @param entity Shared pointer to the entity that needs to be added
      */
@@ -60,8 +65,7 @@ namespace GameLogic{
         grid[entity->getY()][entity->getX()].second = entity;
     }
 
-    /// Updates the grid to accurately represent the current state of the game
-    /***
+    /** Updates the grid to accurately represent the current state of the game.
      * Function updates the state of the grid so all entity are in the correct position of the grid
      * according to their position value
      */
@@ -83,8 +87,7 @@ namespace GameLogic{
         grid[player->getY()][player->getX()].second = player;
     }
 
-    /// Function to get the shared pointer to the player
-    /***
+    /** Function to get the shared pointer to the player.
      * Returns the shared pointer to the player entity
      * @return The shared pointer to the player entity
      */
@@ -92,8 +95,7 @@ namespace GameLogic{
         return player;
     }
 
-    /// Sets the player to the shared pointer of the player entity
-    /***
+    /** Sets the player to the shared pointer of the player entity.
      * Set the player, used only when parsing the level
      * @param player The shared pointer to the p[ayer
      */
@@ -101,20 +103,28 @@ namespace GameLogic{
         Level::player = std::move(player);
     }
 
-    /// Updates the level
-    /***
+    /** Updates the level.
      * Function updates the level by moving all enemies to their next position by calling their move function
      * and updating the grid.
      */
     void Level::update() {
+        enemiesThatCanShoot.clear();
         for (auto &enemyShip : enemyShips) {
             enemyShip->move();
+            if (checkIfLowestEnemy(enemyShip)) {
+                if (enemyShip->canShoot()) {
+                    enemiesThatCanShoot.push_back(enemyShip);
+                }
+            }
+        }
+        for (auto bullet : flyingBullets) {
+            bullet->move();
         }
         updateGrid();
+        removeRemovableEntities();
     }
 
-    /// Checks whether one of the game over conditions is triggered.
-    /***
+    /** Checks whether one of the game over conditions is triggered.
      * Function checks whether one of the game over/level over conditions is triggered (need to separate those)
      * @return Boolean that equals true if one of the conditions is triggered
      */
@@ -129,5 +139,48 @@ namespace GameLogic{
         }
         return false;
     }
+
+    bool Level::checkIfLowestEnemy(shared_ptr<BasicEnemy> checkedEnemy) {
+        for (auto enemy : enemyShips) {
+            if (enemy->getY() > checkedEnemy->getY() and enemy != checkedEnemy) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    vector<shared_ptr<Entity>> Level::getRemovableEntities() {
+        vector<shared_ptr<Entity>> removableEntities;
+        removableEntities.clear();
+        for (auto bullet : flyingBullets) {
+            if (bullet->checkIfRemovable()) {
+                removableEntities.push_back(bullet);
+            }
+        }
+        for (auto enemy : enemyShips) {
+            if (enemy->checkIfRemovable()) {
+                removableEntities.push_back(enemy);
+            }
+        }
+        for (auto removable : removableEntities) {
+            if (removable->getType() == "Bullet") {
+                auto position = std::find(flyingBullets.begin(), flyingBullets.end(), removable);
+                flyingBullets.erase(position);
+            } else if (removable->getType() == "BasicEnemy") {
+                auto position = std::find(enemyShips.begin(), enemyShips.end(), removable);
+                enemyShips.erase(position);
+            }
+        }
+        return removableEntities;
+    }
+
+    void Level::removeRemovableEntities() {
+        auto removableEntities = getRemovableEntities();
+        for (auto entity : removableEntities) {
+            entity.reset();
+        }
+    }
+
+
 }
 

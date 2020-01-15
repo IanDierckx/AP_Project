@@ -2,31 +2,26 @@
 
 #include <memory>
 
-//
-// Created by Ian on 12/9/2019.
-//
-
 #include <fstream>
 #include <iostream>
 #include <utility>
 #include "../Include/GameLogic/LevelParser.h"
 
-namespace GameSFML{
+namespace GameLogic{
 
     /// Constructor of the parser class
-    LevelParser::LevelParser(const string &levelFile, window_ptr window) : window(std::move(window)){
+    LevelParser::LevelParser(const string &levelFile, GameSFML::window_ptr window) : window(std::move(window)){
         // read a JSON file
         std::ifstream file ("./Levels/"+levelFile);
         file >> imported_json;
     }
 
-    /// The actual parsing function
-    /***
+    /** The actual parsing function.
      * Function parses the json file that was imported in the constructor
      * @return Shared pointer to the created Level
      */
-    shared_ptr<Level> LevelParser::parseJson() {
-        shared_ptr<Level> level = make_shared<Level>(GameSFML::Level(window));
+    shared_ptr<GameSFML::Level> LevelParser::parseJson() {
+        shared_ptr<GameSFML::Level> level = make_shared<GameSFML::Level>(GameSFML::Level(window));
 
         level->setGrid_x(imported_json.at("grid_x").get<int>());
         level->setGrid_y(imported_json.at("grid_y").get<int>());
@@ -44,7 +39,7 @@ namespace GameSFML{
             if (enemy.at("type").get<string>() == "basicEnemy") {
                 auto posX = enemy.at("position")[1].get<int>();
                 auto posY = enemy.at("position")[0].get<int>();
-                shared_ptr<BasicEnemy> newEnemy = make_shared<BasicEnemy>(make_pair(posY,posX), 64, 50,
+                shared_ptr<GameSFML::BasicEnemy> newEnemy = make_shared<GameSFML::BasicEnemy>(make_pair(posY,posX), 64, 50,
                         "BasicEnemy.png", window);
                 level->addEnemyShip(newEnemy);
                 level->addEntityToGrid(newEnemy);

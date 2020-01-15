@@ -1,7 +1,3 @@
-//
-// Created by student on 18.12.19.
-//
-
 #ifndef AP_PROJECT_SFML_LEVEL_H
 #define AP_PROJECT_SFML_LEVEL_H
 
@@ -18,6 +14,8 @@ namespace GameSFML{
         explicit Level(window_ptr& window);
 
         void draw();
+
+        void update();
     };
 }
 
