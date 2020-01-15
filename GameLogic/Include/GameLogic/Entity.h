@@ -115,6 +115,10 @@ namespace GameLogic{
              * Virtual draw function in Entity.
              */
             virtual void draw() = 0;
+
+            bool checkIfRemovable();
+
+            void remove();
     };
 }
 

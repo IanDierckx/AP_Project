@@ -1,3 +1,4 @@
+#include <iostream>
 #include "../Include/GameLogic/Bullet.h"
 #include "../Include/GameLogic/Transformation.h"
 #include "../Include/GameLogic/LogicUtils.h"
@@ -27,7 +28,7 @@ namespace GameLogic {
     void Bullet::move() {
         auto transf = Transformation::getInstance();
         if (getMovingY() > 9) {
-
+            remove();
         }
         if (isDoubleEqualToInt(getMovingY(), getY())) {
             setY(getY()+1);
@@ -35,6 +36,10 @@ namespace GameLogic {
         if (getMovingY() < (double)getY() and !isDoubleEqualToInt(getMovingY(),getY())) {
            addMovingY(getSpeed());
         }
+    }
+
+    Bullet::~Bullet() {
+        cout << "Bullet deleted, it's position was " << getMovingY() << ", " << getMovingX() << endl;
     }
 
 //    /** Virtual draw function of the bullet class.

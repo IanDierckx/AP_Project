@@ -121,6 +121,7 @@ namespace GameLogic{
             bullet->move();
         }
         updateGrid();
+        removeRemovableEntities();
     }
 
     /** Checks whether one of the game over conditions is triggered.
@@ -147,5 +148,39 @@ namespace GameLogic{
         }
         return true;
     }
+
+    vector<shared_ptr<Entity>> Level::getRemovableEntities() {
+        vector<shared_ptr<Entity>> removableEntities;
+        removableEntities.clear();
+        for (auto bullet : flyingBullets) {
+            if (bullet->checkIfRemovable()) {
+                removableEntities.push_back(bullet);
+            }
+        }
+        for (auto enemy : enemyShips) {
+            if (enemy->checkIfRemovable()) {
+                removableEntities.push_back(enemy);
+            }
+        }
+        for (auto removable : removableEntities) {
+            if (removable->getType() == "Bullet") {
+                auto position = std::find(flyingBullets.begin(), flyingBullets.end(), removable);
+                flyingBullets.erase(position);
+            } else if (removable->getType() == "BasicEnemy") {
+                auto position = std::find(enemyShips.begin(), enemyShips.end(), removable);
+                enemyShips.erase(position);
+            }
+        }
+        return removableEntities;
+    }
+
+    void Level::removeRemovableEntities() {
+        auto removableEntities = getRemovableEntities();
+        for (auto entity : removableEntities) {
+            entity.reset();
+        }
+    }
+
+
 }
 

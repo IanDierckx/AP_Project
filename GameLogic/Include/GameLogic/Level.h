@@ -98,7 +98,16 @@ namespace GameLogic{
              */
             bool gameOver();
 
+            /** Checks if there are no enemies below the one checked.
+             * Checks if there are no enemies below the one checked.
+             * @param checkedEnemy the enemy we want to check
+             * @return true if there are no enemies below it.
+             */
             bool checkIfLowestEnemy(shared_ptr<BasicEnemy> checkedEnemy);
+
+            vector<shared_ptr<Entity>> getRemovableEntities();
+
+            void removeRemovableEntities();
     };
 }
 

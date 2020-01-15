@@ -50,7 +50,6 @@ namespace GameSFML{
             controller->handleInput();
             if (not currentLevel->gameOver()) {
                 if (watch->getTimePassed()>=tick) {
-                    srand(time(0));
                     currentLevel->update();
                     watch->reset();
                 }

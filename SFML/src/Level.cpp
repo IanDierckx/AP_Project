@@ -27,6 +27,7 @@ namespace GameSFML {
                     64, 64, "EnemyBullet.png", window);
             flyingBullets.push_back(bullet);
         }
+
     }
 
 }

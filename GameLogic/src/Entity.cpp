@@ -115,6 +115,14 @@ namespace GameLogic{
     void Entity::draw() {
         ///Virtual function
     }
+
+    bool Entity::checkIfRemovable() {
+        return needsRemoving;
+    }
+
+    void Entity::remove() {
+        needsRemoving = true;
+    }
 }
 
 

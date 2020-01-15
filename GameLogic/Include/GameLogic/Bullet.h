@@ -21,6 +21,8 @@ namespace GameLogic{
          */
         Bullet(const pair<int, int> &position, double width = 64, double height = 64);
 
+        ~Bullet();
+
         /** Virtual function determines what happens when the bullet hits an Entity.
          * Function determines what happens when the bullet hits an Entity. What exactly happens depends on
          * the type of bullet and the type of Entity.
