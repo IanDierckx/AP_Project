@@ -61,6 +61,23 @@ namespace GameLogic{
         }
         addMovingX(getSpeed());
     }
+
+    /** Checks if player is destroyed.
+     * Checks if player is destroyed. Which usually ends in game over.
+     * @return Returns true if player is destroyed.
+     */
+    bool Player::isDestroyed() const {
+        return destroyed;
+    }
+
+    /** Sets whether or not the player is destroyed.
+     * Sets whether or not the player is destroyed.
+     * @param destroyed True if the player is destroyed, false if not (for example if the player
+     * gets another life from an upgrade).
+     */
+    void Player::setDestroyed(bool destroyed) {
+        Player::destroyed = destroyed;
+    }
 }
 
 

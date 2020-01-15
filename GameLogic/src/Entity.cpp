@@ -111,6 +111,10 @@ namespace GameLogic{
     void Entity::addMovingY(double addedY) {
         Entity::movingY += addedY;
     }
+
+    void Entity::draw() {
+        ///Virtual function
+    }
 }
 
 

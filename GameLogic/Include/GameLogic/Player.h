@@ -15,6 +15,7 @@ namespace GameLogic{
      */
     class Player : public Ship {
     private:
+        bool destroyed = false;
 
     public:
 
@@ -38,6 +39,19 @@ namespace GameLogic{
          * at the edge of the screen before moving.
          */
         void moveRight();
+
+        /** Checks if player is destroyed.
+         * Checks if player is destroyed. Which usually ends in game over.
+         * @return Returns true if player is destroyed.
+         */
+        bool isDestroyed() const;
+
+        /** Sets whether or not the player is destroyed.
+         * Sets whether or not the player is destroyed.
+         * @param destroyed True if the player is destroyed, false if not (for example if the player
+         * gets another life from an upgrade).
+         */
+        void setDestroyed(bool destroyed);
     };
 }
 

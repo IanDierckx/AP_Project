@@ -109,6 +109,11 @@ namespace GameLogic{
          * moving y value
          */
         void addMovingY(double addedY);
+
+        /** Virtual draw function in Entity.
+         * Virtual draw function in Entity.
+         */
+        virtual void draw();
     };
 }
 
