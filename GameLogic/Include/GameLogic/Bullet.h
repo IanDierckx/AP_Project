@@ -19,7 +19,7 @@ namespace GameLogic{
          * @param width the width of the bullet.
          * @param height the height of the bullet.
          */
-        Bullet(const pair<int, int> &position, double width = 64, double height = 64);
+        explicit Bullet(const pair<int, int> &position, double width = 64, double height = 64);
 
         ~Bullet();
 
@@ -28,7 +28,7 @@ namespace GameLogic{
          * the type of bullet and the type of Entity.
          * @param hitEntity Shared_ptr to the Entity that was hit.
          */
-        virtual void hit(shared_ptr<Entity> hitEntity);
+        virtual void hit(const shared_ptr<Entity> &hitEntity);
 
         /** Moves the bullet up or down according to speed.
          * Moves the bullet up or down according to speed.

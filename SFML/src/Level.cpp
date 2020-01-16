@@ -13,7 +13,7 @@ namespace GameSFML {
         for (const auto &enemy : enemyShips) {
             enemy->draw();
         }
-        for (const auto bullet : flyingBullets) {
+        for (const auto &bullet : flyingBullets) {
             bullet->draw();
 
         }
@@ -22,7 +22,7 @@ namespace GameSFML {
 
     void Level::update() {
         GameLogic::Level::update();
-        for (auto ship:enemiesThatCanShoot) {
+        for (const auto &ship:enemiesThatCanShoot) {
             shared_ptr<BasicEnemyBullet> bullet = make_shared<BasicEnemyBullet>(make_pair(ship->getY(), ship->getX()),
                     32, 32, "EnemyBullet.png", window);
             flyingBullets.push_back(bullet);

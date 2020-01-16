@@ -140,7 +140,7 @@ namespace GameLogic{
              */
             double getHeight() const;
 
-            virtual void handleCollision(shared_ptr<Entity> otherEntity);
+            virtual void handleCollision(const shared_ptr<Entity> &otherEntity);
     };
 }
 

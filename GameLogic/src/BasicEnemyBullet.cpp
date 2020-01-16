@@ -19,7 +19,7 @@ namespace GameLogic{
 //        }
 //    }
 
-    void GameLogic::BasicEnemyBullet::handleCollision(shared_ptr<GameLogic::Entity> otherEntity) {
+    void GameLogic::BasicEnemyBullet::handleCollision(const shared_ptr<GameLogic::Entity> &otherEntity) {
         if (otherEntity->getType() == "BasicEnemy") {
             return;
         } else if (otherEntity->getType() == "BasicEnemyBullet") {

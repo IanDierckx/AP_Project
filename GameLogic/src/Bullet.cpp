@@ -21,7 +21,7 @@ namespace GameLogic {
      * the type of bullet and the type of Entity.
      * @param hitEntity Shared_ptr to the Entity that was hit.
      */
-    void Bullet::hit(shared_ptr<Entity> hitEntity) {
+    void Bullet::hit(const shared_ptr<Entity> &hitEntity) {
         ///Virtual function, actual implementation depends on the subclass of bullet.
     }
 

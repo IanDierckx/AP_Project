@@ -13,7 +13,7 @@ namespace GameLogic{
 
 //        void hit(shared_ptr<Entity> hitEntity) override;
 
-        void handleCollision(shared_ptr<Entity> otherEntity);
+        void handleCollision(const shared_ptr<Entity> &otherEntity) override;
     };
 }
 

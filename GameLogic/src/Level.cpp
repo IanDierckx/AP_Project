@@ -120,7 +120,7 @@ namespace GameLogic{
                 }
             }
         }
-        for (auto bullet : flyingBullets) {
+        for (const auto &bullet : flyingBullets) {
             bullet->move();
         }
         updateGrid();
@@ -151,7 +151,7 @@ namespace GameLogic{
      * @return true if there are no enemies below it.
      */
     bool Level::checkIfLowestEnemy(shared_ptr<BasicEnemy> checkedEnemy) {
-        for (auto enemy : enemyShips) {
+        for (const auto &enemy : enemyShips) {
             if (enemy->getY() > checkedEnemy->getY() and enemy != checkedEnemy) {
                 return false;
             }
@@ -166,17 +166,17 @@ namespace GameLogic{
     vector<shared_ptr<Entity>> Level::getRemovableEntities() {
         vector<shared_ptr<Entity>> removableEntities;
         removableEntities.clear();
-        for (auto bullet : flyingBullets) {
+        for (const auto &bullet : flyingBullets) {
             if (bullet->checkIfRemovable()) {
                 removableEntities.push_back(bullet);
             }
         }
-        for (auto enemy : enemyShips) {
+        for (const auto &enemy : enemyShips) {
             if (enemy->checkIfRemovable()) {
                 removableEntities.push_back(enemy);
             }
         }
-        for (auto removable : removableEntities) {
+        for (const auto &removable : removableEntities) {
             if (removable->getType() == "BasicEnemyBullet" or removable->getType() == "Bullet") {
                 auto position = std::find(flyingBullets.begin(), flyingBullets.end(), removable);
                 flyingBullets.erase(position);

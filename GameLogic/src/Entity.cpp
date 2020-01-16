@@ -150,8 +150,8 @@ namespace GameLogic{
         return height;
     }
 
-    void Entity::handleCollision(shared_ptr<Entity> otherEntity) {
-
+    void Entity::handleCollision(const shared_ptr<Entity> &otherEntity) {
+        // Virtual function
     }
 }
 

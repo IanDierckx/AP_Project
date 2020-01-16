@@ -46,7 +46,7 @@ namespace GameLogic{
             }
         }
 
-        level->setPlayer(make_shared<GameSFML::Player>(make_pair(6,4), 50, 50, "Player.png", window));
+        level->setPlayer(make_shared<GameSFML::Player>(make_pair(6,4), 55, 55, "Player.png", window));
         level->addEntityToGrid(level->getPlayer());
 
         return level;

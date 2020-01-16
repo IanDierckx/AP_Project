@@ -78,7 +78,7 @@ namespace GameLogic{
         return distribution(generator);
     }
 
-    void BasicEnemy::handleCollision(shared_ptr<Entity> otherEntity) {
+    void BasicEnemy::handleCollision(const shared_ptr<Entity> &otherEntity) {
         if (otherEntity->getType() == "BasicEnemy") {
             return;
         } else if (otherEntity->getType() == "BasicEnemyBullet") {

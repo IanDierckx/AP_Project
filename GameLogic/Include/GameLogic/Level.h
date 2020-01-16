@@ -86,7 +86,7 @@ namespace GameLogic{
              */
             void setPlayer(shared_ptr<Player> player);
 
-            /** Updates the level.
+        virtual /** Updates the level.
              * Function updates the level by moving all enemies to their next position by calling their move function
              * and updating the grid.
              */

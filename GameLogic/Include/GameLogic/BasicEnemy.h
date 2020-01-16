@@ -51,7 +51,7 @@ namespace GameLogic{
              */
             int generateShootInterval();
 
-            void handleCollision(shared_ptr<Entity> otherEntity);
+            void handleCollision(const shared_ptr<Entity> &otherEntity) override;
     };
 }
 
