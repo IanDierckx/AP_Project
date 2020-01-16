@@ -86,11 +86,11 @@ namespace GameLogic{
              */
             void setPlayer(shared_ptr<Player> player);
 
-        virtual /** Updates the level.
-             * Function updates the level by moving all enemies to their next position by calling their move function
-             * and updating the grid.
+            /** Updates the level.
+             * Function updates the level by moving all enemies to their next position by calling their move function,
+             * checking if enemies can fire and updating the grid.
              */
-            void update();
+            virtual void update();
 
             /** Checks whether one of the game over conditions is triggered.
              * Function checks whether one of the game over/level over conditions is triggered (need to separate those)
@@ -138,6 +138,9 @@ namespace GameLogic{
              */
             pair<double, double> getLowerRightCorner(shared_ptr<Entity> entity);
 
+            /** Check if any entities collide.
+             * Check if any entities collide.
+             */
             void checkCollisionsOfAll();
     };
 }

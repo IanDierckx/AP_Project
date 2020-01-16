@@ -78,6 +78,10 @@ namespace GameLogic{
         return distribution(generator);
     }
 
+    /** Handles what happens if the enemy collides with another entity.
+     * Handles what happens if the enemy collides with another entity.
+     * @param otherEntity the other entity it collides with.
+     */
     void BasicEnemy::handleCollision(const shared_ptr<Entity> &otherEntity) {
         if (otherEntity->getType() == "BasicEnemy") {
             return;

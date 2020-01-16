@@ -31,8 +31,14 @@ namespace GameSFML{
         BasicEnemyBullet(const pair<int, int> &position, double width, double height, const string &fileName,
                 const window_ptr &window);
 
+        /** Updates the sprite and draws it to the window.
+         * Updates the sprite and draws it to the window.
+         */
         void draw() override;
 
+        /** Updates the sprite to the current position.
+         * Updates the sprite to the current position.
+         */
         void updateSprite();
     };
 }

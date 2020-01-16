@@ -140,6 +140,10 @@ namespace GameLogic{
              */
             double getHeight() const;
 
+            /** Virtual function for handling collision.
+             * Virtual function for handling collision.
+             * @param otherEntity the other entity it would collide with.
+             */
             virtual void handleCollision(const shared_ptr<Entity> &otherEntity);
     };
 }

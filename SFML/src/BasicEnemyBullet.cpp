@@ -24,11 +24,17 @@ namespace GameSFML{
 //        scaleSprite(sprite, upperLeft, lowerRight);
     }
 
+    /** Updates the sprite and draws it to the window.
+     * Updates the sprite and draws it to the window.
+     */
     void BasicEnemyBullet::draw() {
         updateSprite();
         window->draw(sprite);
     }
 
+    /** Updates the sprite to the current position.
+     * Updates the sprite to the current position.
+     */
     void BasicEnemyBullet::updateSprite() {
         auto transf = GameLogic::Transformation::getInstance();
         pair<double, double> screenPos = transf->convertToScreen(getMovingX(), getMovingY());

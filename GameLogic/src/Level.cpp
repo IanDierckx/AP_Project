@@ -107,8 +107,8 @@ namespace GameLogic{
     }
 
     /** Updates the level.
-     * Function updates the level by moving all enemies to their next position by calling their move function
-     * and updating the grid.
+     * Function updates the level by moving all enemies to their next position by calling their move function,
+     * checking if enemies can fire and updating the grid.
      */
     void Level::update() {
         enemiesThatCanShoot.clear();
@@ -223,16 +223,6 @@ namespace GameLogic{
             }
         }
         return false;
-
-//        if (e1LowerRightCorner.first > e2UpperLeftCorner.first
-//            and e1LowerRightCorner.second > e2UpperLeftCorner.second) {
-//            if (entity1->getType() == "BasicEnemyBullet" and entity2->getType() == "Player") {
-//                auto test = 0;
-//            }
-//            return true;
-//        } else {
-//            return false;
-//        }
     }
 
     /** Returns the upperleft corner of the entity.
@@ -259,6 +249,9 @@ namespace GameLogic{
         return make_pair(loweRightY, loweRightX);
     }
 
+    /** Check if any entities collide.
+     * Check if any entities collide.
+     */
     void Level::checkCollisionsOfAll() {
         vector<shared_ptr<Entity>> allEntities;
         allEntities.push_back(player);

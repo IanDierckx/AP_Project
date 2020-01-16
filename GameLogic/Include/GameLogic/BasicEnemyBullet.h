@@ -13,6 +13,10 @@ namespace GameLogic{
 
 //        void hit(shared_ptr<Entity> hitEntity) override;
 
+        /** Handles what happens if the bullet collides with another entity.
+         * Handles what happens if the bullet collides with another entity.
+         * @param otherEntity the other entity it collides with.
+         */
         void handleCollision(const shared_ptr<Entity> &otherEntity) override;
     };
 }

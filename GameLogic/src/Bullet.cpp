@@ -16,15 +16,18 @@ namespace GameLogic {
         setType("Bullet");
     }
 
-    /** Virtual function determines what happens when the bullet hits an Entity.
-     * Function determines what happens when the bullet hits an Entity. What exactly happens depends on
-     * the type of bullet and the type of Entity.
-     * @param hitEntity Shared_ptr to the Entity that was hit.
-     */
-    void Bullet::hit(const shared_ptr<Entity> &hitEntity) {
-        ///Virtual function, actual implementation depends on the subclass of bullet.
-    }
+//    /** Virtual function determines what happens when the bullet hits an Entity.
+//     * Function determines what happens when the bullet hits an Entity. What exactly happens depends on
+//     * the type of bullet and the type of Entity.
+//     * @param hitEntity Shared_ptr to the Entity that was hit.
+//     */
+//    void Bullet::hit(const shared_ptr<Entity> &hitEntity) {
+//        ///Virtual function, actual implementation depends on the subclass of bullet.
+//    }
 
+    /** Moves the bullet up or down according to speed.
+     * Moves the bullet up or down according to speed.
+     */
     void Bullet::move() {
         auto transf = Transformation::getInstance();
         if (getMovingY() > 9) {
@@ -36,10 +39,6 @@ namespace GameLogic {
         if (getMovingY() < (double)getY() and !isDoubleEqualToInt(getMovingY(),getY())) {
            addMovingY(getSpeed());
         }
-    }
-
-    Bullet::~Bullet() {
-        cout << "Bullet deleted, it's position was " << getMovingY() << ", " << getMovingX() << endl;
     }
 
 //    /** Virtual draw function of the bullet class.

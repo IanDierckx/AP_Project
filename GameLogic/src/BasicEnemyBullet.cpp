@@ -19,6 +19,10 @@ namespace GameLogic{
 //        }
 //    }
 
+    /** Handles what happens if the bullet collides with another entity.
+     * Handles what happens if the bullet collides with another entity.
+     * @param otherEntity the other entity it collides with.
+     */
     void GameLogic::BasicEnemyBullet::handleCollision(const shared_ptr<GameLogic::Entity> &otherEntity) {
         if (otherEntity->getType() == "BasicEnemy") {
             return;

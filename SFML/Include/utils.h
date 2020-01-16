@@ -8,7 +8,8 @@ using namespace std;
 using position = pair<double, double>;
 
 namespace GameSFML{
-    void scaleSprite(sf::Sprite& sprite, position upperLeft, position lowerRight);
+
+//    void scaleSprite(sf::Sprite& sprite, position upperLeft, position lowerRight);
 }
 
 
