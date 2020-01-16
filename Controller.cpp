@@ -31,7 +31,8 @@ void Controller::handleInput() {
         }
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
             auto player = currentLevel->getPlayer();
-            auto entityAbovePlayer = currentLevel->getEntityInGrid(player->getY()-1, round(player->getMovingX()));
+            auto entityAbovePlayer = currentLevel->getEntityInGrid(player->getY()-1,
+                    static_cast<int>(round(player->getMovingX())));
             if (entityAbovePlayer != nullptr) {
                 if (entityAbovePlayer->getType() == "EnergyCannon") {
                     auto cannonAbovePlayer = dynamic_pointer_cast<GameLogic::EnergyCannon>(entityAbovePlayer);

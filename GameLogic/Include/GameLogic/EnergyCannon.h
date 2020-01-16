@@ -48,6 +48,11 @@ namespace GameLogic{
              * Lowers the shotDelay by 1.
              */
             void lowerDelay();
+
+            /** Increases timeNotUsed by 1.
+             * Increases timeNotUsed by 1.
+             */
+            void increaseTimeNotUsed();
     };
 }
 

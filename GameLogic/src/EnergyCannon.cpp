@@ -28,7 +28,7 @@ namespace GameLogic{
             cout << "Boom shot cannon at " << getY() << ", " << getX() << endl;
             remainingBullets--;
             timeNotUsed = 0;
-            shotDelay = 2;
+            shotDelay = 5;
             return true;
         } else {
             return false;
@@ -40,7 +40,7 @@ namespace GameLogic{
      * @return True is able to reload.
      */
     bool EnergyCannon::autoReload() {
-        if (timeNotUsed >= 10 and remainingBullets > 8) {
+        if (timeNotUsed >= 10 and remainingBullets < 8) {
             remainingBullets++;
             timeNotUsed -= 5;
             return true;
@@ -70,6 +70,10 @@ namespace GameLogic{
         if (shotDelay > 0) {
             shotDelay--;
         }
+    }
+
+    void EnergyCannon::increaseTimeNotUsed() {
+        timeNotUsed++;
     }
 }
 

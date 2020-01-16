@@ -132,6 +132,7 @@ namespace GameLogic{
         for (const auto &cannon : cannons) {
             cannon->autoReload();
             cannon->lowerDelay();
+            cannon->increaseTimeNotUsed();
         }
         updateGrid();
     }
