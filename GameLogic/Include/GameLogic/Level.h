@@ -4,6 +4,7 @@
 #include "Player.h"
 #include "BasicEnemy.h"
 #include "Bullet.h"
+#include "EnergyCannon.h"
 
 #include <memory>
 
@@ -24,6 +25,8 @@ namespace GameLogic{
             vector<shared_ptr<BasicEnemy>> enemiesThatCanShoot;
 
             vector<shared_ptr<Bullet>> flyingBullets;
+
+            vector<shared_ptr<EnergyCannon>> cannons;
         public:
 
             /** Adds a new enemy ship to the level.
@@ -142,6 +145,12 @@ namespace GameLogic{
              * Check if any entities collide.
              */
             void checkCollisionsOfAll();
+
+            /** Adds a new cannon to the level.
+             * Adds a new cannon to the level.
+             * @param newCannon The cannon to add.
+             */
+            void addCannon(shared_ptr<EnergyCannon> newCannon);
     };
 }
 

@@ -123,6 +123,9 @@ namespace GameLogic{
         for (const auto &bullet : flyingBullets) {
             bullet->move();
         }
+        for (const auto &cannon : cannons) {
+            cannon->autoReload();
+        }
         updateGrid();
     }
 
@@ -271,6 +274,14 @@ namespace GameLogic{
                 }
             }
         }
+    }
+
+    /** Adds a new cannon to the level.
+     * Adds a new cannon to the level.
+     * @param newCannon The cannon to add.
+     */
+    void Level::addCannon(shared_ptr<EnergyCannon> newCannon) {
+        cannons.push_back(newCannon);
     }
 
 

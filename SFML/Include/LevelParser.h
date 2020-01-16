@@ -1,13 +1,13 @@
 #ifndef AP_PROJECT_LEVELPARSER_H
 #define AP_PROJECT_LEVELPARSER_H
 
-#include "../lib/json.hpp"
-#include "../../../SFML/Include/Level.h"
+#include "../../GameLogic/Include/lib/json.hpp"
+#include "Level.h"
 
 // for convenience
 using json = nlohmann::json;
 
-namespace GameLogic{
+namespace GameSFML{
 
     /// Class to help parse json files that represent the levels of the game
     class LevelParser {

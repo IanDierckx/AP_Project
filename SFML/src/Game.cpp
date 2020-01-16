@@ -3,7 +3,7 @@
 #include "../../GameLogic/Include/GameLogic/Transformation.h"
 #include "../../Controller.h"
 #include "../../GameLogic/Include/GameLogic/Stopwatch.h"
-#include "../../GameLogic/Include/GameLogic/LevelParser.h"
+#include "../Include/LevelParser.h"
 
 using namespace sf;
 
@@ -68,10 +68,8 @@ namespace GameSFML{
      * @param levelFile the name of the json file of the new level
      */
     void Game::initializeLevel(const string &levelFile) {
-        GameLogic::LevelParser parser = GameLogic::LevelParser(levelFile, window);
+        LevelParser parser = LevelParser(levelFile, window);
 
         currentLevel = parser.parseJson();
-
-//        currentLevel->printLevel();
     }
 }

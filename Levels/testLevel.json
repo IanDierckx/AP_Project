@@ -27,5 +27,11 @@
       "type" : "basicEnemy",
       "position" : [1,5]
     }
+  ],
+
+  "cannons" : [
+    {
+      "position" : [5,4]
+    }
   ]
 }

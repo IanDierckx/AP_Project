@@ -5,9 +5,10 @@
 #include <fstream>
 #include <iostream>
 #include <utility>
-#include "../Include/GameLogic/LevelParser.h"
+#include "../Include/LevelParser.h"
+#include "../Include/EnergyCannon.h"
 
-namespace GameLogic{
+namespace GameSFML{
 
     /// Constructor of the parser class
     LevelParser::LevelParser(const string &levelFile, GameSFML::window_ptr window) : window(std::move(window)){
@@ -39,11 +40,20 @@ namespace GameLogic{
             if (enemy.at("type").get<string>() == "basicEnemy") {
                 auto posX = enemy.at("position")[1].get<int>();
                 auto posY = enemy.at("position")[0].get<int>();
-                shared_ptr<GameSFML::BasicEnemy> newEnemy = make_shared<GameSFML::BasicEnemy>(make_pair(posY,posX), 64, 50,
-                        "BasicEnemy.png", window);
+                shared_ptr<GameSFML::BasicEnemy> newEnemy = make_shared<GameSFML::BasicEnemy>(make_pair(posY,posX),
+                        64, 50, "BasicEnemy.png", window);
                 level->addEnemyShip(newEnemy);
                 level->addEntityToGrid(newEnemy);
             }
+        }
+
+        for (auto &cannon:imported_json.at("cannons")) {
+            auto posY = cannon.at("position")[0].get<int>();
+            auto posX = cannon.at("position")[1].get<int>();
+            shared_ptr<GameSFML::EnergyCannon> newCannon = make_shared<GameSFML::EnergyCannon>(make_pair(posY, posX),
+                    20, 20, "EnergyCanonSprites.png", window);
+            level->addCannon(newCannon);
+            level->addEntityToGrid(newCannon);
         }
 
         level->setPlayer(make_shared<GameSFML::Player>(make_pair(6,4), 55, 55, "Player.png", window));

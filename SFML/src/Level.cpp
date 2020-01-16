@@ -25,6 +25,9 @@ namespace GameSFML {
 
         }
         player->draw();
+        for (const auto &cannon : cannons) {
+            cannon->draw();
+        }
     }
 
     /** Extends the GameLogic version of the update function.
