@@ -5,6 +5,7 @@
 #include "../Include/GameLogic/Level.h"
 #include "../../SFML/Include/Level.h"
 #include "../Include/GameLogic/Transformation.h"
+#include "../Include/GameLogic/LogicUtils.h"
 
 
 #include <iostream>
@@ -86,8 +87,13 @@ namespace GameLogic{
             grid[enemy->getY()][enemy->getX()].second = enemy;
         }
 
-        grid[player->getY()][player->getX()].first = true;
-        grid[player->getY()][player->getX()].second = player;
+        for (const auto &cannon : cannons) {
+            grid[cannon->getY()][cannon->getX()].first = true;
+            grid[cannon->getY()][cannon->getX()].second = cannon;
+        }
+
+        grid[static_cast<int>(round(player->getMovingY()))][static_cast<int>(round(player->getMovingX()))].first = true;
+        grid[static_cast<int>(round(player->getMovingY()))][static_cast<int>(round(player->getMovingX()))].second = player;
     }
 
     /** Function to get the shared pointer to the player.
@@ -125,6 +131,7 @@ namespace GameLogic{
         }
         for (const auto &cannon : cannons) {
             cannon->autoReload();
+            cannon->lowerDelay();
         }
         updateGrid();
     }
@@ -282,6 +289,10 @@ namespace GameLogic{
      */
     void Level::addCannon(shared_ptr<EnergyCannon> newCannon) {
         cannons.push_back(newCannon);
+    }
+
+    shared_ptr<Entity> Level::getEntityInGrid(int gridY, int gridX) {
+        return grid[gridY][gridX].second;
     }
 
 

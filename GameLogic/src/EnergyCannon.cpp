@@ -2,6 +2,7 @@
 // Created by student on 16.01.20.
 //
 
+#include <iostream>
 #include "../Include/GameLogic/EnergyCannon.h"
 
 namespace GameLogic{
@@ -14,16 +15,20 @@ namespace GameLogic{
      */
     GameLogic::EnergyCannon::EnergyCannon(const pair<int, int> &position, double width, double height) : Entity(position,
                                                                                                                 width,
-                                                                                                                height) {}
+                                                                                                                height) {
+        setType("EnergyCannon");
+    }
     /** Shoots the cannon.
      * If the cannon has enough bullets it return that is shoots and resets time not used to 0,
      * else it returns false.
      * @return Whether the cannon shoots or not.
      */
     bool GameLogic::EnergyCannon::shoot() {
-        if (remainingBullets > 0) {
+        if (remainingBullets > 0 and shotDelay == 0) {
+            cout << "Boom shot cannon at " << getY() << ", " << getX() << endl;
             remainingBullets--;
             timeNotUsed = 0;
+            shotDelay = 2;
             return true;
         } else {
             return false;
@@ -35,7 +40,7 @@ namespace GameLogic{
      * @return True is able to reload.
      */
     bool EnergyCannon::autoReload() {
-        if (timeNotUsed >= 10 and remainingBullets < 8) {
+        if (timeNotUsed >= 10 and remainingBullets > 8) {
             remainingBullets++;
             timeNotUsed -= 5;
             return true;
@@ -55,6 +60,15 @@ namespace GameLogic{
             return true;
         } else {
             return false;
+        }
+    }
+
+    /** Lowers the shotDelay by 1.
+     * Lowers the shotDelay by 1.
+     */
+    void EnergyCannon::lowerDelay() {
+        if (shotDelay > 0) {
+            shotDelay--;
         }
     }
 }

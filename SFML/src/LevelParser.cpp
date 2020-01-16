@@ -51,7 +51,7 @@ namespace GameSFML{
             auto posY = cannon.at("position")[0].get<int>();
             auto posX = cannon.at("position")[1].get<int>();
             shared_ptr<GameSFML::EnergyCannon> newCannon = make_shared<GameSFML::EnergyCannon>(make_pair(posY, posX),
-                    20, 20, "EnergyCanonSprites.png", window);
+                    10, 10, "EnergyCanonSprites.png", window);
             level->addCannon(newCannon);
             level->addEntityToGrid(newCannon);
         }

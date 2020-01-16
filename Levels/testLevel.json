@@ -32,6 +32,9 @@
   "cannons" : [
     {
       "position" : [5,4]
+    },
+    {
+      "position" : [5,8]
     }
   ]
 }

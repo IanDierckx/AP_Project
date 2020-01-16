@@ -151,6 +151,8 @@ namespace GameLogic{
              * @param newCannon The cannon to add.
              */
             void addCannon(shared_ptr<EnergyCannon> newCannon);
+
+            shared_ptr<Entity> getEntityInGrid(int gridY, int gridX);
     };
 }
 

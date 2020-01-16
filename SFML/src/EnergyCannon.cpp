@@ -1,3 +1,4 @@
+#include <iostream>
 #include "../Include/EnergyCannon.h"
 #include "../../GameLogic/Include/GameLogic/Transformation.h"
 
@@ -10,6 +11,8 @@ namespace GameSFML{
         string spritesPath = "./SFML/res/sprites/";
         texture.loadFromFile(spritesPath+fileName);
         sprite = Sprite(texture, sf::IntRect(0,0, 64, 64));
+        auto test = sprite.getLocalBounds().width/2;
+        auto test2 = sprite.getLocalBounds().height/2;
         sprite.setOrigin(sprite.getLocalBounds().width/2, sprite.getLocalBounds().height/2);
     }
 
@@ -50,6 +53,7 @@ namespace GameSFML{
                 sprite = Sprite(texture, sf::IntRect(512, 0, 64, 64));
                 break;
         }
+        sprite.setOrigin(sprite.getLocalBounds().width/2, sprite.getLocalBounds().height/2);
         sprite.setPosition(static_cast<float>(screenPos.first), static_cast<float>(screenPos.second));
     }
 }

@@ -11,6 +11,8 @@ namespace GameLogic{
         private:
             int timeNotUsed = 0;
 
+            int shotDelay = 0;
+
         protected:
             int remainingBullets = 8;
 
@@ -41,6 +43,11 @@ namespace GameLogic{
              * @return True if the reload was possible.
              */
             bool reload();
+
+            /** Lowers the shotDelay by 1.
+             * Lowers the shotDelay by 1.
+             */
+            void lowerDelay();
     };
 }
 

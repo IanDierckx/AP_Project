@@ -48,6 +48,8 @@ namespace GameLogic{
          * gets another life from an upgrade).
          */
         void setDestroyed(bool destroyed);
+
+
     };
 }
 
