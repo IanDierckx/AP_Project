@@ -12,6 +12,9 @@ namespace GameSFML{
     using window_ptr = shared_ptr<sf::RenderWindow>;
     using namespace sf;
 
+    /** SFML version of the BasicEnemy class.
+     * SFML version of the BasicEnemy class.
+     */
     class BasicEnemy : public GameLogic::BasicEnemy {
         private:
             window_ptr window;

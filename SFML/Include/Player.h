@@ -12,6 +12,9 @@ namespace GameSFML{
     using window_ptr = shared_ptr<sf::RenderWindow>;
     using namespace sf;
 
+    /** SFML version of the Player class.
+     * SFML version of the Player class.
+     */
     class Player : public GameLogic::Player {
         private:
             window_ptr window;

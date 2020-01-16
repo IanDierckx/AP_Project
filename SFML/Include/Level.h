@@ -6,7 +6,9 @@
 
 namespace GameSFML{
 
-
+    /** SFML version of the Level class.
+     * SFML version of the Level class.
+     */
     class Level : public GameLogic::Level {
     private:
         window_ptr window;

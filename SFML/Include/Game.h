@@ -12,11 +12,9 @@ using namespace std;
 
 namespace GameSFML{
 
-    /// The SFML version of the Game class.
-    /**
+    /** This class represents the game.
      *  This class represents the game
-    */
-//    class Game : public GameLogic::Game
+     */
     class Game{
         private:
             shared_ptr<sf::RenderWindow> window;
