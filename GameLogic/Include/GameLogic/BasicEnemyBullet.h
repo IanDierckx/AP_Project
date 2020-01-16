@@ -11,7 +11,7 @@ namespace GameLogic{
     public:
         BasicEnemyBullet(const pair<int, int> &position, double width, double height);
 
-        void hit(shared_ptr<Entity> hitEntity) override;
+//        void hit(shared_ptr<Entity> hitEntity) override;
 
         void handleCollision(shared_ptr<Entity> otherEntity);
     };

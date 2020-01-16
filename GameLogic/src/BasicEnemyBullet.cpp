@@ -8,16 +8,16 @@ namespace GameLogic{
         setType("BasicEnemyBullet");
     }
 
-    void GameLogic::BasicEnemyBullet::hit(shared_ptr<GameLogic::Entity> hitEntity) {
-        if (hitEntity->getType() == "Player") {
-            auto ship = dynamic_pointer_cast<Ship>(hitEntity);
-            auto player = dynamic_pointer_cast<Player>(ship);
-            player->setHealth(player->getHealth()-1);
-            if (player->getHealth() == 0) {
-                player->setDestroyed(true);
-            }
-        }
-    }
+//    void GameLogic::BasicEnemyBullet::hit(shared_ptr<GameLogic::Entity> hitEntity) {
+//        if (hitEntity->getType() == "Player") {
+//            auto ship = dynamic_pointer_cast<Ship>(hitEntity);
+//            auto player = dynamic_pointer_cast<Player>(ship);
+//            player->setHealth(player->getHealth()-1);
+//            if (player->getHealth() == 0) {
+//                player->setDestroyed(true);
+//            }
+//        }
+//    }
 
     void GameLogic::BasicEnemyBullet::handleCollision(shared_ptr<GameLogic::Entity> otherEntity) {
         if (otherEntity->getType() == "BasicEnemy") {
@@ -27,7 +27,10 @@ namespace GameLogic{
         } else if (otherEntity->getType() == "Player") {
             cout << "Bullet hit player" << endl;
             shared_ptr<Player> player = dynamic_pointer_cast<Player>(otherEntity);
-            player->setDestroyed(true);
+            player->setHealth(player->getHealth()-1);
+            if (player->getHealth() == 0) {
+                player->setDestroyed(true);
+            }
             remove();
         }
     }
