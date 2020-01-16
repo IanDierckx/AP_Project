@@ -105,9 +105,40 @@ namespace GameLogic{
              */
             bool checkIfLowestEnemy(shared_ptr<BasicEnemy> checkedEnemy);
 
+            /** Returns a vector of entities that should be deleted.
+             * Returns a vector of entities that should be deleted.
+             * @return A vector of entities that should be deleted.
+             */
             vector<shared_ptr<Entity>> getRemovableEntities();
 
+            /** Deletes all entities that aren't used anymore.
+             * Deletes all entities that aren't used anymore.
+             */
             void removeRemovableEntities();
+
+            /** Checks if 2 entities collide.
+             * Returns a boolean that represents is 2 entities collide or not.
+             * @param entity1 First entity to check.
+             * @param entity2 Second entity to check.
+             * @return Returns true if the entities collide.
+             */
+            bool checkCollision(shared_ptr<Entity> entity1, shared_ptr<Entity> entity2);
+
+            /** Returns the upperleft corner of the entity.
+             * Returns the upperleft corner of the entity in the forms of a pair with the y coordinate first.
+             * @param entity The entity we want the corner of.
+             * @return The corner in the form of a pair with the y coordinate first.
+             */
+            pair<double, double> getUpperLeftCorner(shared_ptr<Entity> entity);
+
+            /** Returns the lowerright corner of the entity.
+             * Returns the lowerright corner of the entity in the forms of a pair with the y coordinate first.
+             * @param entity The entity we want the corner of.
+             * @return The corner in the form of a pair with the y coordinate first.
+             */
+            pair<double, double> getLowerRightCorner(shared_ptr<Entity> entity);
+
+            void checkCollisionsOfAll();
     };
 }
 

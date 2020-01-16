@@ -84,6 +84,20 @@ namespace GameLogic{
          * @return Boolean that is true when it's a valid position.
          */
         bool isInGrid(pair<int, int> pos);
+
+        /** Convert a grid x coordinate to their screen equivalent.
+         * Convert a grid x coordinate to their screen equivalent.
+         * @param x the x value to convert.
+         * @return the screen equivalent.
+         */
+        double convertXToScreen(double x);
+
+        /** Convert a grid y coordinate to their screen equivalent.
+         * Convert a grid y coordinate to their screen equivalent.
+         * @param y the y value to convert.
+         * @return the screen equivalent.
+         */
+        double convertYToScreen(double y);
     };
 }
 

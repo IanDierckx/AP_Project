@@ -2,6 +2,7 @@
 #define AP_PROJECT_ENTITY_H
 
 #include <map>
+#include <memory>
 
 using namespace std;
 
@@ -116,9 +117,30 @@ namespace GameLogic{
              */
             virtual void draw() = 0;
 
+            /** Checks if the entity is removable.
+             * Checks the value of the removable variable.
+             * @return the value of the removable variable.
+             */
             bool checkIfRemovable();
 
+            /** Makes the entity ready to be removed.
+             * Sets the removable variable to true.
+             */
             void remove();
+
+            /** Gets the width of the entity.
+             * Gets the width of the entity.
+             * @return The width of the entity.
+             */
+            double getWidth() const;
+
+            /** Gets the height of the entity.
+             * Gets the height of the entity.
+             * @return The height of the entity.
+             */
+            double getHeight() const;
+
+            virtual void handleCollision(shared_ptr<Entity> otherEntity);
     };
 }
 

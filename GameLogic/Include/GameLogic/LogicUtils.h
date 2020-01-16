@@ -17,6 +17,7 @@ namespace GameLogic{
      */
     bool isDoubleEqualToInt(double dbl, int i, double rounding = 0.001);
 
+
 }
 
 

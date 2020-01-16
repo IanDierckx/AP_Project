@@ -1,7 +1,10 @@
 #include <utility>
 
+#include <utility>
+
 #include "../Include/GameLogic/Level.h"
 #include "../../SFML/Include/Level.h"
+#include "../Include/GameLogic/Transformation.h"
 
 
 #include <iostream>
@@ -121,7 +124,6 @@ namespace GameLogic{
             bullet->move();
         }
         updateGrid();
-        removeRemovableEntities();
     }
 
     /** Checks whether one of the game over conditions is triggered.
@@ -137,9 +139,17 @@ namespace GameLogic{
                 return true;
             }
         }
+        if (player->isDestroyed()) {
+            return true;
+        }
         return false;
     }
 
+    /** Checks if there are no enemies below the one checked.
+     * Checks if there are no enemies below the one checked.
+     * @param checkedEnemy the enemy we want to check
+     * @return true if there are no enemies below it.
+     */
     bool Level::checkIfLowestEnemy(shared_ptr<BasicEnemy> checkedEnemy) {
         for (auto enemy : enemyShips) {
             if (enemy->getY() > checkedEnemy->getY() and enemy != checkedEnemy) {
@@ -149,6 +159,10 @@ namespace GameLogic{
         return true;
     }
 
+    /** Returns a vector of entities that should be deleted.
+     * Returns a vector of entities that should be deleted.
+     * @return A vector of entities that should be deleted.
+     */
     vector<shared_ptr<Entity>> Level::getRemovableEntities() {
         vector<shared_ptr<Entity>> removableEntities;
         removableEntities.clear();
@@ -163,7 +177,7 @@ namespace GameLogic{
             }
         }
         for (auto removable : removableEntities) {
-            if (removable->getType() == "Bullet") {
+            if (removable->getType() == "BasicEnemyBullet" or removable->getType() == "Bullet") {
                 auto position = std::find(flyingBullets.begin(), flyingBullets.end(), removable);
                 flyingBullets.erase(position);
             } else if (removable->getType() == "BasicEnemy") {
@@ -174,10 +188,95 @@ namespace GameLogic{
         return removableEntities;
     }
 
+    /** Deletes all entities that aren't used anymore.
+     * Deletes all entities that aren't used anymore.
+     */
     void Level::removeRemovableEntities() {
         auto removableEntities = getRemovableEntities();
         for (auto entity : removableEntities) {
             entity.reset();
+        }
+    }
+
+    /** Checks if 2 entities collide.
+     * Returns a boolean that represents is 2 entities collide or not.
+     * @param entity1 First entity to check.
+     * @param entity2 Second entity to check.
+     * @return Returns true if the entities collide.
+     */
+    bool Level::checkCollision(shared_ptr<Entity> entity1, shared_ptr<Entity> entity2) {
+        if (entity2->getMovingY() < entity1->getMovingY()) {
+            auto temp = std::move(entity2);
+            entity2 = std::move(entity1);
+            entity1 = std::move(temp);
+        }
+
+        auto e1UpperLeftCorner = getUpperLeftCorner(entity1);
+        auto e2UpperLeftCorner = getUpperLeftCorner(entity2);
+        auto e1LowerRightCorner = getLowerRightCorner(entity1);
+        auto e2LowerRightCorner = getLowerRightCorner(entity2);
+
+
+        if (e1LowerRightCorner.first > e2UpperLeftCorner.first) {
+            if (e2UpperLeftCorner.second < e1LowerRightCorner.second and e2LowerRightCorner.second > e1LowerRightCorner.second) {
+                return true;
+            }
+        }
+        return false;
+
+//        if (e1LowerRightCorner.first > e2UpperLeftCorner.first
+//            and e1LowerRightCorner.second > e2UpperLeftCorner.second) {
+//            if (entity1->getType() == "BasicEnemyBullet" and entity2->getType() == "Player") {
+//                auto test = 0;
+//            }
+//            return true;
+//        } else {
+//            return false;
+//        }
+    }
+
+    /** Returns the upperleft corner of the entity.
+     * Returns the upperleft corner of the entity in the forms of a pair with the y coordinate first.
+     * @param entity The entity we want the corner of.
+     * @return The corner in the form of a pair with the y coordinate first.
+     */
+    pair<double, double> Level::getUpperLeftCorner(shared_ptr<Entity> entity) {
+        auto transf = Transformation::getInstance();
+        double upperLeftX = transf->convertXToScreen(entity->getMovingX()) - entity->getWidth()/2;
+        double upperLeftY = transf->convertYToScreen(entity->getMovingY()) - entity->getHeight()/2;
+        return make_pair(upperLeftY, upperLeftX);
+    }
+
+    /** Returns the lowerright corner of the entity.
+     * Returns the lowerright corner of the entity in the forms of a pair with the y coordinate first.
+     * @param entity The entity we want the corner of.
+     * @return The corner in the form of a pair with the y coordinate first.
+     */
+    pair<double, double> Level::getLowerRightCorner(shared_ptr<Entity> entity) {
+        auto transf = Transformation::getInstance();
+        double loweRightX = transf->convertXToScreen(entity->getMovingX()) + entity->getWidth()/2;
+        double loweRightY = transf->convertYToScreen(entity->getMovingY()) + entity->getHeight()/2;
+        return make_pair(loweRightY, loweRightX);
+    }
+
+    void Level::checkCollisionsOfAll() {
+        vector<shared_ptr<Entity>> allEntities;
+        allEntities.push_back(player);
+        for (const auto &bullet : flyingBullets) {
+            allEntities.push_back(bullet);
+        }
+        for (const auto &enemy : enemyShips) {
+            allEntities.push_back(enemy);
+        }
+        for (const auto &entity1 : allEntities) {
+            for (const auto &entity2 : allEntities) {
+                if (entity1 == entity2) {
+                    continue;
+                }
+                if (checkCollision(entity1, entity2)) {
+                    entity1->handleCollision(entity2);
+                }
+            }
         }
     }
 

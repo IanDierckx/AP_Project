@@ -1,6 +1,7 @@
 #include "../Include/GameLogic/BasicEnemy.h"
 #include "../Include/GameLogic/Transformation.h"
 #include "../Include/GameLogic/LogicUtils.h"
+#include "../Include/GameLogic/Player.h"
 
 
 namespace GameLogic{
@@ -52,6 +53,10 @@ namespace GameLogic{
         shootDelay = generateShootInterval();
     }
 
+    /** Checks if the enemy can shoot.
+     * Checks if the enemy can shoot.
+     * @return True if the enemy can shoot.
+     */
     bool BasicEnemy::canShoot() {
         if (shootDelay == 0) {
             shootDelay = generateShootInterval();
@@ -59,6 +64,28 @@ namespace GameLogic{
         } else {
             shootDelay--;
             return false;
+        }
+    }
+
+    /** Generates a random interval for when an enemy can shoot again.
+     * Generates a random interval for when an enemy can shoot again.
+     * @return the random interval between 20 and 100
+     */
+    int BasicEnemy::generateShootInterval() {
+        std::default_random_engine generator(
+                static_cast<unsigned long>(std::chrono::system_clock::now().time_since_epoch().count()));
+        std::uniform_int_distribution<int> distribution(20,100);
+        return distribution(generator);
+    }
+
+    void BasicEnemy::handleCollision(shared_ptr<Entity> otherEntity) {
+        if (otherEntity->getType() == "BasicEnemy") {
+            return;
+        } else if (otherEntity->getType() == "BasicEnemyBullet") {
+            return;
+        } else if (otherEntity->getType() == "Player") {
+            shared_ptr<Player> player = dynamic_pointer_cast<Player>(otherEntity);
+            player->setDestroyed(true);
         }
     }
 }

@@ -74,8 +74,8 @@ void GameLogic::Transformation::setYMax(int yMax) {
  * @return the calculated screen position
  */
 pair<double, double> GameLogic::Transformation::convertToScreen(double X, double Y) {
-    double screenX = (X+1 - xMin)/(xMax-xMin)*screenWidth;
-    double screenY = (Y+1 - yMin)/(yMax-yMin)*screenHeight;
+    double screenX = convertXToScreen(X);
+    double screenY = convertYToScreen(Y);
     return make_pair(screenX, screenY);
 }
 
@@ -94,4 +94,24 @@ bool GameLogic::Transformation::isInGrid(pair<int, int> pos) {
     bool yCheck = pos.first <= yMax && pos.first >= yMin;
     bool xCheck = pos.second <= xMax && pos.second >= xMin;
     return yCheck && xCheck;
+}
+
+/** Convert a grid x coordinate to their screen equivalent.
+ * Convert a grid x coordinate to their screen equivalent.
+ * @param x the x value to convert.
+ * @return the screen equivalent.
+ */
+double GameLogic::Transformation::convertXToScreen(double x) {
+    double screenX = (x+1 - xMin)/(xMax-xMin)*screenWidth;
+    return screenX;
+}
+
+/** Convert a grid y coordinate to their screen equivalent.
+ * Convert a grid y coordinate to their screen equivalent.
+ * @param y the y value to convert.
+ * @return the screen equivalent.
+ */
+double GameLogic::Transformation::convertYToScreen(double y) {
+    double screenY = (y+1 - yMin)/(yMax-yMin)*screenHeight;
+    return screenY;
 }

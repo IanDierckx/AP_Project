@@ -112,16 +112,46 @@ namespace GameLogic{
         Entity::movingY += addedY;
     }
 
+    /** Virtual draw function in Entity.
+     * Virtual draw function in Entity.
+     */
     void Entity::draw() {
         ///Virtual function
     }
 
+    /** Checks if the entity is removable.
+     * Checks the value of the removable variable.
+     * @return the value of the removable variable.
+     */
     bool Entity::checkIfRemovable() {
         return needsRemoving;
     }
 
+    /** Makes the entity ready to be removed.
+     * Sets the removable variable to true.
+     */
     void Entity::remove() {
         needsRemoving = true;
+    }
+
+    /** Gets the width of the entity.
+     * Gets the width of the entity.
+     * @return The width of the entity.
+     */
+    double Entity::getWidth() const {
+        return width;
+    }
+
+    /** Gets the height of the entity.
+     * Gets the height of the entity.
+     * @return The height of the entity.
+     */
+    double Entity::getHeight() const {
+        return height;
+    }
+
+    void Entity::handleCollision(shared_ptr<Entity> otherEntity) {
+
     }
 }
 

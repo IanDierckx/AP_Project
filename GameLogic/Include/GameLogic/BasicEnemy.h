@@ -6,6 +6,7 @@
 #include <random>
 #include <iostream>
 #include <chrono>
+#include <memory>
 
 #include "Ship.h"
 
@@ -38,14 +39,19 @@ namespace GameLogic{
              */
             void move() override;
 
+            /** Checks if the enemy can shoot.
+             * Checks if the enemy can shoot.
+             * @return True if the enemy can shoot.
+             */
             bool canShoot();
 
-            int generateShootInterval() {
-                std::default_random_engine generator(std::chrono::system_clock::now().time_since_epoch().count());
-                std::uniform_int_distribution<int> distribution(20,100);
-                cout << distribution(generator) << endl;
-                return distribution(generator);
-            }
+            /** Generates a random interval for when an enemy can shoot again.
+             * Generates a random interval for when an enemy can shoot again.
+             * @return the random interval between 20 and 100
+             */
+            int generateShootInterval();
+
+            void handleCollision(shared_ptr<Entity> otherEntity);
     };
 }
 

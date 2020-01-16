@@ -24,10 +24,11 @@ namespace GameSFML {
         GameLogic::Level::update();
         for (auto ship:enemiesThatCanShoot) {
             shared_ptr<BasicEnemyBullet> bullet = make_shared<BasicEnemyBullet>(make_pair(ship->getY(), ship->getX()),
-                    64, 64, "EnemyBullet.png", window);
+                    32, 32, "EnemyBullet.png", window);
             flyingBullets.push_back(bullet);
         }
-
+        checkCollisionsOfAll();
+        removeRemovableEntities();
     }
 
 }
