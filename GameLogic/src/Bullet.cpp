@@ -30,13 +30,17 @@ namespace GameLogic {
      */
     void Bullet::move() {
         auto transf = Transformation::getInstance();
-        if (getMovingY() > 9) {
+        if (getMovingY() > 9 or getMovingY() < 0) {
             remove();
         }
         if (isDoubleEqualToInt(getMovingY(), getY())) {
-            setY(getY()+1);
+            if (getSpeed() > 0) {
+                setY(getY()+1);
+            } else {
+                setY(getY()-1);
+            }
         }
-        if (getMovingY() < (double)getY() and !isDoubleEqualToInt(getMovingY(),getY())) {
+        if (!isDoubleEqualToInt(getMovingY(),getY())) {
            addMovingY(getSpeed());
         }
     }

@@ -36,7 +36,9 @@ void Controller::handleInput() {
             if (entityAbovePlayer != nullptr) {
                 if (entityAbovePlayer->getType() == "EnergyCannon") {
                     auto cannonAbovePlayer = dynamic_pointer_cast<GameLogic::EnergyCannon>(entityAbovePlayer);
-                    cannonAbovePlayer->shoot();
+                    if (cannonAbovePlayer->shoot()) {
+                        currentLevel->createPlayerBullet(cannonAbovePlayer->getY(), cannonAbovePlayer->getX());
+                    };
                 }
             }
         }

@@ -249,6 +249,8 @@ namespace GameLogic{
              * @return the height of the energy bullet.
              */
             int getEnergyBulletHeight() const;
+
+            virtual void createPlayerBullet(double y, double x);
     };
 }
 

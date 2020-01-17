@@ -1,6 +1,7 @@
 #include <iostream>
 #include "../Include/Level.h"
 #include "../Include/BasicEnemyBullet.h"
+#include "../Include/EnergyBullet.h"
 
 
 namespace GameSFML {
@@ -43,6 +44,12 @@ namespace GameSFML {
         }
         checkCollisionsOfAll();
         removeRemovableEntities();
+    }
+
+    void Level::createPlayerBullet(double y, double x) {
+        auto bullet = make_shared<EnergyBullet>(make_pair(y, x), getEnergyBulletWidth(), getEnergyBulletHeight(),
+                "EnergyBullet.png", window);
+        flyingBullets.push_back(bullet);
     }
 
 }

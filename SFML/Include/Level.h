@@ -30,6 +30,8 @@ namespace GameSFML{
          * checking for collisions and removing removable entities.
          */
         void update() override;
+
+        void createPlayerBullet(double y, double x) override;
     };
 }
 

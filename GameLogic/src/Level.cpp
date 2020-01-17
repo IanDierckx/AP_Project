@@ -6,6 +6,7 @@
 #include "../../SFML/Include/Level.h"
 #include "../Include/GameLogic/Transformation.h"
 #include "../Include/GameLogic/LogicUtils.h"
+#include "../Include/GameLogic/EnergyBullet.h"
 
 
 #include <iostream>
@@ -396,6 +397,11 @@ namespace GameLogic{
      */
     int Level::getEnergyBulletHeight() const {
         return energyBulletHeight;
+    }
+
+    void Level::createPlayerBullet(double y, double x) {
+//        auto bullet = make_shared<EnergyBullet>(make_pair(y, x), getEnergyBulletWidth(), getEnergyBulletHeight());
+//        flyingBullets.push_back(bullet);
     }
 
 

@@ -3,9 +3,9 @@
 #include "../Include/GameLogic/Player.h"
 
 namespace GameLogic{
-    GameLogic::BasicEnemyBullet::BasicEnemyBullet(const pair<int, int> &position, double width, double height) : Bullet(
-            position, width, height) {
-        setType("BasicEnemyBullet");
+    GameLogic::BasicEnemyBullet::BasicEnemyBullet(const pair<int, int> &position, double width, double height)
+        : Bullet(position, width, height) {
+            setType("BasicEnemyBullet");
     }
 
 //    void GameLogic::BasicEnemyBullet::hit(shared_ptr<GameLogic::Entity> hitEntity) {
