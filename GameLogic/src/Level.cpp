@@ -292,54 +292,108 @@ namespace GameLogic{
         cannons.push_back(newCannon);
     }
 
+    /** Returns the entity at the given position in the grid.
+     * Returns the entity at the given position in the grid.
+     * @param gridY Y coordinate of the grid.
+     * @param gridX X coordinate of the grid.
+     * @return If entity found a pointer to it, otherwise a nullpointer.
+     */
     shared_ptr<Entity> Level::getEntityInGrid(int gridY, int gridX) {
         return grid[gridY][gridX].second;
     }
 
+    /** Getter for the width of the basic enemy.
+     * Getter for the width of the basic enemy.
+     * @return the width of the basic enemy.
+     */
     int Level::getBasicEnemyWidth() const {
         return basicEnemyWidth;
     }
 
+    /** Getter for the height of the basic enemy.
+     * Getter for the height of the basic enemy.
+     * @return the height of the basic enemy.
+     */
     int Level::getBasicEnemyHeight() const {
         return basicEnemyHeight;
     }
 
+    /** Getter for the width of the player.
+     * Getter for the width of the player.
+     * @return the width of the player.
+     */
     int Level::getPlayerWidth() const {
         return playerWidth;
     }
 
+    /** Getter for the height of the player.
+     * Getter for the height of the player.
+     * @return the height of the player.
+     */
     int Level::getPlayerHeight() const {
         return playerHeight;
     }
 
+    /** Getter for the width of the basic enemy bullet.
+     * Getter for the width of the basic enemy bullet.
+     * @return the width of the basic enemy bullet.
+     */
     int Level::getBasicEnemyBulletWidth() const {
         return basicEnemyBulletWidth;
     }
 
+    /** Getter for the height of the basic enemy bullet.
+     * Getter for the height of the basic enemy bullet.
+     * @return the height of the basic enemy bullet.
+     */
     int Level::getBasicEnemyBulletHeight() const {
         return basicEnemyBulletHeight;
     }
 
+    /** Getter for the width of the double shot enemy.
+     * Getter for the width of the double shot enemy.
+     * @return the width of the double shot enemy.
+     */
     int Level::getDoubleShotEnemyWidth() const {
         return doubleShotEnemyWidth;
     }
 
+    /** Getter for the height of the double shot enemy.
+     * Getter for the height of the double shot enemy.
+     * @return the height of the double shot enemy.
+     */
     int Level::getDoubleShotEnemyHeight() const {
         return doubleShotEnemyHeight;
     }
 
+    /** Getter for the width of the cannon.
+     * Getter for the width of the cannon.
+     * @return the width of the cannon.
+     */
     int Level::getCannonWidth() const {
         return cannonWidth;
     }
 
+    /** Getter for the height of the cannon.
+     * Getter for the height of the cannon.
+     * @return the height of the cannon.
+     */
     int Level::getCannonHeight() const {
         return cannonHeight;
     }
 
+    /** Getter for the width of the energy bullet.
+     * Getter for the width of the energy bullet.
+     * @return the width of the energy bullet.
+     */
     int Level::getEnergyBulletWidth() const {
         return energyBulletWidth;
     }
 
+    /** Getter for the height of the energy bullet.
+     * Getter for the height of the energy bullet.
+     * @return the height of the energy bullet.
+     */
     int Level::getEnergyBulletHeight() const {
         return energyBulletHeight;
     }
