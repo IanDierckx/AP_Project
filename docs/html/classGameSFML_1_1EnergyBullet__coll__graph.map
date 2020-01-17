@@ -1,5 +1,5 @@
 <map id="GameSFML::EnergyBullet" name="GameSFML::EnergyBullet">
-<area shape="rect" id="node2" href="$classGameLogic_1_1EnergyBullet.html" title="GameLogic::EnergyBullet" alt="" coords="7,155,178,181"/>
+<area shape="rect" id="node2" href="$classGameLogic_1_1EnergyBullet.html" title="Class to represent the bullets shot by the player. " alt="" coords="7,155,178,181"/>
 <area shape="rect" id="node3" href="$classGameLogic_1_1Bullet.html" title="Class to represent all bullet types in game. " alt="" coords="28,80,157,107"/>
 <area shape="rect" id="node4" href="$classGameLogic_1_1Entity.html" title="Base Entity class Base entity class, most classes will be derived from this. " alt="" coords="27,5,158,32"/>
 </map>
