@@ -14,7 +14,7 @@ namespace GameLogic{
     Player::Player(const pair<int, int> &position, double width, double height) : Ship(position, width, height) {
         setType("Player");
         setSpeed(0.01);
-        setHealth(5);
+        setHealth(3);
     }
 
     /** Moves the player left.

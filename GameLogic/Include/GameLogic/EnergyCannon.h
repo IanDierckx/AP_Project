@@ -15,7 +15,7 @@ namespace GameLogic{
 
             int shotDelayMax = 5;
 
-            int timeNotUsedTrigger = 20;
+            int timeNotUsedTrigger = 40;
 
             int maxBullets = 8;
 
