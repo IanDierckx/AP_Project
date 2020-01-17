@@ -34,7 +34,7 @@ namespace GameSFML{
         Controller *controller = Controller::getInstance();
         controller->setCurrentLevel(currentLevel);
         controller->setWindow(window);
-        double tick = 0.1;
+        double tick = 0.08;
 
         sf::Font MyFont;
         if (!MyFont.loadFromFile("SFML/res/fonts/ArcadeClassic.ttf"))

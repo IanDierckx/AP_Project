@@ -26,9 +26,12 @@ namespace GameLogic{
      * @param otherEntity the other entity it collides with.
      */
     void EnergyBullet::handleCollision(const shared_ptr<Entity> &otherEntity) {
-        if (otherEntity->getType() == "BasicEnemy") {
-            cout << "Energy bullet hit BasicEnemy" << endl;
+        if (otherEntity->getType() == "BasicEnemy" or otherEntity->getType() == "doubleShotEnemy") {
+//            cout << "Energy bullet hit " << otherEntity->getType() << endl;
             shared_ptr<BasicEnemy> enemy = dynamic_pointer_cast<BasicEnemy>(otherEntity);
+            if (otherEntity->getType() == "doubleShotEnemy") {
+                auto test = 0;
+            }
             enemy->setHealth(enemy->getHealth()-1);
             if (enemy->getHealth() == 0) {
                 enemy->remove();

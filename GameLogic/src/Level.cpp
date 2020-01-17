@@ -193,7 +193,7 @@ namespace GameLogic{
             if (removable->getType() == "BasicEnemyBullet" or removable->getType() == "EnergyBullet") {
                 auto position = std::find(flyingBullets.begin(), flyingBullets.end(), removable);
                 flyingBullets.erase(position);
-            } else if (removable->getType() == "BasicEnemy") {
+            } else if (removable->getType() == "BasicEnemy" or removable->getType() == "doubleShotEnemy") {
                 auto position = std::find(enemyShips.begin(), enemyShips.end(), removable);
                 enemyShips.erase(position);
             }
