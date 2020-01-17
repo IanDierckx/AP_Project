@@ -12,16 +12,32 @@
       "position" : [2,1]
     },
     {
+      "type" : "doubleShotEnemy",
+      "position" : [2,2]
+    },
+    {
       "type" : "basicEnemy",
       "position" : [2,3]
+    },
+    {
+      "type" : "doubleShotEnemy",
+      "position" : [2,4]
     },
     {
       "type" : "basicEnemy",
       "position" : [2,5]
     },
     {
+      "type" : "doubleShotEnemy",
+      "position" : [2,6]
+    },
+    {
       "type" : "basicEnemy",
       "position" : [2,7]
+    },
+    {
+      "type" : "doubleShotEnemy",
+      "position" : [2,8]
     },
     {
       "type" : "basicEnemy",

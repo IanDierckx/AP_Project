@@ -36,7 +36,7 @@ namespace GameSFML{
              * Function initializes a new level by calling the Level Parser
              * @param levelFile the name of the json file of the new level
              */
-            void initializeLevel(int levelNumber);;
+            void initializeLevel(int levelNumber);
 
             /// Function to run the actual game
             /**
@@ -45,6 +45,12 @@ namespace GameSFML{
              * Inside the loop it checks for events and draws the game accordingly.
              */
             void run();
+
+            /** Returns whether the current level is the last level.
+             * Returns whether the current level is the last level.
+             * @return True if current level is the last level.
+             */
+            bool isLastLevel();
     };
 }
 

@@ -28,6 +28,8 @@ namespace GameLogic{
 
             vector<shared_ptr<EnergyCannon>> cannons;
 
+            bool allEnemiesDefeated = false;
+
             int basicEnemyWidth = 48;
             int basicEnemyHeight = 29;
 
@@ -256,6 +258,8 @@ namespace GameLogic{
              * @param x The X coordinate of the cannon that fires the bullet.
              */
             virtual void createPlayerBullet(double y, double x);
+
+            bool won();
     };
 }
 

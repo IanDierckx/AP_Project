@@ -145,6 +145,7 @@ namespace GameLogic{
      */
     bool Level::gameOver() {
         if (enemyShips.empty()) {
+            allEnemiesDefeated = true;
             return true;
         }
         for (auto &enemyShip : enemyShips) {
@@ -408,6 +409,10 @@ namespace GameLogic{
     void Level::createPlayerBullet(double y, double x) {
 //        auto bullet = make_shared<EnergyBullet>(make_pair(y, x), getEnergyBulletWidth(), getEnergyBulletHeight());
 //        flyingBullets.push_back(bullet);
+    }
+
+    bool Level::won() {
+        return allEnemiesDefeated;
     }
 
 

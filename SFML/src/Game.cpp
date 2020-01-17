@@ -18,7 +18,7 @@ namespace GameSFML{
     GameSFML::Game::Game(const string &title) {
         window = make_shared<RenderWindow>(VideoMode(9*64+10, 7*64+10), title,
                                                  Style::Titlebar | Style::Close);
-        initializeLevel(2);
+        initializeLevel(1);
         auto transf = GameLogic::Transformation::getInstance();
         transf->setScreenSize(window->getSize().x-64, window->getSize().y-64);
     }
@@ -37,13 +37,24 @@ namespace GameSFML{
         double tick = 0.08;
 
         sf::Font MyFont;
-        if (!MyFont.loadFromFile("SFML/res/fonts/ArcadeClassic.ttf"))
+        if (!MyFont.loadFromFile("SFML/res/fonts/PressStart2P-Regular.ttf"))
         {
             // Error...
         }
-        sf::Text gameOver("Game Over", MyFont, 50);
+        sf::Text gameOver("Game Over", MyFont, 35);
         gameOver.setOrigin(gameOver.getLocalBounds().width/2, gameOver.getLocalBounds().height/2);
-        gameOver.setPosition(window->getSize().x/2, window->getSize().y/2);
+        gameOver.setPosition(window->getSize().x/2, window->getSize().y/2 - 50);
+        sf::Text enterCloseGame("PRESS ENTER", MyFont, 25);
+        enterCloseGame.setOrigin(enterCloseGame.getLocalBounds().width/2, enterCloseGame.getLocalBounds().height/2);
+        enterCloseGame.setPosition(window->getSize().x/2, gameOver.getPosition().y +
+            gameOver.getLocalBounds().height/2 + enterCloseGame.getLocalBounds().height/2 + 20);
+        sf::Text congrats("Congratulations", MyFont, 35);
+        congrats.setOrigin(congrats.getLocalBounds().width/2, congrats.getLocalBounds().height/2);
+        congrats.setPosition(window->getSize().x/2, window->getSize().y/2 - 50);
+        sf::Text enterToContinue("Enter to continue", MyFont, 25);
+        enterToContinue.setOrigin(enterToContinue.getLocalBounds().width/2, enterToContinue.getLocalBounds().height/2);
+        enterToContinue.setPosition(window->getSize().x/2, gameOver.getPosition().y +
+            enterToContinue.getLocalBounds().height/2 + enterToContinue.getLocalBounds().height/2 + 20);
 
         while (window->isOpen()) {
             Event event{};
@@ -55,6 +66,10 @@ namespace GameSFML{
                 break;
             }
             controller->handleInput();
+            if (currentLevel != controller->getCurrentLevel()) {
+                currentLevel = controller->getCurrentLevel();
+                levelCount++;
+            }
             if (not currentLevel->gameOver()) {
                 if (watch->getTimePassed()>=tick) {
                     currentLevel->update();
@@ -63,7 +78,18 @@ namespace GameSFML{
                 window->clear(sf::Color::Black);
                 currentLevel->draw();
             } else {
-                window->draw(gameOver);
+                if (currentLevel->won()) {
+                    if (isLastLevel()) {
+                        window->draw(congrats);
+                    } else {
+                        window->draw(congrats);
+                        window->draw(enterToContinue);
+                    }
+                } else {
+                    window->draw(gameOver);
+                    window->draw(enterCloseGame);
+                }
+
             }
             window->display();
         }
@@ -79,5 +105,13 @@ namespace GameSFML{
         LevelParser parser = LevelParser("Level" + to_string(levelNumber) + ".json", window);
 
         currentLevel = parser.parseJson();
+    }
+
+    /** Returns whether the current level is the last level.
+     * Returns whether the current level is the last level.
+     * @return True if current level is the last level.
+     */
+    bool Game::isLastLevel() {
+        return levelCount == totalLevels;
     }
 }

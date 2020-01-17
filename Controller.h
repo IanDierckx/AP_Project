@@ -3,7 +3,8 @@
 
 #include <SFML/Graphics.hpp>
 
-#include "./GameLogic/Include/GameLogic/Level.h"
+#include "./SFML/Include/Level.h"
+
 
 using namespace std;
 
@@ -16,7 +17,10 @@ private:
     static Controller *instance;
 
     shared_ptr<sf::RenderWindow> window;
-    shared_ptr<GameLogic::Level> currentLevel;
+    shared_ptr<GameSFML::Level> currentLevel;
+
+    int levelCount = 1;
+    int totalLevels = 2;
 
     /** Default private controller so no new instances can be created.
      * Default private controller so no new instances can be created.
@@ -34,7 +38,7 @@ public:
      * Setter for the current level in the game so the controller knows which entities to affect.
      * @param newLevel The new current level.
      */
-    void setCurrentLevel(shared_ptr<GameLogic::Level> newLevel);
+    void setCurrentLevel(shared_ptr<GameSFML::Level> newLevel);
 
     /** Setter for the current game window.
      * Setter for the current game window so the controller knows where to get it's input from.
@@ -47,6 +51,15 @@ public:
      * with exception of closing the window using the window's own close button.
      */
     void handleInput();
+
+    /// Initialize a new level in the game
+    /**
+     * Function initializes a new level by calling the Level Parser
+     * @param levelFile the name of the json file of the new level
+     */
+    void initializeLevel(int levelNumber);
+
+    shared_ptr<GameSFML::Level> &getCurrentLevel();
 };
 
 

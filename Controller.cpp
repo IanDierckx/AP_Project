@@ -1,6 +1,7 @@
 #include <utility>
 
 #include "Controller.h"
+#include "./SFML/Include/LevelParser.h"
 
 
 /** Function to get the controller instance.
@@ -20,7 +21,16 @@ Controller *Controller::getInstance() {
 void Controller::handleInput() {
     if (currentLevel->gameOver()) {
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Return)) {
-            window->close();
+            if (currentLevel->won()) {
+                if (levelCount == totalLevels) {
+                    window->close();
+                } else {
+                    initializeLevel(++levelCount);
+                    setCurrentLevel(currentLevel);
+                }
+            } else {
+                window->close();
+            }
         }
     } else {
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
@@ -49,7 +59,7 @@ void Controller::handleInput() {
  * Setter for the current level in the game so the controller knows which entities to affect.
  * @param newLevel The new current level.
  */
-void Controller::setCurrentLevel(shared_ptr<GameLogic::Level> newLevel) {
+void Controller::setCurrentLevel(shared_ptr<GameSFML::Level> newLevel) {
     currentLevel = std::move(newLevel);
 }
 
@@ -57,3 +67,21 @@ void Controller::setWindow(shared_ptr<sf::RenderWindow> wndw) {
     window = std::move(wndw);
 }
 
+/// Initialize a new level in the game
+/**
+ * Function initializes a new level by calling the Level Parser
+ * @param levelFile the name of the json file of the new level
+ */
+void Controller::initializeLevel(int levelNumber) {
+    GameSFML::LevelParser parser = GameSFML::LevelParser("Level" + to_string(levelNumber) + ".json", window);
+
+    currentLevel = parser.parseJson();
+}
+
+/** Getter for the current level.
+ * Getter for the current level.
+ * @return the current level.
+ */
+shared_ptr<GameSFML::Level> &Controller::getCurrentLevel() {
+    return currentLevel;
+}
