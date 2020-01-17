@@ -19,6 +19,9 @@ namespace GameSFML{
         private:
             shared_ptr<sf::RenderWindow> window;
             shared_ptr<Level> currentLevel;
+
+            int levelCount = 1;
+            int totalLevels = 2;
         public:
             /// Constructor of the class
             /**
@@ -33,7 +36,7 @@ namespace GameSFML{
              * Function initializes a new level by calling the Level Parser
              * @param levelFile the name of the json file of the new level
              */
-            void initializeLevel(const string &levelFile); //override;
+            void initializeLevel(int levelNumber);;
 
             /// Function to run the actual game
             /**

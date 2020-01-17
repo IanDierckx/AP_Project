@@ -7,6 +7,7 @@
 #include <utility>
 #include "../Include/LevelParser.h"
 #include "../Include/EnergyCannon.h"
+#include "../Include/DoubleShotEnemy.h"
 
 namespace GameSFML{
 
@@ -42,6 +43,13 @@ namespace GameSFML{
                 auto posY = enemy.at("position")[0].get<int>();
                 shared_ptr<GameSFML::BasicEnemy> newEnemy = make_shared<GameSFML::BasicEnemy>(make_pair(posY,posX),
                         level->getBasicEnemyWidth(), level->getBasicEnemyHeight(), "BasicEnemy.png", window);
+                level->addEnemyShip(newEnemy);
+                level->addEntityToGrid(newEnemy);
+            } else if (enemy.at("type").get<string>() == "doubleShotEnemy") {
+                auto posX = enemy.at("position")[1].get<int>();
+                auto posY = enemy.at("position")[0].get<int>();
+                shared_ptr<GameSFML::DoubleShotEnemy> newEnemy = make_shared<GameSFML::DoubleShotEnemy>(make_pair(posY,posX),
+                        level->getBasicEnemyWidth(), level->getBasicEnemyHeight(), "DoubleShotEnemy.png", window);
                 level->addEnemyShip(newEnemy);
                 level->addEntityToGrid(newEnemy);
             }

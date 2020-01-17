@@ -18,7 +18,7 @@ namespace GameSFML{
     GameSFML::Game::Game(const string &title) {
         window = make_shared<RenderWindow>(VideoMode(9*64+10, 7*64+10), title,
                                                  Style::Titlebar | Style::Close);
-        initializeLevel("testLevel.json");
+        initializeLevel(2);
         auto transf = GameLogic::Transformation::getInstance();
         transf->setScreenSize(window->getSize().x-64, window->getSize().y-64);
     }
@@ -75,8 +75,8 @@ namespace GameSFML{
      * Function initializes a new level by calling the Level Parser
      * @param levelFile the name of the json file of the new level
      */
-    void Game::initializeLevel(const string &levelFile) {
-        LevelParser parser = LevelParser(levelFile, window);
+    void Game::initializeLevel(int levelNumber) {
+        LevelParser parser = LevelParser("Level" + to_string(levelNumber) + ".json", window);
 
         currentLevel = parser.parseJson();
     }
