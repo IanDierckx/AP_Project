@@ -3,6 +3,7 @@ var searchData=
   ['game',['Game',['../classGameSFML_1_1Game.html',1,'GameSFML::Game'],['../classGameSFML_1_1Game.html#a4ae981e788669fff50422ed9a1591db4',1,'GameSFML::Game::Game()']]],
   ['gamelogic',['GameLogic',['../namespaceGameLogic.html',1,'']]],
   ['gameover',['gameOver',['../classGameLogic_1_1Level.html#ab4496926ad24689d101de4a2e3702149',1,'GameLogic::Level']]],
+  ['gamesfml',['GameSFML',['../namespaceGameSFML.html',1,'']]],
   ['generateshootinterval',['generateShootInterval',['../classGameLogic_1_1BasicEnemy.html#adec32036fbf44534988bcbc850a3e3a5',1,'GameLogic::BasicEnemy']]],
   ['getbasicenemybulletheight',['getBasicEnemyBulletHeight',['../classGameLogic_1_1Level.html#a5063897104bbf7ff1f2d173cc37a0f57',1,'GameLogic::Level']]],
   ['getbasicenemybulletwidth',['getBasicEnemyBulletWidth',['../classGameLogic_1_1Level.html#a3986fbece7460c76852b0455b433b06d',1,'GameLogic::Level']]],

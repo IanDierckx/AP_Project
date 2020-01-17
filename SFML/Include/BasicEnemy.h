@@ -7,6 +7,7 @@
 #include "../../GameLogic/Include/GameLogic/BasicEnemy.h"
 #include "../../GameLogic/Include/GameLogic/Level.h"
 
+/// Namespace used for SFML (a.k.a. the view of the MVC pattern).
 namespace GameSFML{
 
     using window_ptr = shared_ptr<sf::RenderWindow>;
