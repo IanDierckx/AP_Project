@@ -6,8 +6,14 @@ namespace GameSFML{
              const GameSFML::window_ptr window)
             : GameLogic::BasicEnemy(position, width, height), window(window){
         string spritesPath = "./SFML/res/sprites/";
-        if (!texture.loadFromFile(spritesPath+fileName)) {
-            cout << "Unable to load file" << endl;
+        try {
+            if(!texture.loadFromFile(spritesPath+fileName)) {
+                throw 1;
+            };
+        }
+        catch (int e) {
+            cout << "Unable to load basicEnemy sprite" << endl;
+            texture.create(64,64);
         }
         sprite = Sprite(texture);
         sprite.setOrigin(sprite.getLocalBounds().width/2, sprite.getLocalBounds().height/2);

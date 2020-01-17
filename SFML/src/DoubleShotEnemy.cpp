@@ -10,8 +10,13 @@ namespace GameSFML{
                                                GameLogic::DoubleShotEnemy(position, width, height), window(
             std::move(window)) {
         string spritesPath = "./SFML/res/sprites/";
-        if (!texture.loadFromFile(spritesPath+fileName)) {
-            cout << "Unable to load file" << endl;
+        try {
+            if(!texture.loadFromFile(spritesPath+fileName)) {
+                throw 1;
+            };
+        }
+        catch (int e) {
+            cout << "Unable to load double shot enemy sprite" << endl;
         }
         sprite = Sprite(texture);
         sprite.setOrigin(sprite.getLocalBounds().width/2, sprite.getLocalBounds().height/2);

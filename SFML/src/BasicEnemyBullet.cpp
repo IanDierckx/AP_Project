@@ -16,8 +16,13 @@ namespace GameSFML{
                                                  const string &fileName, const GameSFML::window_ptr &window)
             : GameLogic::BasicEnemyBullet(position, width, height), window(window) {
         string spritesPath = "./SFML/res/sprites/";
-        if (!texture.loadFromFile(spritesPath+fileName)) {
-            cout << "Unable to load file" << endl;
+        try {
+            if(!texture.loadFromFile(spritesPath+fileName)) {
+                throw 1;
+            };
+        }
+        catch (int e) {
+            cout << "Unable to load enemy bullet sprite" << endl;
         }
         sprite = Sprite(texture);
         sprite.setOrigin(sprite.getLocalBounds().width/2, sprite.getLocalBounds().height/2);;

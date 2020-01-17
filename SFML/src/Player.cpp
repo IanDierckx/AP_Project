@@ -18,8 +18,13 @@ namespace GameSFML{
                              GameSFML::window_ptr window): GameLogic::Player(position, width, height), window(
             std::move(window)) {
         string spritesPath = "./SFML/res/sprites/";
-        if (!texture.loadFromFile(spritesPath+fileName)) {
-            cout << "Unable to load file" << endl;
+        try {
+            if(!texture.loadFromFile(spritesPath+fileName)) {
+                throw 1;
+            };
+        }
+        catch (int e) {
+            cout << "Unable to load player sprite" << endl;
         }
         sprite = Sprite(texture, sf::IntRect(0,0, 64, 64));
         sprite.setOrigin(sprite.getLocalBounds().width/2, sprite.getLocalBounds().height/2);
