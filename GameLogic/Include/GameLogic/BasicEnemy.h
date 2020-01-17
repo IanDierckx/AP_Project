@@ -31,7 +31,6 @@ namespace GameLogic{
              */
             BasicEnemy(const pair<int, int> &position, double width, double height);
 
-
             /** Function that moves the Basic Enemy.
              * Function that moves the Basic Enemy to it's next position in the grid and updates movingX and movingY.
              * The Basic Enemy moves from left to right, then lowers a row before moving from right to left.

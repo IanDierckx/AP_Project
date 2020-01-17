@@ -25,7 +25,7 @@ namespace GameLogic{
      */
     bool GameLogic::EnergyCannon::shoot() {
         if (remainingBullets > 0 and shotDelay == 0) {
-            cout << "Boom shot cannon at " << getY() << ", " << getX() << endl;
+//            cout << "Boom shot cannon at " << getY() << ", " << getX() << endl;
             remainingBullets--;
             timeNotUsed = 0;
             shotDelay = shotDelayMax;
@@ -72,6 +72,9 @@ namespace GameLogic{
         }
     }
 
+    /** Increases the timeNotUsed counter by 1.
+     * Increases the timeNotUsed counter by 1.
+     */
     void EnergyCannon::increaseTimeNotUsed() {
         timeNotUsed++;
     }

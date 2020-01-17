@@ -31,6 +31,11 @@ namespace GameSFML{
          */
         void update() override;
 
+        /** Creates a new EnergyBullet.
+         * Creates a new EnergyBullet.
+         * @param y The Y coordinate of the cannon that fires the bullet.
+         * @param x The X coordinate of the cannon that fires the bullet.
+         */
         void createPlayerBullet(double y, double x) override;
     };
 }

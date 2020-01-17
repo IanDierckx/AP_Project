@@ -400,6 +400,11 @@ namespace GameLogic{
         return energyBulletHeight;
     }
 
+    /** Creates a new EnergyBullet.
+     * Creates a new EnergyBullet.
+     * @param y The Y coordinate of the cannon that fires the bullet.
+     * @param x The X coordinate of the cannon that fires the bullet.
+     */
     void Level::createPlayerBullet(double y, double x) {
 //        auto bullet = make_shared<EnergyBullet>(make_pair(y, x), getEnergyBulletWidth(), getEnergyBulletHeight());
 //        flyingBullets.push_back(bullet);

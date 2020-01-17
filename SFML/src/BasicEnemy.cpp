@@ -1,6 +1,5 @@
 #include "../Include/BasicEnemy.h"
 #include "../../GameLogic/Include/GameLogic/Transformation.h"
-#include "../Include/utils.h"
 
 namespace GameSFML{
     BasicEnemy::BasicEnemy(const pair<int, int> &position, double width, double height, const string &fileName,
@@ -10,9 +9,6 @@ namespace GameSFML{
         texture.loadFromFile(spritesPath+fileName);
         sprite = Sprite(texture);
         sprite.setOrigin(sprite.getLocalBounds().width/2, sprite.getLocalBounds().height/2);
-        pair<double, double> upperLeft = make_pair(sprite.getOrigin().x - width/2, sprite.getOrigin().y - height/2);
-        pair<double, double> lowerRight = make_pair(sprite.getOrigin().x + width/2, sprite.getOrigin().y + height/2);
-//        scaleSprite(sprite, upperLeft, lowerRight);
     }
 
     /** Updates the sprite and draws it to the window.

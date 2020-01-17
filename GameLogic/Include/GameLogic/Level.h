@@ -250,6 +250,11 @@ namespace GameLogic{
              */
             int getEnergyBulletHeight() const;
 
+            /** Creates a new EnergyBullet.
+             * Creates a new EnergyBullet.
+             * @param y The Y coordinate of the cannon that fires the bullet.
+             * @param x The X coordinate of the cannon that fires the bullet.
+             */
             virtual void createPlayerBullet(double y, double x);
     };
 }

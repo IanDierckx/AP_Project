@@ -16,7 +16,6 @@ namespace GameSFML{
      * @param title Gives the title of the window
      */
     GameSFML::Game::Game(const string &title) {
-//        VideoMode videoMode = VideoMode::getDesktopMode();
         window = make_shared<RenderWindow>(VideoMode(9*64+10, 7*64+10), title,
                                                  Style::Titlebar | Style::Close);
         initializeLevel("testLevel.json");

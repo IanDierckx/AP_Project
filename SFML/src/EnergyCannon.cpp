@@ -11,8 +11,6 @@ namespace GameSFML{
         string spritesPath = "./SFML/res/sprites/";
         texture.loadFromFile(spritesPath+fileName);
         sprite = Sprite(texture, sf::IntRect(0,0, 64, 64));
-        auto test = sprite.getLocalBounds().width/2;
-        auto test2 = sprite.getLocalBounds().height/2;
         sprite.setOrigin(sprite.getLocalBounds().width/2, sprite.getLocalBounds().height/2);
     }
 

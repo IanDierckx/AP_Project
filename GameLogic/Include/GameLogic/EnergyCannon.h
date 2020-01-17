@@ -55,8 +55,8 @@ namespace GameLogic{
              */
             void lowerDelay();
 
-            /** Increases timeNotUsed by 1.
-             * Increases timeNotUsed by 1.
+            /** Increases the timeNotUsed counter by 1.
+             * Increases the timeNotUsed counter by 1.
              */
             void increaseTimeNotUsed();
     };
