@@ -5,6 +5,9 @@
 
 namespace GameLogic{
 
+    /** Class to represent the bullets shot by the player.
+     * Class to represent the bullets shot by the player.
+     */
     class EnergyBullet : public GameLogic::Bullet {
         private:
 

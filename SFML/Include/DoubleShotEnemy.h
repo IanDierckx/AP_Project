@@ -9,6 +9,9 @@ namespace GameSFML {
     using window_ptr = shared_ptr<sf::RenderWindow>;
     using namespace sf;
 
+    /** SFML version of the doubleShotEnemy class.
+     * SFML version of the doubleShotEnemy class.
+     */
     class DoubleShotEnemy : public GameLogic::DoubleShotEnemy {
         private:
             window_ptr window;

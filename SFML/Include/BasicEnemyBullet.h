@@ -10,7 +10,7 @@ namespace GameSFML{
     using window_ptr = shared_ptr<sf::RenderWindow>;
     using namespace sf;
 
-    /** SFML version of the Basic Enemy's bullet.
+    /** SFML version of the basicEnemyBullet class.
      * SFML version of the Basic Enemy's bullet.
      */
     class BasicEnemyBullet : public GameLogic::BasicEnemyBullet {
