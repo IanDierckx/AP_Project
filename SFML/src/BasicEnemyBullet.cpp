@@ -1,3 +1,4 @@
+#include <iostream>
 #include "../Include/BasicEnemyBullet.h"
 #include "../../GameLogic/Include/GameLogic/Transformation.h"
 
@@ -15,7 +16,9 @@ namespace GameSFML{
                                                  const string &fileName, const GameSFML::window_ptr &window)
             : GameLogic::BasicEnemyBullet(position, width, height), window(window) {
         string spritesPath = "./SFML/res/sprites/";
-        texture.loadFromFile(spritesPath+fileName);
+        if (!texture.loadFromFile(spritesPath+fileName)) {
+            cout << "Unable to load file" << endl;
+        }
         sprite = Sprite(texture);
         sprite.setOrigin(sprite.getLocalBounds().width/2, sprite.getLocalBounds().height/2);;
     }

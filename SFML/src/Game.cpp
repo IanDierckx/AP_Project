@@ -43,17 +43,17 @@ namespace GameSFML{
         }
         sf::Text gameOver("Game Over", MyFont, 35);
         gameOver.setOrigin(gameOver.getLocalBounds().width/2, gameOver.getLocalBounds().height/2);
-        gameOver.setPosition(window->getSize().x/2, window->getSize().y/2 - 50);
+        gameOver.setPosition(window->getSize().x/2.0f, window->getSize().y/2.0f - 50);
         sf::Text enterCloseGame("Press enter to close the game", MyFont, 18);
         enterCloseGame.setOrigin(enterCloseGame.getLocalBounds().width/2, enterCloseGame.getLocalBounds().height/2);
-        enterCloseGame.setPosition(window->getSize().x/2, gameOver.getPosition().y +
+        enterCloseGame.setPosition(window->getSize().x/2.0f, gameOver.getPosition().y +
             gameOver.getLocalBounds().height/2 + enterCloseGame.getLocalBounds().height/2 + 20);
         sf::Text congrats("Congratulations", MyFont, 35);
         congrats.setOrigin(congrats.getLocalBounds().width/2, congrats.getLocalBounds().height/2);
-        congrats.setPosition(window->getSize().x/2, window->getSize().y/2 - 50);
+        congrats.setPosition(window->getSize().x/2.0f, window->getSize().y/2.0f - 50);
         sf::Text enterToContinue("Press enter to continue", MyFont, 25);
         enterToContinue.setOrigin(enterToContinue.getLocalBounds().width/2, enterToContinue.getLocalBounds().height/2);
-        enterToContinue.setPosition(window->getSize().x/2, gameOver.getPosition().y +
+        enterToContinue.setPosition(window->getSize().x/2.0f, gameOver.getPosition().y +
             enterToContinue.getLocalBounds().height/2 + enterToContinue.getLocalBounds().height/2 + 20);
 
         while (window->isOpen()) {

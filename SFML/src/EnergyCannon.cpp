@@ -9,7 +9,9 @@ namespace GameSFML{
                                const window_ptr &window) :
                                GameLogic::EnergyCannon(position, width, height), window(window) {
         string spritesPath = "./SFML/res/sprites/";
-        texture.loadFromFile(spritesPath+fileName);
+        if (!texture.loadFromFile(spritesPath+fileName)) {
+            cout << "Unable to load file" << endl;
+        }
         sprite = Sprite(texture, sf::IntRect(0,0, 64, 64));
         sprite.setOrigin(sprite.getLocalBounds().width/2, sprite.getLocalBounds().height/2);
     }
@@ -48,6 +50,9 @@ namespace GameSFML{
                 sprite = Sprite(texture, sf::IntRect(448, 0, 64, 64));
                 break;
             case 0:
+                sprite = Sprite(texture, sf::IntRect(512, 0, 64, 64));
+                break;
+            default:
                 sprite = Sprite(texture, sf::IntRect(512, 0, 64, 64));
                 break;
         }

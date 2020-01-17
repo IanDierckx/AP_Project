@@ -1,3 +1,5 @@
+#include <utility>
+
 #include "../Include/DoubleShotEnemy.h"
 #include "../../GameLogic/Include/GameLogic/Transformation.h"
 
@@ -5,9 +7,12 @@ namespace GameSFML{
 
     GameSFML::DoubleShotEnemy::DoubleShotEnemy(const pair<int, int> &position, double width, double height,
                                                const string &fileName, GameSFML::window_ptr window) :
-                                               GameLogic::DoubleShotEnemy(position, width, height), window(window) {
+                                               GameLogic::DoubleShotEnemy(position, width, height), window(
+            std::move(window)) {
         string spritesPath = "./SFML/res/sprites/";
-        texture.loadFromFile(spritesPath+fileName);
+        if (!texture.loadFromFile(spritesPath+fileName)) {
+            cout << "Unable to load file" << endl;
+        }
         sprite = Sprite(texture);
         sprite.setOrigin(sprite.getLocalBounds().width/2, sprite.getLocalBounds().height/2);
     }

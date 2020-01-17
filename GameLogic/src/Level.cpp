@@ -153,10 +153,7 @@ namespace GameLogic{
                 return true;
             }
         }
-        if (player->isDestroyed()) {
-            return true;
-        }
-        return false;
+        return player->isDestroyed();
     }
 
     /** Checks if there are no enemies below the one checked.
@@ -225,7 +222,6 @@ namespace GameLogic{
             entity1 = std::move(temp);
         }
 
-        auto e1UpperLeftCorner = getUpperLeftCorner(entity1);
         auto e2UpperLeftCorner = getUpperLeftCorner(entity2);
         auto e1LowerRightCorner = getLowerRightCorner(entity1);
         auto e2LowerRightCorner = getLowerRightCorner(entity2);
