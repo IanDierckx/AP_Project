@@ -27,6 +27,24 @@ namespace GameLogic{
             vector<shared_ptr<Bullet>> flyingBullets;
 
             vector<shared_ptr<EnergyCannon>> cannons;
+
+            int basicEnemyWidth = 48;
+            int basicEnemyHeight = 29;
+
+            int playerWidth = 44;
+            int playerHeight = 36;
+
+            int basicEnemyBulletWidth = 14;
+            int basicEnemyBulletHeight = 25;
+
+            int doubleShotEnemyWidth = 48;
+            int doubleShotEnemyHeight = 27;
+
+            int cannonWidth = 36;
+            int cannonHeight = 34;
+
+            int energyBulletWidth = 6;
+            int energyBulletHeight = 18;
         public:
 
             /** Adds a new enemy ship to the level.
@@ -153,6 +171,30 @@ namespace GameLogic{
             void addCannon(shared_ptr<EnergyCannon> newCannon);
 
             shared_ptr<Entity> getEntityInGrid(int gridY, int gridX);
+
+            int getBasicEnemyWidth() const;
+
+            int getBasicEnemyHeight() const;
+
+            int getPlayerWidth() const;
+
+            int getPlayerHeight() const;
+
+            int getBasicEnemyBulletWidth() const;
+
+            int getBasicEnemyBulletHeight() const;
+
+            int getDoubleShotEnemyWidth() const;
+
+            int getDoubleShotEnemyHeight() const;
+
+            int getCannonWidth() const;
+
+            int getCannonHeight() const;
+
+            int getEnergyBulletWidth() const;
+
+            int getEnergyBulletHeight() const;
     };
 }
 

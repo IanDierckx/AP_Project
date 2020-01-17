@@ -146,7 +146,7 @@ namespace GameLogic{
             return true;
         }
         for (auto &enemyShip : enemyShips) {
-            if (std::abs(enemyShip->getMovingY() - 6) < 0.001) {
+            if (std::abs(enemyShip->getMovingY() - 5) < 0.001) {
                 return true;
             }
         }
@@ -294,6 +294,54 @@ namespace GameLogic{
 
     shared_ptr<Entity> Level::getEntityInGrid(int gridY, int gridX) {
         return grid[gridY][gridX].second;
+    }
+
+    int Level::getBasicEnemyWidth() const {
+        return basicEnemyWidth;
+    }
+
+    int Level::getBasicEnemyHeight() const {
+        return basicEnemyHeight;
+    }
+
+    int Level::getPlayerWidth() const {
+        return playerWidth;
+    }
+
+    int Level::getPlayerHeight() const {
+        return playerHeight;
+    }
+
+    int Level::getBasicEnemyBulletWidth() const {
+        return basicEnemyBulletWidth;
+    }
+
+    int Level::getBasicEnemyBulletHeight() const {
+        return basicEnemyBulletHeight;
+    }
+
+    int Level::getDoubleShotEnemyWidth() const {
+        return doubleShotEnemyWidth;
+    }
+
+    int Level::getDoubleShotEnemyHeight() const {
+        return doubleShotEnemyHeight;
+    }
+
+    int Level::getCannonWidth() const {
+        return cannonWidth;
+    }
+
+    int Level::getCannonHeight() const {
+        return cannonHeight;
+    }
+
+    int Level::getEnergyBulletWidth() const {
+        return energyBulletWidth;
+    }
+
+    int Level::getEnergyBulletHeight() const {
+        return energyBulletHeight;
     }
 
 

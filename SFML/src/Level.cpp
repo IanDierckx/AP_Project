@@ -38,7 +38,7 @@ namespace GameSFML {
         GameLogic::Level::update();
         for (const auto &ship:enemiesThatCanShoot) {
             shared_ptr<BasicEnemyBullet> bullet = make_shared<BasicEnemyBullet>(make_pair(ship->getY(), ship->getX()),
-                    32, 32, "EnemyBullet.png", window);
+                    getBasicEnemyBulletWidth(), getBasicEnemyBulletHeight(), "EnemyBullet.png", window);
             flyingBullets.push_back(bullet);
         }
         checkCollisionsOfAll();

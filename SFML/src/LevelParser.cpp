@@ -41,7 +41,7 @@ namespace GameSFML{
                 auto posX = enemy.at("position")[1].get<int>();
                 auto posY = enemy.at("position")[0].get<int>();
                 shared_ptr<GameSFML::BasicEnemy> newEnemy = make_shared<GameSFML::BasicEnemy>(make_pair(posY,posX),
-                        64, 50, "BasicEnemy.png", window);
+                        level->getBasicEnemyWidth(), level->getBasicEnemyHeight(), "BasicEnemy.png", window);
                 level->addEnemyShip(newEnemy);
                 level->addEntityToGrid(newEnemy);
             }
@@ -51,12 +51,13 @@ namespace GameSFML{
             auto posY = cannon.at("position")[0].get<int>();
             auto posX = cannon.at("position")[1].get<int>();
             shared_ptr<GameSFML::EnergyCannon> newCannon = make_shared<GameSFML::EnergyCannon>(make_pair(posY, posX),
-                    10, 10, "EnergyCanonSprites.png", window);
+                    level->getCannonWidth(), level->getCannonHeight(), "EnergyCanonSprites.png", window);
             level->addCannon(newCannon);
             level->addEntityToGrid(newCannon);
         }
 
-        level->setPlayer(make_shared<GameSFML::Player>(make_pair(6,4), 55, 55, "Player.png", window));
+        level->setPlayer(make_shared<GameSFML::Player>(make_pair(6,4), level->getPlayerWidth(),
+                level->getPlayerHeight(), "Player.png", window));
         level->addEntityToGrid(level->getPlayer());
 
         return level;
