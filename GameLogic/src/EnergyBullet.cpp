@@ -2,8 +2,10 @@
 // Created by student on 17.01.20.
 //
 
+#include <iostream>
 #include "../Include/GameLogic/EnergyBullet.h"
 #include "../../SFML/Include/EnergyBullet.h"
+#include "../Include/GameLogic/BasicEnemy.h"
 
 
 namespace GameLogic{
@@ -24,7 +26,15 @@ namespace GameLogic{
      * @param otherEntity the other entity it collides with.
      */
     void EnergyBullet::handleCollision(const shared_ptr<Entity> &otherEntity) {
-        //
+        if (otherEntity->getType() == "BasicEnemy") {
+            cout << "Energy bullet hit BasicEnemy" << endl;
+            shared_ptr<BasicEnemy> enemy = dynamic_pointer_cast<BasicEnemy>(otherEntity);
+            enemy->setHealth(enemy->getHealth()-1);
+            if (enemy->getHealth() == 0) {
+                enemy->remove();
+            }
+            remove();
+        }
     }
 }
 

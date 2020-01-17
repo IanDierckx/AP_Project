@@ -118,6 +118,7 @@ namespace GameLogic{
      * checking if enemies can fire and updating the grid.
      */
     void Level::update() {
+        removeRemovableEntities();
         enemiesThatCanShoot.clear();
         for (auto &enemyShip : enemyShips) {
             enemyShip->move();
@@ -189,7 +190,7 @@ namespace GameLogic{
             }
         }
         for (const auto &removable : removableEntities) {
-            if (removable->getType() == "BasicEnemyBullet" or removable->getType() == "Bullet") {
+            if (removable->getType() == "BasicEnemyBullet" or removable->getType() == "EnergyBullet") {
                 auto position = std::find(flyingBullets.begin(), flyingBullets.end(), removable);
                 flyingBullets.erase(position);
             } else if (removable->getType() == "BasicEnemy") {
