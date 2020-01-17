@@ -36,6 +36,14 @@ namespace GameSFML{
         controller->setWindow(window);
         double tick = 0.1;
 
+        sf::Font MyFont;
+        if (!MyFont.loadFromFile("SFML/res/fonts/ArcadeClassic.ttf"))
+        {
+            // Error...
+        }
+        sf::Text gameOver("Game Over", MyFont, 50);
+        gameOver.setOrigin(gameOver.getLocalBounds().width/2, gameOver.getLocalBounds().height/2);
+        gameOver.setPosition(window->getSize().x/2, window->getSize().y/2);
 
         while (window->isOpen()) {
             Event event{};
@@ -52,10 +60,11 @@ namespace GameSFML{
                     currentLevel->update();
                     watch->reset();
                 }
+                window->clear(sf::Color::Black);
+                currentLevel->draw();
+            } else {
+                window->draw(gameOver);
             }
-
-            window->clear(sf::Color::Black);
-            currentLevel->draw();
             window->display();
         }
 

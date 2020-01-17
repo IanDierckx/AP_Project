@@ -41,7 +41,7 @@ namespace GameSFML{
              * Game runs in a while loop with the condition of if the game window is still open
              * Inside the loop it checks for events and draws the game accordingly.
              */
-            void run(); // override;
+            void run();
     };
 }
 
