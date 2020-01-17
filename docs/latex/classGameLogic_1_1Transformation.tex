@@ -1,0 +1,174 @@
+\hypertarget{classGameLogic_1_1Transformation}{}\section{Game\+Logic\+:\+:Transformation Class Reference}
+\label{classGameLogic_1_1Transformation}\index{Game\+Logic\+::\+Transformation@{Game\+Logic\+::\+Transformation}}
+
+
+Class used to convert from the game\+Logic grid to screen coordinates.  
+
+
+
+
+{\ttfamily \#include $<$Transformation.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classGameLogic_1_1Transformation_a1a65e0d2527c3c558f5dfe59e0832d52}{set\+Screen\+Size} (unsigned int width, unsigned int height)
+\begin{DoxyCompactList}\small\item\em Set the screen size used in calculating the correct screen coordinates. \end{DoxyCompactList}\item 
+void \hyperlink{classGameLogic_1_1Transformation_a69686d5a12ba0e04b6ea7b80e5c874ac}{set\+X\+Min} (int x\+Min)
+\begin{DoxyCompactList}\small\item\em Setter for the minimum value of the x value of the grid. \end{DoxyCompactList}\item 
+void \hyperlink{classGameLogic_1_1Transformation_ac1818769a0212075fb865d0495ced12c}{set\+X\+Max} (int x\+Max)
+\begin{DoxyCompactList}\small\item\em Setter for the maximum value of the x value of the grid. \end{DoxyCompactList}\item 
+void \hyperlink{classGameLogic_1_1Transformation_a8863f56cd8d117a6817d288fa28258bd}{set\+Y\+Min} (int y\+Min)
+\begin{DoxyCompactList}\small\item\em Setter for the minimum value of the y value of the grid. \end{DoxyCompactList}\item 
+void \hyperlink{classGameLogic_1_1Transformation_a0da7509d874b735240aba51c72f31811}{set\+Y\+Max} (int y\+Max)
+\begin{DoxyCompactList}\small\item\em Setter for the maximum value of the y value of the grid. \end{DoxyCompactList}\item 
+pair$<$ double, double $>$ \hyperlink{classGameLogic_1_1Transformation_a30bed07a78fb248b129e50234ecef28a}{convert\+To\+Screen} (double X, double Y)
+\begin{DoxyCompactList}\small\item\em Function to convert grid position (or between 2 grid positions) to screen coordinates. \end{DoxyCompactList}\item 
+bool \hyperlink{classGameLogic_1_1Transformation_a573549aa64a0932387e9ab116e408493}{is\+In\+Grid} (pair$<$ int, int $>$ pos)
+\begin{DoxyCompactList}\small\item\em Function checks whether a position is a valid grid position. \end{DoxyCompactList}\item 
+double \hyperlink{classGameLogic_1_1Transformation_a1168354a2f68dcfcee917da9ec1076ac}{convert\+X\+To\+Screen} (double x)
+\begin{DoxyCompactList}\small\item\em Convert a grid x coordinate to their screen equivalent. \end{DoxyCompactList}\item 
+double \hyperlink{classGameLogic_1_1Transformation_a6a3d8fd76997ed12fc6dc9640118f405}{convert\+Y\+To\+Screen} (double y)
+\begin{DoxyCompactList}\small\item\em Convert a grid y coordinate to their screen equivalent. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static shared\+\_\+ptr$<$ \hyperlink{classGameLogic_1_1Transformation}{Transformation} $>$ \hyperlink{classGameLogic_1_1Transformation_a1b76a508913396581f4eeed63e96776d}{get\+Instance} ()
+\begin{DoxyCompactList}\small\item\em Function to get the transformation instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class used to convert from the game\+Logic grid to screen coordinates. Uses the singleton pattern. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classGameLogic_1_1Transformation_a30bed07a78fb248b129e50234ecef28a}\label{classGameLogic_1_1Transformation_a30bed07a78fb248b129e50234ecef28a}} 
+\index{Game\+Logic\+::\+Transformation@{Game\+Logic\+::\+Transformation}!convert\+To\+Screen@{convert\+To\+Screen}}
+\index{convert\+To\+Screen@{convert\+To\+Screen}!Game\+Logic\+::\+Transformation@{Game\+Logic\+::\+Transformation}}
+\subsubsection{\texorpdfstring{convert\+To\+Screen()}{convertToScreen()}}
+{\footnotesize\ttfamily pair$<$ double, double $>$ Game\+Logic\+::\+Transformation\+::convert\+To\+Screen (\begin{DoxyParamCaption}\item[{double}]{X,  }\item[{double}]{Y }\end{DoxyParamCaption})}
+
+Function to convert grid position (or between 2 grid positions) to screen coordinates. 
+\begin{DoxyParams}{Parameters}
+{\em X} & the x value of the position you want to convert \\
+\hline
+{\em Y} & the y value of the position you want to convert \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the calculated screen position 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGameLogic_1_1Transformation_a1168354a2f68dcfcee917da9ec1076ac}\label{classGameLogic_1_1Transformation_a1168354a2f68dcfcee917da9ec1076ac}} 
+\index{Game\+Logic\+::\+Transformation@{Game\+Logic\+::\+Transformation}!convert\+X\+To\+Screen@{convert\+X\+To\+Screen}}
+\index{convert\+X\+To\+Screen@{convert\+X\+To\+Screen}!Game\+Logic\+::\+Transformation@{Game\+Logic\+::\+Transformation}}
+\subsubsection{\texorpdfstring{convert\+X\+To\+Screen()}{convertXToScreen()}}
+{\footnotesize\ttfamily double Game\+Logic\+::\+Transformation\+::convert\+X\+To\+Screen (\begin{DoxyParamCaption}\item[{double}]{x }\end{DoxyParamCaption})}
+
+Convert a grid x coordinate to their screen equivalent. 
+\begin{DoxyParams}{Parameters}
+{\em x} & the x value to convert. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the screen equivalent. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGameLogic_1_1Transformation_a6a3d8fd76997ed12fc6dc9640118f405}\label{classGameLogic_1_1Transformation_a6a3d8fd76997ed12fc6dc9640118f405}} 
+\index{Game\+Logic\+::\+Transformation@{Game\+Logic\+::\+Transformation}!convert\+Y\+To\+Screen@{convert\+Y\+To\+Screen}}
+\index{convert\+Y\+To\+Screen@{convert\+Y\+To\+Screen}!Game\+Logic\+::\+Transformation@{Game\+Logic\+::\+Transformation}}
+\subsubsection{\texorpdfstring{convert\+Y\+To\+Screen()}{convertYToScreen()}}
+{\footnotesize\ttfamily double Game\+Logic\+::\+Transformation\+::convert\+Y\+To\+Screen (\begin{DoxyParamCaption}\item[{double}]{y }\end{DoxyParamCaption})}
+
+Convert a grid y coordinate to their screen equivalent. 
+\begin{DoxyParams}{Parameters}
+{\em y} & the y value to convert. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the screen equivalent. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGameLogic_1_1Transformation_a1b76a508913396581f4eeed63e96776d}\label{classGameLogic_1_1Transformation_a1b76a508913396581f4eeed63e96776d}} 
+\index{Game\+Logic\+::\+Transformation@{Game\+Logic\+::\+Transformation}!get\+Instance@{get\+Instance}}
+\index{get\+Instance@{get\+Instance}!Game\+Logic\+::\+Transformation@{Game\+Logic\+::\+Transformation}}
+\subsubsection{\texorpdfstring{get\+Instance()}{getInstance()}}
+{\footnotesize\ttfamily shared\+\_\+ptr$<$ \hyperlink{classGameLogic_1_1Transformation}{Game\+Logic\+::\+Transformation} $>$ Game\+Logic\+::\+Transformation\+::get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Will return the transformation instance if one already exists, if not it will create one. \begin{DoxyReturn}{Returns}
+The transformation instance 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGameLogic_1_1Transformation_a573549aa64a0932387e9ab116e408493}\label{classGameLogic_1_1Transformation_a573549aa64a0932387e9ab116e408493}} 
+\index{Game\+Logic\+::\+Transformation@{Game\+Logic\+::\+Transformation}!is\+In\+Grid@{is\+In\+Grid}}
+\index{is\+In\+Grid@{is\+In\+Grid}!Game\+Logic\+::\+Transformation@{Game\+Logic\+::\+Transformation}}
+\subsubsection{\texorpdfstring{is\+In\+Grid()}{isInGrid()}}
+{\footnotesize\ttfamily bool Game\+Logic\+::\+Transformation\+::is\+In\+Grid (\begin{DoxyParamCaption}\item[{pair$<$ int, int $>$}]{pos }\end{DoxyParamCaption})}
+
+Checks whether the recieved x and y values are between the grid\textquotesingle{}s max and min. 
+\begin{DoxyParams}{Parameters}
+{\em pos} & The position to check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Boolean that is true when it\textquotesingle{}s a valid position. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGameLogic_1_1Transformation_a1a65e0d2527c3c558f5dfe59e0832d52}\label{classGameLogic_1_1Transformation_a1a65e0d2527c3c558f5dfe59e0832d52}} 
+\index{Game\+Logic\+::\+Transformation@{Game\+Logic\+::\+Transformation}!set\+Screen\+Size@{set\+Screen\+Size}}
+\index{set\+Screen\+Size@{set\+Screen\+Size}!Game\+Logic\+::\+Transformation@{Game\+Logic\+::\+Transformation}}
+\subsubsection{\texorpdfstring{set\+Screen\+Size()}{setScreenSize()}}
+{\footnotesize\ttfamily void Game\+Logic\+::\+Transformation\+::set\+Screen\+Size (\begin{DoxyParamCaption}\item[{unsigned int}]{width,  }\item[{unsigned int}]{height }\end{DoxyParamCaption})}
+
+Set the screen size used in calculating the correct screen coordinates. 
+\begin{DoxyParams}{Parameters}
+{\em width} & the width of the screen. \\
+\hline
+{\em height} & the height of the screen. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGameLogic_1_1Transformation_ac1818769a0212075fb865d0495ced12c}\label{classGameLogic_1_1Transformation_ac1818769a0212075fb865d0495ced12c}} 
+\index{Game\+Logic\+::\+Transformation@{Game\+Logic\+::\+Transformation}!set\+X\+Max@{set\+X\+Max}}
+\index{set\+X\+Max@{set\+X\+Max}!Game\+Logic\+::\+Transformation@{Game\+Logic\+::\+Transformation}}
+\subsubsection{\texorpdfstring{set\+X\+Max()}{setXMax()}}
+{\footnotesize\ttfamily void Game\+Logic\+::\+Transformation\+::set\+X\+Max (\begin{DoxyParamCaption}\item[{int}]{x\+Max }\end{DoxyParamCaption})}
+
+Setter for the maximum value of the x value of the grid. Used if you want to change the grid mid game. 
+\begin{DoxyParams}{Parameters}
+{\em x\+Min} & the new x maximum. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGameLogic_1_1Transformation_a69686d5a12ba0e04b6ea7b80e5c874ac}\label{classGameLogic_1_1Transformation_a69686d5a12ba0e04b6ea7b80e5c874ac}} 
+\index{Game\+Logic\+::\+Transformation@{Game\+Logic\+::\+Transformation}!set\+X\+Min@{set\+X\+Min}}
+\index{set\+X\+Min@{set\+X\+Min}!Game\+Logic\+::\+Transformation@{Game\+Logic\+::\+Transformation}}
+\subsubsection{\texorpdfstring{set\+X\+Min()}{setXMin()}}
+{\footnotesize\ttfamily void Game\+Logic\+::\+Transformation\+::set\+X\+Min (\begin{DoxyParamCaption}\item[{int}]{x\+Min }\end{DoxyParamCaption})}
+
+Setter for the minimum value of the x value of the grid. Used if you want to change the grid mid game. 
+\begin{DoxyParams}{Parameters}
+{\em x\+Min} & the new x minimum. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGameLogic_1_1Transformation_a0da7509d874b735240aba51c72f31811}\label{classGameLogic_1_1Transformation_a0da7509d874b735240aba51c72f31811}} 
+\index{Game\+Logic\+::\+Transformation@{Game\+Logic\+::\+Transformation}!set\+Y\+Max@{set\+Y\+Max}}
+\index{set\+Y\+Max@{set\+Y\+Max}!Game\+Logic\+::\+Transformation@{Game\+Logic\+::\+Transformation}}
+\subsubsection{\texorpdfstring{set\+Y\+Max()}{setYMax()}}
+{\footnotesize\ttfamily void Game\+Logic\+::\+Transformation\+::set\+Y\+Max (\begin{DoxyParamCaption}\item[{int}]{y\+Max }\end{DoxyParamCaption})}
+
+Setter for the maximum value of the y value of the grid. Used if you want to change the grid mid game. 
+\begin{DoxyParams}{Parameters}
+{\em x\+Min} & the new y maximum. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGameLogic_1_1Transformation_a8863f56cd8d117a6817d288fa28258bd}\label{classGameLogic_1_1Transformation_a8863f56cd8d117a6817d288fa28258bd}} 
+\index{Game\+Logic\+::\+Transformation@{Game\+Logic\+::\+Transformation}!set\+Y\+Min@{set\+Y\+Min}}
+\index{set\+Y\+Min@{set\+Y\+Min}!Game\+Logic\+::\+Transformation@{Game\+Logic\+::\+Transformation}}
+\subsubsection{\texorpdfstring{set\+Y\+Min()}{setYMin()}}
+{\footnotesize\ttfamily void Game\+Logic\+::\+Transformation\+::set\+Y\+Min (\begin{DoxyParamCaption}\item[{int}]{y\+Min }\end{DoxyParamCaption})}
+
+Setter for the minimum value of the y value of the grid. Used if you want to change the grid mid game. 
+\begin{DoxyParams}{Parameters}
+{\em x\+Min} & the new y minimum. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Game\+Logic/\+Include/\+Game\+Logic/Transformation.\+h\item 
+Game\+Logic/src/Transformation.\+cpp\item 
+main.\+cpp\end{DoxyCompactItemize}

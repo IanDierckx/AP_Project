@@ -1,0 +1,6 @@
+<map id="GameSFML::DoubleShotEnemy" name="GameSFML::DoubleShotEnemy">
+<area shape="rect" id="node2" href="$classGameLogic_1_1DoubleShotEnemy.html" title="Class to represent the DoubleShotEnemy. " alt="" coords="7,229,213,256"/>
+<area shape="rect" id="node3" href="$classGameLogic_1_1BasicEnemy.html" title="GameLogic version of the Basic Enemy class. " alt="" coords="25,155,195,181"/>
+<area shape="rect" id="node4" href="$classGameLogic_1_1Ship.html" title="Class that represents all of the ships in game logic. " alt="" coords="49,80,171,107"/>
+<area shape="rect" id="node5" href="$classGameLogic_1_1Entity.html" title="Base Entity class Base entity class, most classes will be derived from this. " alt="" coords="45,5,175,32"/>
+</map>

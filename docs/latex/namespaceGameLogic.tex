@@ -1,0 +1,60 @@
+\hypertarget{namespaceGameLogic}{}\section{Game\+Logic Namespace Reference}
+\label{namespaceGameLogic}\index{Game\+Logic@{Game\+Logic}}
+
+
+Namespace used for the game logic (a.\+k.\+a. the module of the M\+VC pattern)  
+
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classGameLogic_1_1BasicEnemy}{Basic\+Enemy}
+\begin{DoxyCompactList}\small\item\em \hyperlink{namespaceGameLogic}{Game\+Logic} version of the Basic Enemy class. \end{DoxyCompactList}\item 
+class \hyperlink{classGameLogic_1_1BasicEnemyBullet}{Basic\+Enemy\+Bullet}
+\begin{DoxyCompactList}\small\item\em \hyperlink{namespaceGameLogic}{Game\+Logic} version of \hyperlink{classGameLogic_1_1BasicEnemyBullet}{Basic\+Enemy\+Bullet}. \end{DoxyCompactList}\item 
+class \hyperlink{classGameLogic_1_1Bullet}{Bullet}
+\begin{DoxyCompactList}\small\item\em Class to represent all bullet types in game. \end{DoxyCompactList}\item 
+class \hyperlink{classGameLogic_1_1DoubleShotEnemy}{Double\+Shot\+Enemy}
+\begin{DoxyCompactList}\small\item\em Class to represent the \hyperlink{classGameLogic_1_1DoubleShotEnemy}{Double\+Shot\+Enemy}. \end{DoxyCompactList}\item 
+class \hyperlink{classGameLogic_1_1EnergyBullet}{Energy\+Bullet}
+\item 
+class \hyperlink{classGameLogic_1_1EnergyCannon}{Energy\+Cannon}
+\begin{DoxyCompactList}\small\item\em Class that represents the cannons used for shooting down enemies. \end{DoxyCompactList}\item 
+class \hyperlink{classGameLogic_1_1Entity}{Entity}
+\begin{DoxyCompactList}\small\item\em Base \hyperlink{classGameLogic_1_1Entity}{Entity} class Base entity class, most classes will be derived from this. \end{DoxyCompactList}\item 
+class \hyperlink{classGameLogic_1_1Level}{Level}
+\begin{DoxyCompactList}\small\item\em Class to represent the levels inside the game. \end{DoxyCompactList}\item 
+class \hyperlink{classGameLogic_1_1Player}{Player}
+\begin{DoxyCompactList}\small\item\em Class to represent the player. \end{DoxyCompactList}\item 
+class \hyperlink{classGameLogic_1_1Ship}{Ship}
+\begin{DoxyCompactList}\small\item\em Class that represents all of the ships in game logic. \end{DoxyCompactList}\item 
+class \hyperlink{classGameLogic_1_1Stopwatch}{Stopwatch}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classGameLogic_1_1Stopwatch}{Stopwatch} class to make sure the game runs at the same speed on every pc. \end{DoxyCompactList}\item 
+class \hyperlink{classGameLogic_1_1Transformation}{Transformation}
+\begin{DoxyCompactList}\small\item\em Class used to convert from the game\+Logic grid to screen coordinates. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{namespaceGameLogic_a788b107597480e46241295de1c44670a}{is\+Double\+Equal\+To\+Int} (double dbl, int i, double rounding=0.\+001)
+\begin{DoxyCompactList}\small\item\em Checks whether an int and a double are (close to) equal. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespaceGameLogic_a788b107597480e46241295de1c44670a}\label{namespaceGameLogic_a788b107597480e46241295de1c44670a}} 
+\index{Game\+Logic@{Game\+Logic}!is\+Double\+Equal\+To\+Int@{is\+Double\+Equal\+To\+Int}}
+\index{is\+Double\+Equal\+To\+Int@{is\+Double\+Equal\+To\+Int}!Game\+Logic@{Game\+Logic}}
+\subsubsection{\texorpdfstring{is\+Double\+Equal\+To\+Int()}{isDoubleEqualToInt()}}
+{\footnotesize\ttfamily bool Game\+Logic\+::is\+Double\+Equal\+To\+Int (\begin{DoxyParamCaption}\item[{double}]{dbl,  }\item[{int}]{i,  }\item[{double}]{rounding = {\ttfamily 0.001} }\end{DoxyParamCaption})}
+
+Checks whether an int and a double are equal to each other within a specified rounding error 
+\begin{DoxyParams}{Parameters}
+{\em dbl} & The double that needs checking \\
+\hline
+{\em i} & The int that needs checking \\
+\hline
+{\em rounding} & The rounding error that is allowed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Boolean that is true is they are equal 
+\end{DoxyReturn}

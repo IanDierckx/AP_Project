@@ -1,0 +1,4 @@
+<map id="GameLogic::BasicEnemy" name="GameLogic::BasicEnemy">
+<area shape="rect" id="node2" href="$classGameLogic_1_1Ship.html" title="Class that represents all of the ships in game logic. " alt="" coords="29,80,152,107"/>
+<area shape="rect" id="node3" href="$classGameLogic_1_1Entity.html" title="Base Entity class Base entity class, most classes will be derived from this. " alt="" coords="25,5,156,32"/>
+</map>

@@ -1,0 +1,529 @@
+\hypertarget{classGameLogic_1_1Level}{}\section{Game\+Logic\+:\+:Level Class Reference}
+\label{classGameLogic_1_1Level}\index{Game\+Logic\+::\+Level@{Game\+Logic\+::\+Level}}
+
+
+Class to represent the levels inside the game.  
+
+
+
+
+{\ttfamily \#include $<$Level.\+h$>$}
+
+
+
+Inheritance diagram for Game\+Logic\+:\+:Level\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{classGameLogic_1_1Level__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Game\+Logic\+:\+:Level\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGameLogic_1_1Level__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classGameLogic_1_1Level_a4d6e8cd499b0d78a36f7a2f89f221456}{add\+Enemy\+Ship} (shared\+\_\+ptr$<$ \hyperlink{classGameLogic_1_1BasicEnemy}{Basic\+Enemy} $>$ enemy)
+\begin{DoxyCompactList}\small\item\em Adds a new enemy ship to the level. \end{DoxyCompactList}\item 
+void \hyperlink{classGameLogic_1_1Level_a0d3d5db9311e281b7161c4daff692249}{update\+Grid} ()
+\begin{DoxyCompactList}\small\item\em Updates the grid to accurately represent the current state of the game. \end{DoxyCompactList}\item 
+void \hyperlink{classGameLogic_1_1Level_a42e42fda28e7f43286d9beb166d1e3f9}{add\+Row} (vector$<$ pair$<$ bool, shared\+\_\+ptr$<$ \hyperlink{classGameLogic_1_1Entity}{Entity} $>$$>$$>$ row)
+\begin{DoxyCompactList}\small\item\em Adds a new row to the grid. \end{DoxyCompactList}\item 
+int \hyperlink{classGameLogic_1_1Level_a3c233a241cf2ea7a231186acf2301ec3}{get\+Grid\+\_\+x} () const
+\begin{DoxyCompactList}\small\item\em Getter for the max x value of the grid set by the grid\+\_\+x value of the class. \end{DoxyCompactList}\item 
+void \hyperlink{classGameLogic_1_1Level_ac5f2066f82041e2222b79c427055f424}{set\+Grid\+\_\+x} (int grid\+\_\+x)
+\begin{DoxyCompactList}\small\item\em Setter for the max x value of the grid set by the grid\+\_\+x value of the class. \end{DoxyCompactList}\item 
+int \hyperlink{classGameLogic_1_1Level_a72e96cb117a1de175c2c91eb953f5b74}{get\+Grid\+\_\+y} () const
+\begin{DoxyCompactList}\small\item\em Getter for the max y value of the grid set by the grid\+\_\+y value of the class. \end{DoxyCompactList}\item 
+void \hyperlink{classGameLogic_1_1Level_a23edca6119a73f28b7823f1d6c1df2d6}{set\+Grid\+\_\+y} (int grid\+\_\+y)
+\begin{DoxyCompactList}\small\item\em Setter for the max y value of the grid set by the grid\+\_\+y value of the class. \end{DoxyCompactList}\item 
+void \hyperlink{classGameLogic_1_1Level_a9945b2baf78f44ff61f189846cc59c7a}{add\+Entity\+To\+Grid} (shared\+\_\+ptr$<$ \hyperlink{classGameLogic_1_1Entity}{Entity} $>$ entity)
+\begin{DoxyCompactList}\small\item\em Adds a new entity to the grid. \end{DoxyCompactList}\item 
+shared\+\_\+ptr$<$ \hyperlink{classGameLogic_1_1Player}{Player} $>$ \hyperlink{classGameLogic_1_1Level_a76420d9e37505a2e5cbbbe8c4f57adbe}{get\+Player} () const
+\begin{DoxyCompactList}\small\item\em Function to get the shared pointer to the player. \end{DoxyCompactList}\item 
+void \hyperlink{classGameLogic_1_1Level_a418ab1b60ad2d35ad5983a0ec596dce6}{set\+Player} (shared\+\_\+ptr$<$ \hyperlink{classGameLogic_1_1Player}{Player} $>$ player)
+\begin{DoxyCompactList}\small\item\em Sets the player to the shared pointer of the player entity. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classGameLogic_1_1Level_a72f5b36a0254821aabaaafa48834998b}{update} ()
+\begin{DoxyCompactList}\small\item\em Updates the level. \end{DoxyCompactList}\item 
+bool \hyperlink{classGameLogic_1_1Level_ab4496926ad24689d101de4a2e3702149}{game\+Over} ()
+\begin{DoxyCompactList}\small\item\em Checks whether one of the game over conditions is triggered. \end{DoxyCompactList}\item 
+bool \hyperlink{classGameLogic_1_1Level_a045b9a34d69596868df7c66f47d6912e}{check\+If\+Lowest\+Enemy} (shared\+\_\+ptr$<$ \hyperlink{classGameLogic_1_1BasicEnemy}{Basic\+Enemy} $>$ checked\+Enemy)
+\begin{DoxyCompactList}\small\item\em Checks if there are no enemies below the one checked. \end{DoxyCompactList}\item 
+vector$<$ shared\+\_\+ptr$<$ \hyperlink{classGameLogic_1_1Entity}{Entity} $>$ $>$ \hyperlink{classGameLogic_1_1Level_aa6b01a37c08040974534c00031e8cbed}{get\+Removable\+Entities} ()
+\begin{DoxyCompactList}\small\item\em Returns a vector of entities that should be deleted. \end{DoxyCompactList}\item 
+void \hyperlink{classGameLogic_1_1Level_a6f581d8c053ae5a9d5b6a333b455038f}{remove\+Removable\+Entities} ()
+\begin{DoxyCompactList}\small\item\em Deletes all entities that aren\textquotesingle{}t used anymore. \end{DoxyCompactList}\item 
+bool \hyperlink{classGameLogic_1_1Level_aaf7dd085cfe83d8c59f224f8d0acc6ec}{check\+Collision} (shared\+\_\+ptr$<$ \hyperlink{classGameLogic_1_1Entity}{Entity} $>$ entity1, shared\+\_\+ptr$<$ \hyperlink{classGameLogic_1_1Entity}{Entity} $>$ entity2)
+\begin{DoxyCompactList}\small\item\em Checks if 2 entities collide. \end{DoxyCompactList}\item 
+pair$<$ double, double $>$ \hyperlink{classGameLogic_1_1Level_ae6edaa461fc6cd170387a3d7b3e16d1f}{get\+Upper\+Left\+Corner} (shared\+\_\+ptr$<$ \hyperlink{classGameLogic_1_1Entity}{Entity} $>$ entity)
+\begin{DoxyCompactList}\small\item\em Returns the upperleft corner of the entity. \end{DoxyCompactList}\item 
+pair$<$ double, double $>$ \hyperlink{classGameLogic_1_1Level_a0a4b3dacec30ac1de1a2170082a9d799}{get\+Lower\+Right\+Corner} (shared\+\_\+ptr$<$ \hyperlink{classGameLogic_1_1Entity}{Entity} $>$ entity)
+\begin{DoxyCompactList}\small\item\em Returns the lowerright corner of the entity. \end{DoxyCompactList}\item 
+void \hyperlink{classGameLogic_1_1Level_a9792c2e1bbb52931fe83355fcbb35b89}{check\+Collisions\+Of\+All} ()
+\begin{DoxyCompactList}\small\item\em Check if any entities collide. \end{DoxyCompactList}\item 
+void \hyperlink{classGameLogic_1_1Level_a728ab647770a64be071d4125d7bd5cd6}{add\+Cannon} (shared\+\_\+ptr$<$ \hyperlink{classGameLogic_1_1EnergyCannon}{Energy\+Cannon} $>$ new\+Cannon)
+\begin{DoxyCompactList}\small\item\em Adds a new cannon to the level. \end{DoxyCompactList}\item 
+shared\+\_\+ptr$<$ \hyperlink{classGameLogic_1_1Entity}{Entity} $>$ \hyperlink{classGameLogic_1_1Level_afbe96c6615ae2df79dd3ce90fcedf83a}{get\+Entity\+In\+Grid} (int gridY, int gridX)
+\begin{DoxyCompactList}\small\item\em Returns the entity at the given position in the grid. \end{DoxyCompactList}\item 
+int \hyperlink{classGameLogic_1_1Level_a393075a2f768bf13c35ca338d1785694}{get\+Basic\+Enemy\+Width} () const
+\begin{DoxyCompactList}\small\item\em Getter for the width of the basic enemy. \end{DoxyCompactList}\item 
+int \hyperlink{classGameLogic_1_1Level_a5ff5361f7a4f4ff3ac58c95dfdc2341a}{get\+Basic\+Enemy\+Height} () const
+\begin{DoxyCompactList}\small\item\em Getter for the height of the basic enemy. \end{DoxyCompactList}\item 
+int \hyperlink{classGameLogic_1_1Level_a3e891e1ebca3e64b0fcf85ec6b50ee44}{get\+Player\+Width} () const
+\begin{DoxyCompactList}\small\item\em Getter for the width of the player. \end{DoxyCompactList}\item 
+int \hyperlink{classGameLogic_1_1Level_a6fdeff89393edde1156f75ccab640c79}{get\+Player\+Height} () const
+\begin{DoxyCompactList}\small\item\em Getter for the height of the player. \end{DoxyCompactList}\item 
+int \hyperlink{classGameLogic_1_1Level_a3986fbece7460c76852b0455b433b06d}{get\+Basic\+Enemy\+Bullet\+Width} () const
+\begin{DoxyCompactList}\small\item\em Getter for the width of the basic enemy bullet. \end{DoxyCompactList}\item 
+int \hyperlink{classGameLogic_1_1Level_a5063897104bbf7ff1f2d173cc37a0f57}{get\+Basic\+Enemy\+Bullet\+Height} () const
+\begin{DoxyCompactList}\small\item\em Getter for the height of the basic enemy bullet. \end{DoxyCompactList}\item 
+int \hyperlink{classGameLogic_1_1Level_a20cbcb471e2060a0024c5f7a055a85ce}{get\+Double\+Shot\+Enemy\+Width} () const
+\begin{DoxyCompactList}\small\item\em Getter for the width of the double shot enemy. \end{DoxyCompactList}\item 
+int \hyperlink{classGameLogic_1_1Level_a3196aa721c3d7b09be321ef3bbf0c5e9}{get\+Double\+Shot\+Enemy\+Height} () const
+\begin{DoxyCompactList}\small\item\em Getter for the height of the double shot enemy. \end{DoxyCompactList}\item 
+int \hyperlink{classGameLogic_1_1Level_a423e12a9f87441175f1ae449096ee997}{get\+Cannon\+Width} () const
+\begin{DoxyCompactList}\small\item\em Getter for the width of the cannon. \end{DoxyCompactList}\item 
+int \hyperlink{classGameLogic_1_1Level_ae66002e5cfd3f4404d34e1221505aeef}{get\+Cannon\+Height} () const
+\begin{DoxyCompactList}\small\item\em Getter for the height of the cannon. \end{DoxyCompactList}\item 
+int \hyperlink{classGameLogic_1_1Level_aba38362ae3b9b72fdb883dcf42965f78}{get\+Energy\+Bullet\+Width} () const
+\begin{DoxyCompactList}\small\item\em Getter for the width of the energy bullet. \end{DoxyCompactList}\item 
+int \hyperlink{classGameLogic_1_1Level_aa0b405c02ad398d415b2f378825d2c5b}{get\+Energy\+Bullet\+Height} () const
+\begin{DoxyCompactList}\small\item\em Getter for the height of the energy bullet. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classGameLogic_1_1Level_ad9ac3fbb69cbfe7552a5ce8737a4cfd5}{create\+Player\+Bullet} (double y, double x)
+\begin{DoxyCompactList}\small\item\em Creates a new \hyperlink{classGameLogic_1_1EnergyBullet}{Energy\+Bullet}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGameLogic_1_1Level_aab512e6cb8c1d3d4d703cc7e85d75391}\label{classGameLogic_1_1Level_aab512e6cb8c1d3d4d703cc7e85d75391}} 
+bool {\bfseries won} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGameLogic_1_1Level_a14aad8e997f07e966fa9d51567c6b36e}\label{classGameLogic_1_1Level_a14aad8e997f07e966fa9d51567c6b36e}} 
+vector$<$ shared\+\_\+ptr$<$ \hyperlink{classGameLogic_1_1BasicEnemy}{Basic\+Enemy} $>$ $>$ {\bfseries enemy\+Ships}
+\item 
+\mbox{\Hypertarget{classGameLogic_1_1Level_a4eef9e6b732bf31eabd60484f030ec5a}\label{classGameLogic_1_1Level_a4eef9e6b732bf31eabd60484f030ec5a}} 
+vector$<$ vector$<$ pair$<$ bool, shared\+\_\+ptr$<$ \hyperlink{classGameLogic_1_1Entity}{Entity} $>$ $>$ $>$ $>$ {\bfseries grid}
+\item 
+\mbox{\Hypertarget{classGameLogic_1_1Level_af3af65172662d162fd1309f2c8286540}\label{classGameLogic_1_1Level_af3af65172662d162fd1309f2c8286540}} 
+int {\bfseries grid\+\_\+x} = 9
+\item 
+\mbox{\Hypertarget{classGameLogic_1_1Level_aaef09f1a8d23bcea4d40716f43c85c8e}\label{classGameLogic_1_1Level_aaef09f1a8d23bcea4d40716f43c85c8e}} 
+int {\bfseries grid\+\_\+y} = 7
+\item 
+\mbox{\Hypertarget{classGameLogic_1_1Level_a63e81c693d418fcc56cf38cb210ec812}\label{classGameLogic_1_1Level_a63e81c693d418fcc56cf38cb210ec812}} 
+shared\+\_\+ptr$<$ \hyperlink{classGameLogic_1_1Player}{Player} $>$ {\bfseries player}
+\item 
+\mbox{\Hypertarget{classGameLogic_1_1Level_a1b28ec0b0e9b7e0344dccf60e5c2668b}\label{classGameLogic_1_1Level_a1b28ec0b0e9b7e0344dccf60e5c2668b}} 
+vector$<$ shared\+\_\+ptr$<$ \hyperlink{classGameLogic_1_1BasicEnemy}{Basic\+Enemy} $>$ $>$ {\bfseries enemies\+That\+Can\+Shoot}
+\item 
+\mbox{\Hypertarget{classGameLogic_1_1Level_a6c4303f858a3f1348cf20ae826449bd8}\label{classGameLogic_1_1Level_a6c4303f858a3f1348cf20ae826449bd8}} 
+vector$<$ shared\+\_\+ptr$<$ \hyperlink{classGameLogic_1_1Bullet}{Bullet} $>$ $>$ {\bfseries flying\+Bullets}
+\item 
+\mbox{\Hypertarget{classGameLogic_1_1Level_ad5b6c9ea691cc3e5389fa02b027b6514}\label{classGameLogic_1_1Level_ad5b6c9ea691cc3e5389fa02b027b6514}} 
+vector$<$ shared\+\_\+ptr$<$ \hyperlink{classGameLogic_1_1EnergyCannon}{Energy\+Cannon} $>$ $>$ {\bfseries cannons}
+\item 
+\mbox{\Hypertarget{classGameLogic_1_1Level_a6a13203c180d5e383bb95322492456ce}\label{classGameLogic_1_1Level_a6a13203c180d5e383bb95322492456ce}} 
+bool {\bfseries all\+Enemies\+Defeated} = false
+\item 
+\mbox{\Hypertarget{classGameLogic_1_1Level_ab119c656e9bfb54e0092b07ae220b3b9}\label{classGameLogic_1_1Level_ab119c656e9bfb54e0092b07ae220b3b9}} 
+int {\bfseries basic\+Enemy\+Width} = 48
+\item 
+\mbox{\Hypertarget{classGameLogic_1_1Level_ae895c537c4e22d207106d2d6c53ecd41}\label{classGameLogic_1_1Level_ae895c537c4e22d207106d2d6c53ecd41}} 
+int {\bfseries basic\+Enemy\+Height} = 29
+\item 
+\mbox{\Hypertarget{classGameLogic_1_1Level_a19ba7f37bfef1174c1db7e68edd8b599}\label{classGameLogic_1_1Level_a19ba7f37bfef1174c1db7e68edd8b599}} 
+int {\bfseries player\+Width} = 44
+\item 
+\mbox{\Hypertarget{classGameLogic_1_1Level_a5e7307f10ad9f1560a878c43d349e942}\label{classGameLogic_1_1Level_a5e7307f10ad9f1560a878c43d349e942}} 
+int {\bfseries player\+Height} = 36
+\item 
+\mbox{\Hypertarget{classGameLogic_1_1Level_a4c7f0cdc94125dc1c0f3ee79bb049188}\label{classGameLogic_1_1Level_a4c7f0cdc94125dc1c0f3ee79bb049188}} 
+int {\bfseries basic\+Enemy\+Bullet\+Width} = 14
+\item 
+\mbox{\Hypertarget{classGameLogic_1_1Level_a433aed3c648f8bc0ec023056d8ecd749}\label{classGameLogic_1_1Level_a433aed3c648f8bc0ec023056d8ecd749}} 
+int {\bfseries basic\+Enemy\+Bullet\+Height} = 25
+\item 
+\mbox{\Hypertarget{classGameLogic_1_1Level_a31ac35d0b155297039d13015e94875a6}\label{classGameLogic_1_1Level_a31ac35d0b155297039d13015e94875a6}} 
+int {\bfseries double\+Shot\+Enemy\+Width} = 48
+\item 
+\mbox{\Hypertarget{classGameLogic_1_1Level_a41c7adbbfc65a64ce9b1e1dc3e2e0b67}\label{classGameLogic_1_1Level_a41c7adbbfc65a64ce9b1e1dc3e2e0b67}} 
+int {\bfseries double\+Shot\+Enemy\+Height} = 27
+\item 
+\mbox{\Hypertarget{classGameLogic_1_1Level_a72aaffe845338ab603728c32876472b4}\label{classGameLogic_1_1Level_a72aaffe845338ab603728c32876472b4}} 
+int {\bfseries cannon\+Width} = 36
+\item 
+\mbox{\Hypertarget{classGameLogic_1_1Level_a438cb19565dfc82ba9241d3417bcd07d}\label{classGameLogic_1_1Level_a438cb19565dfc82ba9241d3417bcd07d}} 
+int {\bfseries cannon\+Height} = 34
+\item 
+\mbox{\Hypertarget{classGameLogic_1_1Level_ade726aed7ecf9c403b2f3a6dd2ba381e}\label{classGameLogic_1_1Level_ade726aed7ecf9c403b2f3a6dd2ba381e}} 
+int {\bfseries energy\+Bullet\+Width} = 6
+\item 
+\mbox{\Hypertarget{classGameLogic_1_1Level_ac94d008bc4dec74b60b590ad22f95a75}\label{classGameLogic_1_1Level_ac94d008bc4dec74b60b590ad22f95a75}} 
+int {\bfseries energy\+Bullet\+Height} = 18
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classGameLogic_1_1Level_a728ab647770a64be071d4125d7bd5cd6}\label{classGameLogic_1_1Level_a728ab647770a64be071d4125d7bd5cd6}} 
+\index{Game\+Logic\+::\+Level@{Game\+Logic\+::\+Level}!add\+Cannon@{add\+Cannon}}
+\index{add\+Cannon@{add\+Cannon}!Game\+Logic\+::\+Level@{Game\+Logic\+::\+Level}}
+\subsubsection{\texorpdfstring{add\+Cannon()}{addCannon()}}
+{\footnotesize\ttfamily void Game\+Logic\+::\+Level\+::add\+Cannon (\begin{DoxyParamCaption}\item[{shared\+\_\+ptr$<$ \hyperlink{classGameLogic_1_1EnergyCannon}{Energy\+Cannon} $>$}]{new\+Cannon }\end{DoxyParamCaption})}
+
+Adds a new cannon to the level. 
+\begin{DoxyParams}{Parameters}
+{\em new\+Cannon} & The cannon to add. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGameLogic_1_1Level_a4d6e8cd499b0d78a36f7a2f89f221456}\label{classGameLogic_1_1Level_a4d6e8cd499b0d78a36f7a2f89f221456}} 
+\index{Game\+Logic\+::\+Level@{Game\+Logic\+::\+Level}!add\+Enemy\+Ship@{add\+Enemy\+Ship}}
+\index{add\+Enemy\+Ship@{add\+Enemy\+Ship}!Game\+Logic\+::\+Level@{Game\+Logic\+::\+Level}}
+\subsubsection{\texorpdfstring{add\+Enemy\+Ship()}{addEnemyShip()}}
+{\footnotesize\ttfamily void Game\+Logic\+::\+Level\+::add\+Enemy\+Ship (\begin{DoxyParamCaption}\item[{shared\+\_\+ptr$<$ \hyperlink{classGameLogic_1_1BasicEnemy}{Basic\+Enemy} $>$}]{enemy }\end{DoxyParamCaption})}
+
+Function to add a new \hyperlink{classGameLogic_1_1Ship}{Ship} entity to the vector of enemy ships 
+\begin{DoxyParams}{Parameters}
+{\em ship} & shared pointer to the new enemy ship to add \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGameLogic_1_1Level_a9945b2baf78f44ff61f189846cc59c7a}\label{classGameLogic_1_1Level_a9945b2baf78f44ff61f189846cc59c7a}} 
+\index{Game\+Logic\+::\+Level@{Game\+Logic\+::\+Level}!add\+Entity\+To\+Grid@{add\+Entity\+To\+Grid}}
+\index{add\+Entity\+To\+Grid@{add\+Entity\+To\+Grid}!Game\+Logic\+::\+Level@{Game\+Logic\+::\+Level}}
+\subsubsection{\texorpdfstring{add\+Entity\+To\+Grid()}{addEntityToGrid()}}
+{\footnotesize\ttfamily void Game\+Logic\+::\+Level\+::add\+Entity\+To\+Grid (\begin{DoxyParamCaption}\item[{shared\+\_\+ptr$<$ \hyperlink{classGameLogic_1_1Entity}{Entity} $>$}]{entity }\end{DoxyParamCaption})}
+
+Adds a new entity to the grid. Position in the grid is determined by the position value of the entity 
+\begin{DoxyParams}{Parameters}
+{\em entity} & Shared pointer to the entity that needs to be added \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGameLogic_1_1Level_a42e42fda28e7f43286d9beb166d1e3f9}\label{classGameLogic_1_1Level_a42e42fda28e7f43286d9beb166d1e3f9}} 
+\index{Game\+Logic\+::\+Level@{Game\+Logic\+::\+Level}!add\+Row@{add\+Row}}
+\index{add\+Row@{add\+Row}!Game\+Logic\+::\+Level@{Game\+Logic\+::\+Level}}
+\subsubsection{\texorpdfstring{add\+Row()}{addRow()}}
+{\footnotesize\ttfamily void Game\+Logic\+::\+Level\+::add\+Row (\begin{DoxyParamCaption}\item[{vector$<$ pair$<$ bool, shared\+\_\+ptr$<$ \hyperlink{classGameLogic_1_1Entity}{Entity} $>$$>$$>$}]{row }\end{DoxyParamCaption})}
+
+Function adds a new row to the grid, mostly used to add a empty row when setting up the grid 
+\begin{DoxyParams}{Parameters}
+{\em row} & Vector that represents the row that gets added to the grid \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGameLogic_1_1Level_aaf7dd085cfe83d8c59f224f8d0acc6ec}\label{classGameLogic_1_1Level_aaf7dd085cfe83d8c59f224f8d0acc6ec}} 
+\index{Game\+Logic\+::\+Level@{Game\+Logic\+::\+Level}!check\+Collision@{check\+Collision}}
+\index{check\+Collision@{check\+Collision}!Game\+Logic\+::\+Level@{Game\+Logic\+::\+Level}}
+\subsubsection{\texorpdfstring{check\+Collision()}{checkCollision()}}
+{\footnotesize\ttfamily bool Game\+Logic\+::\+Level\+::check\+Collision (\begin{DoxyParamCaption}\item[{shared\+\_\+ptr$<$ \hyperlink{classGameLogic_1_1Entity}{Entity} $>$}]{entity1,  }\item[{shared\+\_\+ptr$<$ \hyperlink{classGameLogic_1_1Entity}{Entity} $>$}]{entity2 }\end{DoxyParamCaption})}
+
+Returns a boolean that represents is 2 entities collide or not. 
+\begin{DoxyParams}{Parameters}
+{\em entity1} & First entity to check. \\
+\hline
+{\em entity2} & Second entity to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true if the entities collide. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGameLogic_1_1Level_a9792c2e1bbb52931fe83355fcbb35b89}\label{classGameLogic_1_1Level_a9792c2e1bbb52931fe83355fcbb35b89}} 
+\index{Game\+Logic\+::\+Level@{Game\+Logic\+::\+Level}!check\+Collisions\+Of\+All@{check\+Collisions\+Of\+All}}
+\index{check\+Collisions\+Of\+All@{check\+Collisions\+Of\+All}!Game\+Logic\+::\+Level@{Game\+Logic\+::\+Level}}
+\subsubsection{\texorpdfstring{check\+Collisions\+Of\+All()}{checkCollisionsOfAll()}}
+{\footnotesize\ttfamily void Game\+Logic\+::\+Level\+::check\+Collisions\+Of\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Check if any entities collide. \mbox{\Hypertarget{classGameLogic_1_1Level_a045b9a34d69596868df7c66f47d6912e}\label{classGameLogic_1_1Level_a045b9a34d69596868df7c66f47d6912e}} 
+\index{Game\+Logic\+::\+Level@{Game\+Logic\+::\+Level}!check\+If\+Lowest\+Enemy@{check\+If\+Lowest\+Enemy}}
+\index{check\+If\+Lowest\+Enemy@{check\+If\+Lowest\+Enemy}!Game\+Logic\+::\+Level@{Game\+Logic\+::\+Level}}
+\subsubsection{\texorpdfstring{check\+If\+Lowest\+Enemy()}{checkIfLowestEnemy()}}
+{\footnotesize\ttfamily bool Game\+Logic\+::\+Level\+::check\+If\+Lowest\+Enemy (\begin{DoxyParamCaption}\item[{shared\+\_\+ptr$<$ \hyperlink{classGameLogic_1_1BasicEnemy}{Basic\+Enemy} $>$}]{checked\+Enemy }\end{DoxyParamCaption})}
+
+Checks if there are no enemies below the one checked. 
+\begin{DoxyParams}{Parameters}
+{\em checked\+Enemy} & the enemy we want to check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if there are no enemies below it. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGameLogic_1_1Level_ad9ac3fbb69cbfe7552a5ce8737a4cfd5}\label{classGameLogic_1_1Level_ad9ac3fbb69cbfe7552a5ce8737a4cfd5}} 
+\index{Game\+Logic\+::\+Level@{Game\+Logic\+::\+Level}!create\+Player\+Bullet@{create\+Player\+Bullet}}
+\index{create\+Player\+Bullet@{create\+Player\+Bullet}!Game\+Logic\+::\+Level@{Game\+Logic\+::\+Level}}
+\subsubsection{\texorpdfstring{create\+Player\+Bullet()}{createPlayerBullet()}}
+{\footnotesize\ttfamily void Game\+Logic\+::\+Level\+::create\+Player\+Bullet (\begin{DoxyParamCaption}\item[{double}]{y,  }\item[{double}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Creates a new \hyperlink{classGameLogic_1_1EnergyBullet}{Energy\+Bullet}. 
+\begin{DoxyParams}{Parameters}
+{\em y} & The Y coordinate of the cannon that fires the bullet. \\
+\hline
+{\em x} & The X coordinate of the cannon that fires the bullet. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{classGameSFML_1_1Level_adafff50ab250a1d85f1b1d48c085bac1}{Game\+S\+F\+M\+L\+::\+Level}.
+
+\mbox{\Hypertarget{classGameLogic_1_1Level_ab4496926ad24689d101de4a2e3702149}\label{classGameLogic_1_1Level_ab4496926ad24689d101de4a2e3702149}} 
+\index{Game\+Logic\+::\+Level@{Game\+Logic\+::\+Level}!game\+Over@{game\+Over}}
+\index{game\+Over@{game\+Over}!Game\+Logic\+::\+Level@{Game\+Logic\+::\+Level}}
+\subsubsection{\texorpdfstring{game\+Over()}{gameOver()}}
+{\footnotesize\ttfamily bool Game\+Logic\+::\+Level\+::game\+Over (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Function checks whether one of the game over/level over conditions is triggered (need to separate those) \begin{DoxyReturn}{Returns}
+Boolean that equals true if one of the conditions is triggered 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGameLogic_1_1Level_a5063897104bbf7ff1f2d173cc37a0f57}\label{classGameLogic_1_1Level_a5063897104bbf7ff1f2d173cc37a0f57}} 
+\index{Game\+Logic\+::\+Level@{Game\+Logic\+::\+Level}!get\+Basic\+Enemy\+Bullet\+Height@{get\+Basic\+Enemy\+Bullet\+Height}}
+\index{get\+Basic\+Enemy\+Bullet\+Height@{get\+Basic\+Enemy\+Bullet\+Height}!Game\+Logic\+::\+Level@{Game\+Logic\+::\+Level}}
+\subsubsection{\texorpdfstring{get\+Basic\+Enemy\+Bullet\+Height()}{getBasicEnemyBulletHeight()}}
+{\footnotesize\ttfamily int Game\+Logic\+::\+Level\+::get\+Basic\+Enemy\+Bullet\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Getter for the height of the basic enemy bullet. \begin{DoxyReturn}{Returns}
+the height of the basic enemy bullet. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGameLogic_1_1Level_a3986fbece7460c76852b0455b433b06d}\label{classGameLogic_1_1Level_a3986fbece7460c76852b0455b433b06d}} 
+\index{Game\+Logic\+::\+Level@{Game\+Logic\+::\+Level}!get\+Basic\+Enemy\+Bullet\+Width@{get\+Basic\+Enemy\+Bullet\+Width}}
+\index{get\+Basic\+Enemy\+Bullet\+Width@{get\+Basic\+Enemy\+Bullet\+Width}!Game\+Logic\+::\+Level@{Game\+Logic\+::\+Level}}
+\subsubsection{\texorpdfstring{get\+Basic\+Enemy\+Bullet\+Width()}{getBasicEnemyBulletWidth()}}
+{\footnotesize\ttfamily int Game\+Logic\+::\+Level\+::get\+Basic\+Enemy\+Bullet\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Getter for the width of the basic enemy bullet. \begin{DoxyReturn}{Returns}
+the width of the basic enemy bullet. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGameLogic_1_1Level_a5ff5361f7a4f4ff3ac58c95dfdc2341a}\label{classGameLogic_1_1Level_a5ff5361f7a4f4ff3ac58c95dfdc2341a}} 
+\index{Game\+Logic\+::\+Level@{Game\+Logic\+::\+Level}!get\+Basic\+Enemy\+Height@{get\+Basic\+Enemy\+Height}}
+\index{get\+Basic\+Enemy\+Height@{get\+Basic\+Enemy\+Height}!Game\+Logic\+::\+Level@{Game\+Logic\+::\+Level}}
+\subsubsection{\texorpdfstring{get\+Basic\+Enemy\+Height()}{getBasicEnemyHeight()}}
+{\footnotesize\ttfamily int Game\+Logic\+::\+Level\+::get\+Basic\+Enemy\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Getter for the height of the basic enemy. \begin{DoxyReturn}{Returns}
+the height of the basic enemy. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGameLogic_1_1Level_a393075a2f768bf13c35ca338d1785694}\label{classGameLogic_1_1Level_a393075a2f768bf13c35ca338d1785694}} 
+\index{Game\+Logic\+::\+Level@{Game\+Logic\+::\+Level}!get\+Basic\+Enemy\+Width@{get\+Basic\+Enemy\+Width}}
+\index{get\+Basic\+Enemy\+Width@{get\+Basic\+Enemy\+Width}!Game\+Logic\+::\+Level@{Game\+Logic\+::\+Level}}
+\subsubsection{\texorpdfstring{get\+Basic\+Enemy\+Width()}{getBasicEnemyWidth()}}
+{\footnotesize\ttfamily int Game\+Logic\+::\+Level\+::get\+Basic\+Enemy\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Getter for the width of the basic enemy. \begin{DoxyReturn}{Returns}
+the width of the basic enemy. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGameLogic_1_1Level_ae66002e5cfd3f4404d34e1221505aeef}\label{classGameLogic_1_1Level_ae66002e5cfd3f4404d34e1221505aeef}} 
+\index{Game\+Logic\+::\+Level@{Game\+Logic\+::\+Level}!get\+Cannon\+Height@{get\+Cannon\+Height}}
+\index{get\+Cannon\+Height@{get\+Cannon\+Height}!Game\+Logic\+::\+Level@{Game\+Logic\+::\+Level}}
+\subsubsection{\texorpdfstring{get\+Cannon\+Height()}{getCannonHeight()}}
+{\footnotesize\ttfamily int Game\+Logic\+::\+Level\+::get\+Cannon\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Getter for the height of the cannon. \begin{DoxyReturn}{Returns}
+the height of the cannon. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGameLogic_1_1Level_a423e12a9f87441175f1ae449096ee997}\label{classGameLogic_1_1Level_a423e12a9f87441175f1ae449096ee997}} 
+\index{Game\+Logic\+::\+Level@{Game\+Logic\+::\+Level}!get\+Cannon\+Width@{get\+Cannon\+Width}}
+\index{get\+Cannon\+Width@{get\+Cannon\+Width}!Game\+Logic\+::\+Level@{Game\+Logic\+::\+Level}}
+\subsubsection{\texorpdfstring{get\+Cannon\+Width()}{getCannonWidth()}}
+{\footnotesize\ttfamily int Game\+Logic\+::\+Level\+::get\+Cannon\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Getter for the width of the cannon. \begin{DoxyReturn}{Returns}
+the width of the cannon. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGameLogic_1_1Level_a3196aa721c3d7b09be321ef3bbf0c5e9}\label{classGameLogic_1_1Level_a3196aa721c3d7b09be321ef3bbf0c5e9}} 
+\index{Game\+Logic\+::\+Level@{Game\+Logic\+::\+Level}!get\+Double\+Shot\+Enemy\+Height@{get\+Double\+Shot\+Enemy\+Height}}
+\index{get\+Double\+Shot\+Enemy\+Height@{get\+Double\+Shot\+Enemy\+Height}!Game\+Logic\+::\+Level@{Game\+Logic\+::\+Level}}
+\subsubsection{\texorpdfstring{get\+Double\+Shot\+Enemy\+Height()}{getDoubleShotEnemyHeight()}}
+{\footnotesize\ttfamily int Game\+Logic\+::\+Level\+::get\+Double\+Shot\+Enemy\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Getter for the height of the double shot enemy. \begin{DoxyReturn}{Returns}
+the height of the double shot enemy. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGameLogic_1_1Level_a20cbcb471e2060a0024c5f7a055a85ce}\label{classGameLogic_1_1Level_a20cbcb471e2060a0024c5f7a055a85ce}} 
+\index{Game\+Logic\+::\+Level@{Game\+Logic\+::\+Level}!get\+Double\+Shot\+Enemy\+Width@{get\+Double\+Shot\+Enemy\+Width}}
+\index{get\+Double\+Shot\+Enemy\+Width@{get\+Double\+Shot\+Enemy\+Width}!Game\+Logic\+::\+Level@{Game\+Logic\+::\+Level}}
+\subsubsection{\texorpdfstring{get\+Double\+Shot\+Enemy\+Width()}{getDoubleShotEnemyWidth()}}
+{\footnotesize\ttfamily int Game\+Logic\+::\+Level\+::get\+Double\+Shot\+Enemy\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Getter for the width of the double shot enemy. \begin{DoxyReturn}{Returns}
+the width of the double shot enemy. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGameLogic_1_1Level_aa0b405c02ad398d415b2f378825d2c5b}\label{classGameLogic_1_1Level_aa0b405c02ad398d415b2f378825d2c5b}} 
+\index{Game\+Logic\+::\+Level@{Game\+Logic\+::\+Level}!get\+Energy\+Bullet\+Height@{get\+Energy\+Bullet\+Height}}
+\index{get\+Energy\+Bullet\+Height@{get\+Energy\+Bullet\+Height}!Game\+Logic\+::\+Level@{Game\+Logic\+::\+Level}}
+\subsubsection{\texorpdfstring{get\+Energy\+Bullet\+Height()}{getEnergyBulletHeight()}}
+{\footnotesize\ttfamily int Game\+Logic\+::\+Level\+::get\+Energy\+Bullet\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Getter for the height of the energy bullet. \begin{DoxyReturn}{Returns}
+the height of the energy bullet. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGameLogic_1_1Level_aba38362ae3b9b72fdb883dcf42965f78}\label{classGameLogic_1_1Level_aba38362ae3b9b72fdb883dcf42965f78}} 
+\index{Game\+Logic\+::\+Level@{Game\+Logic\+::\+Level}!get\+Energy\+Bullet\+Width@{get\+Energy\+Bullet\+Width}}
+\index{get\+Energy\+Bullet\+Width@{get\+Energy\+Bullet\+Width}!Game\+Logic\+::\+Level@{Game\+Logic\+::\+Level}}
+\subsubsection{\texorpdfstring{get\+Energy\+Bullet\+Width()}{getEnergyBulletWidth()}}
+{\footnotesize\ttfamily int Game\+Logic\+::\+Level\+::get\+Energy\+Bullet\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Getter for the width of the energy bullet. \begin{DoxyReturn}{Returns}
+the width of the energy bullet. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGameLogic_1_1Level_afbe96c6615ae2df79dd3ce90fcedf83a}\label{classGameLogic_1_1Level_afbe96c6615ae2df79dd3ce90fcedf83a}} 
+\index{Game\+Logic\+::\+Level@{Game\+Logic\+::\+Level}!get\+Entity\+In\+Grid@{get\+Entity\+In\+Grid}}
+\index{get\+Entity\+In\+Grid@{get\+Entity\+In\+Grid}!Game\+Logic\+::\+Level@{Game\+Logic\+::\+Level}}
+\subsubsection{\texorpdfstring{get\+Entity\+In\+Grid()}{getEntityInGrid()}}
+{\footnotesize\ttfamily shared\+\_\+ptr$<$ \hyperlink{classGameLogic_1_1Entity}{Entity} $>$ Game\+Logic\+::\+Level\+::get\+Entity\+In\+Grid (\begin{DoxyParamCaption}\item[{int}]{gridY,  }\item[{int}]{gridX }\end{DoxyParamCaption})}
+
+Returns the entity at the given position in the grid. 
+\begin{DoxyParams}{Parameters}
+{\em gridY} & Y coordinate of the grid. \\
+\hline
+{\em gridX} & X coordinate of the grid. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If entity found a pointer to it, otherwise a nullpointer. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGameLogic_1_1Level_a3c233a241cf2ea7a231186acf2301ec3}\label{classGameLogic_1_1Level_a3c233a241cf2ea7a231186acf2301ec3}} 
+\index{Game\+Logic\+::\+Level@{Game\+Logic\+::\+Level}!get\+Grid\+\_\+x@{get\+Grid\+\_\+x}}
+\index{get\+Grid\+\_\+x@{get\+Grid\+\_\+x}!Game\+Logic\+::\+Level@{Game\+Logic\+::\+Level}}
+\subsubsection{\texorpdfstring{get\+Grid\+\_\+x()}{getGrid\_x()}}
+{\footnotesize\ttfamily int Game\+Logic\+::\+Level\+::get\+Grid\+\_\+x (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+Integer that is the max x value of the grid 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGameLogic_1_1Level_a72e96cb117a1de175c2c91eb953f5b74}\label{classGameLogic_1_1Level_a72e96cb117a1de175c2c91eb953f5b74}} 
+\index{Game\+Logic\+::\+Level@{Game\+Logic\+::\+Level}!get\+Grid\+\_\+y@{get\+Grid\+\_\+y}}
+\index{get\+Grid\+\_\+y@{get\+Grid\+\_\+y}!Game\+Logic\+::\+Level@{Game\+Logic\+::\+Level}}
+\subsubsection{\texorpdfstring{get\+Grid\+\_\+y()}{getGrid\_y()}}
+{\footnotesize\ttfamily int Game\+Logic\+::\+Level\+::get\+Grid\+\_\+y (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+Integer that is the max y value of the grid 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGameLogic_1_1Level_a0a4b3dacec30ac1de1a2170082a9d799}\label{classGameLogic_1_1Level_a0a4b3dacec30ac1de1a2170082a9d799}} 
+\index{Game\+Logic\+::\+Level@{Game\+Logic\+::\+Level}!get\+Lower\+Right\+Corner@{get\+Lower\+Right\+Corner}}
+\index{get\+Lower\+Right\+Corner@{get\+Lower\+Right\+Corner}!Game\+Logic\+::\+Level@{Game\+Logic\+::\+Level}}
+\subsubsection{\texorpdfstring{get\+Lower\+Right\+Corner()}{getLowerRightCorner()}}
+{\footnotesize\ttfamily pair$<$ double, double $>$ Game\+Logic\+::\+Level\+::get\+Lower\+Right\+Corner (\begin{DoxyParamCaption}\item[{shared\+\_\+ptr$<$ \hyperlink{classGameLogic_1_1Entity}{Entity} $>$}]{entity }\end{DoxyParamCaption})}
+
+Returns the lowerright corner of the entity in the forms of a pair with the y coordinate first. 
+\begin{DoxyParams}{Parameters}
+{\em entity} & The entity we want the corner of. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The corner in the form of a pair with the y coordinate first. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGameLogic_1_1Level_a76420d9e37505a2e5cbbbe8c4f57adbe}\label{classGameLogic_1_1Level_a76420d9e37505a2e5cbbbe8c4f57adbe}} 
+\index{Game\+Logic\+::\+Level@{Game\+Logic\+::\+Level}!get\+Player@{get\+Player}}
+\index{get\+Player@{get\+Player}!Game\+Logic\+::\+Level@{Game\+Logic\+::\+Level}}
+\subsubsection{\texorpdfstring{get\+Player()}{getPlayer()}}
+{\footnotesize\ttfamily shared\+\_\+ptr$<$ \hyperlink{classGameLogic_1_1Player}{Player} $>$ Game\+Logic\+::\+Level\+::get\+Player (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the shared pointer to the player entity \begin{DoxyReturn}{Returns}
+The shared pointer to the player entity 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGameLogic_1_1Level_a6fdeff89393edde1156f75ccab640c79}\label{classGameLogic_1_1Level_a6fdeff89393edde1156f75ccab640c79}} 
+\index{Game\+Logic\+::\+Level@{Game\+Logic\+::\+Level}!get\+Player\+Height@{get\+Player\+Height}}
+\index{get\+Player\+Height@{get\+Player\+Height}!Game\+Logic\+::\+Level@{Game\+Logic\+::\+Level}}
+\subsubsection{\texorpdfstring{get\+Player\+Height()}{getPlayerHeight()}}
+{\footnotesize\ttfamily int Game\+Logic\+::\+Level\+::get\+Player\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Getter for the height of the player. \begin{DoxyReturn}{Returns}
+the height of the player. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGameLogic_1_1Level_a3e891e1ebca3e64b0fcf85ec6b50ee44}\label{classGameLogic_1_1Level_a3e891e1ebca3e64b0fcf85ec6b50ee44}} 
+\index{Game\+Logic\+::\+Level@{Game\+Logic\+::\+Level}!get\+Player\+Width@{get\+Player\+Width}}
+\index{get\+Player\+Width@{get\+Player\+Width}!Game\+Logic\+::\+Level@{Game\+Logic\+::\+Level}}
+\subsubsection{\texorpdfstring{get\+Player\+Width()}{getPlayerWidth()}}
+{\footnotesize\ttfamily int Game\+Logic\+::\+Level\+::get\+Player\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Getter for the width of the player. \begin{DoxyReturn}{Returns}
+the width of the player. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGameLogic_1_1Level_aa6b01a37c08040974534c00031e8cbed}\label{classGameLogic_1_1Level_aa6b01a37c08040974534c00031e8cbed}} 
+\index{Game\+Logic\+::\+Level@{Game\+Logic\+::\+Level}!get\+Removable\+Entities@{get\+Removable\+Entities}}
+\index{get\+Removable\+Entities@{get\+Removable\+Entities}!Game\+Logic\+::\+Level@{Game\+Logic\+::\+Level}}
+\subsubsection{\texorpdfstring{get\+Removable\+Entities()}{getRemovableEntities()}}
+{\footnotesize\ttfamily vector$<$ shared\+\_\+ptr$<$ \hyperlink{classGameLogic_1_1Entity}{Entity} $>$ $>$ Game\+Logic\+::\+Level\+::get\+Removable\+Entities (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns a vector of entities that should be deleted. \begin{DoxyReturn}{Returns}
+A vector of entities that should be deleted. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGameLogic_1_1Level_ae6edaa461fc6cd170387a3d7b3e16d1f}\label{classGameLogic_1_1Level_ae6edaa461fc6cd170387a3d7b3e16d1f}} 
+\index{Game\+Logic\+::\+Level@{Game\+Logic\+::\+Level}!get\+Upper\+Left\+Corner@{get\+Upper\+Left\+Corner}}
+\index{get\+Upper\+Left\+Corner@{get\+Upper\+Left\+Corner}!Game\+Logic\+::\+Level@{Game\+Logic\+::\+Level}}
+\subsubsection{\texorpdfstring{get\+Upper\+Left\+Corner()}{getUpperLeftCorner()}}
+{\footnotesize\ttfamily pair$<$ double, double $>$ Game\+Logic\+::\+Level\+::get\+Upper\+Left\+Corner (\begin{DoxyParamCaption}\item[{shared\+\_\+ptr$<$ \hyperlink{classGameLogic_1_1Entity}{Entity} $>$}]{entity }\end{DoxyParamCaption})}
+
+Returns the upperleft corner of the entity in the forms of a pair with the y coordinate first. 
+\begin{DoxyParams}{Parameters}
+{\em entity} & The entity we want the corner of. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The corner in the form of a pair with the y coordinate first. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGameLogic_1_1Level_a6f581d8c053ae5a9d5b6a333b455038f}\label{classGameLogic_1_1Level_a6f581d8c053ae5a9d5b6a333b455038f}} 
+\index{Game\+Logic\+::\+Level@{Game\+Logic\+::\+Level}!remove\+Removable\+Entities@{remove\+Removable\+Entities}}
+\index{remove\+Removable\+Entities@{remove\+Removable\+Entities}!Game\+Logic\+::\+Level@{Game\+Logic\+::\+Level}}
+\subsubsection{\texorpdfstring{remove\+Removable\+Entities()}{removeRemovableEntities()}}
+{\footnotesize\ttfamily void Game\+Logic\+::\+Level\+::remove\+Removable\+Entities (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Deletes all entities that aren\textquotesingle{}t used anymore. \mbox{\Hypertarget{classGameLogic_1_1Level_ac5f2066f82041e2222b79c427055f424}\label{classGameLogic_1_1Level_ac5f2066f82041e2222b79c427055f424}} 
+\index{Game\+Logic\+::\+Level@{Game\+Logic\+::\+Level}!set\+Grid\+\_\+x@{set\+Grid\+\_\+x}}
+\index{set\+Grid\+\_\+x@{set\+Grid\+\_\+x}!Game\+Logic\+::\+Level@{Game\+Logic\+::\+Level}}
+\subsubsection{\texorpdfstring{set\+Grid\+\_\+x()}{setGrid\_x()}}
+{\footnotesize\ttfamily void Game\+Logic\+::\+Level\+::set\+Grid\+\_\+x (\begin{DoxyParamCaption}\item[{int}]{grid\+\_\+x }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em grid\+\_\+x} & The integer value to set the max x value of the grid to. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGameLogic_1_1Level_a23edca6119a73f28b7823f1d6c1df2d6}\label{classGameLogic_1_1Level_a23edca6119a73f28b7823f1d6c1df2d6}} 
+\index{Game\+Logic\+::\+Level@{Game\+Logic\+::\+Level}!set\+Grid\+\_\+y@{set\+Grid\+\_\+y}}
+\index{set\+Grid\+\_\+y@{set\+Grid\+\_\+y}!Game\+Logic\+::\+Level@{Game\+Logic\+::\+Level}}
+\subsubsection{\texorpdfstring{set\+Grid\+\_\+y()}{setGrid\_y()}}
+{\footnotesize\ttfamily void Game\+Logic\+::\+Level\+::set\+Grid\+\_\+y (\begin{DoxyParamCaption}\item[{int}]{grid\+\_\+y }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em grid\+\_\+y} & The integer value to set the max y value of the grid to. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGameLogic_1_1Level_a418ab1b60ad2d35ad5983a0ec596dce6}\label{classGameLogic_1_1Level_a418ab1b60ad2d35ad5983a0ec596dce6}} 
+\index{Game\+Logic\+::\+Level@{Game\+Logic\+::\+Level}!set\+Player@{set\+Player}}
+\index{set\+Player@{set\+Player}!Game\+Logic\+::\+Level@{Game\+Logic\+::\+Level}}
+\subsubsection{\texorpdfstring{set\+Player()}{setPlayer()}}
+{\footnotesize\ttfamily void Game\+Logic\+::\+Level\+::set\+Player (\begin{DoxyParamCaption}\item[{shared\+\_\+ptr$<$ \hyperlink{classGameLogic_1_1Player}{Player} $>$}]{player }\end{DoxyParamCaption})}
+
+Set the player, used only when parsing the level 
+\begin{DoxyParams}{Parameters}
+{\em player} & The shared pointer to the p\mbox{[}ayer \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGameLogic_1_1Level_a72f5b36a0254821aabaaafa48834998b}\label{classGameLogic_1_1Level_a72f5b36a0254821aabaaafa48834998b}} 
+\index{Game\+Logic\+::\+Level@{Game\+Logic\+::\+Level}!update@{update}}
+\index{update@{update}!Game\+Logic\+::\+Level@{Game\+Logic\+::\+Level}}
+\subsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Game\+Logic\+::\+Level\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Function updates the level by moving all enemies to their next position by calling their move function, checking if enemies can fire and updating the grid. 
+
+Reimplemented in \hyperlink{classGameSFML_1_1Level_ab98f7a9ceb040bef609c2c96990707ba}{Game\+S\+F\+M\+L\+::\+Level}.
+
+\mbox{\Hypertarget{classGameLogic_1_1Level_a0d3d5db9311e281b7161c4daff692249}\label{classGameLogic_1_1Level_a0d3d5db9311e281b7161c4daff692249}} 
+\index{Game\+Logic\+::\+Level@{Game\+Logic\+::\+Level}!update\+Grid@{update\+Grid}}
+\index{update\+Grid@{update\+Grid}!Game\+Logic\+::\+Level@{Game\+Logic\+::\+Level}}
+\subsubsection{\texorpdfstring{update\+Grid()}{updateGrid()}}
+{\footnotesize\ttfamily void Game\+Logic\+::\+Level\+::update\+Grid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Function updates the state of the grid so all entity are in the correct position of the grid according to their position value 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Game\+Logic/\+Include/\+Game\+Logic/Level.\+h\item 
+Game\+Logic/src/Level.\+cpp\end{DoxyCompactItemize}

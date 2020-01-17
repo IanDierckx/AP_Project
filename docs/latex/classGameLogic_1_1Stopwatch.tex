@@ -1,0 +1,71 @@
+\hypertarget{classGameLogic_1_1Stopwatch}{}\section{Game\+Logic\+:\+:Stopwatch Class Reference}
+\label{classGameLogic_1_1Stopwatch}\index{Game\+Logic\+::\+Stopwatch@{Game\+Logic\+::\+Stopwatch}}
+
+
+\hyperlink{classGameLogic_1_1Stopwatch}{Stopwatch} class to make sure the game runs at the same speed on every pc.  
+
+
+
+
+{\ttfamily \#include $<$Stopwatch.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+clock\+\_\+t \hyperlink{classGameLogic_1_1Stopwatch_a630ec6e48b90673127a033d18dd4d570}{get\+Start\+\_\+clock} () const
+\begin{DoxyCompactList}\small\item\em Function returns when the clock was last started. \end{DoxyCompactList}\item 
+void \hyperlink{classGameLogic_1_1Stopwatch_a8490b96964e128c93be7133e7a5386a5}{reset} ()
+\begin{DoxyCompactList}\small\item\em Resets the clock. \end{DoxyCompactList}\item 
+double \hyperlink{classGameLogic_1_1Stopwatch_a71ca51fb998fd7c16a64bf6f13ce8faa}{get\+Time\+Passed} ()
+\begin{DoxyCompactList}\small\item\em Returns how much time has passed since the last time the clock was started. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static shared\+\_\+ptr$<$ \hyperlink{classGameLogic_1_1Stopwatch}{Stopwatch} $>$ \hyperlink{classGameLogic_1_1Stopwatch_aaca0b7d8b21eb26ed2acb4cbd63fe208}{get\+Instance} ()
+\begin{DoxyCompactList}\small\item\em Function to get the stopwatch instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classGameLogic_1_1Stopwatch}{Stopwatch} class to make sure the game runs at the same speed on every pc. Uses the singleton patterns. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classGameLogic_1_1Stopwatch_aaca0b7d8b21eb26ed2acb4cbd63fe208}\label{classGameLogic_1_1Stopwatch_aaca0b7d8b21eb26ed2acb4cbd63fe208}} 
+\index{Game\+Logic\+::\+Stopwatch@{Game\+Logic\+::\+Stopwatch}!get\+Instance@{get\+Instance}}
+\index{get\+Instance@{get\+Instance}!Game\+Logic\+::\+Stopwatch@{Game\+Logic\+::\+Stopwatch}}
+\subsubsection{\texorpdfstring{get\+Instance()}{getInstance()}}
+{\footnotesize\ttfamily shared\+\_\+ptr$<$ \hyperlink{classGameLogic_1_1Stopwatch}{Stopwatch} $>$ Game\+Logic\+::\+Stopwatch\+::get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Will return the stopwatch instance if one already exists, if not it will create one. \begin{DoxyReturn}{Returns}
+The stopwatch instance 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGameLogic_1_1Stopwatch_a630ec6e48b90673127a033d18dd4d570}\label{classGameLogic_1_1Stopwatch_a630ec6e48b90673127a033d18dd4d570}} 
+\index{Game\+Logic\+::\+Stopwatch@{Game\+Logic\+::\+Stopwatch}!get\+Start\+\_\+clock@{get\+Start\+\_\+clock}}
+\index{get\+Start\+\_\+clock@{get\+Start\+\_\+clock}!Game\+Logic\+::\+Stopwatch@{Game\+Logic\+::\+Stopwatch}}
+\subsubsection{\texorpdfstring{get\+Start\+\_\+clock()}{getStart\_clock()}}
+{\footnotesize\ttfamily clock\+\_\+t Game\+Logic\+::\+Stopwatch\+::get\+Start\+\_\+clock (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Function returns when the clock was last started. \begin{DoxyReturn}{Returns}
+the time when the clock was last started. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGameLogic_1_1Stopwatch_a71ca51fb998fd7c16a64bf6f13ce8faa}\label{classGameLogic_1_1Stopwatch_a71ca51fb998fd7c16a64bf6f13ce8faa}} 
+\index{Game\+Logic\+::\+Stopwatch@{Game\+Logic\+::\+Stopwatch}!get\+Time\+Passed@{get\+Time\+Passed}}
+\index{get\+Time\+Passed@{get\+Time\+Passed}!Game\+Logic\+::\+Stopwatch@{Game\+Logic\+::\+Stopwatch}}
+\subsubsection{\texorpdfstring{get\+Time\+Passed()}{getTimePassed()}}
+{\footnotesize\ttfamily double Game\+Logic\+::\+Stopwatch\+::get\+Time\+Passed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns how much time has passed since the last time the clock was started. \begin{DoxyReturn}{Returns}
+how much time has passed 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGameLogic_1_1Stopwatch_a8490b96964e128c93be7133e7a5386a5}\label{classGameLogic_1_1Stopwatch_a8490b96964e128c93be7133e7a5386a5}} 
+\index{Game\+Logic\+::\+Stopwatch@{Game\+Logic\+::\+Stopwatch}!reset@{reset}}
+\index{reset@{reset}!Game\+Logic\+::\+Stopwatch@{Game\+Logic\+::\+Stopwatch}}
+\subsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void Game\+Logic\+::\+Stopwatch\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Resets the clock. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Game\+Logic/\+Include/\+Game\+Logic/Stopwatch.\+h\item 
+Game\+Logic/src/Stopwatch.\+cpp\item 
+main.\+cpp\end{DoxyCompactItemize}

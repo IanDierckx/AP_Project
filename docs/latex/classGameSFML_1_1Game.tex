@@ -1,0 +1,74 @@
+\hypertarget{classGameSFML_1_1Game}{}\section{Game\+S\+F\+ML\+:\+:Game Class Reference}
+\label{classGameSFML_1_1Game}\index{Game\+S\+F\+M\+L\+::\+Game@{Game\+S\+F\+M\+L\+::\+Game}}
+
+
+This class represents the game.  
+
+
+
+
+{\ttfamily \#include $<$Game.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGameSFML_1_1Game_a4ae981e788669fff50422ed9a1591db4}{Game} (const string \&title=\char`\"{}Space Invaders\char`\"{})
+\begin{DoxyCompactList}\small\item\em Constructor of the class. \end{DoxyCompactList}\item 
+void \hyperlink{classGameSFML_1_1Game_a79da94cd442e1b622b7880fc8862ed9e}{initialize\+Level} (int level\+Number)
+\begin{DoxyCompactList}\small\item\em Initialize a new level in the game. \end{DoxyCompactList}\item 
+void \hyperlink{classGameSFML_1_1Game_a4a16f6dac8a77cefae6ff58622791525}{run} ()
+\begin{DoxyCompactList}\small\item\em Function to run the actual game. \end{DoxyCompactList}\item 
+bool \hyperlink{classGameSFML_1_1Game_aa6817ce272ba3c2007b0c5957ef69fdd}{is\+Last\+Level} ()
+\begin{DoxyCompactList}\small\item\em Returns whether the current level is the last level. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class represents the game 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGameSFML_1_1Game_a4ae981e788669fff50422ed9a1591db4}\label{classGameSFML_1_1Game_a4ae981e788669fff50422ed9a1591db4}} 
+\index{Game\+S\+F\+M\+L\+::\+Game@{Game\+S\+F\+M\+L\+::\+Game}!Game@{Game}}
+\index{Game@{Game}!Game\+S\+F\+M\+L\+::\+Game@{Game\+S\+F\+M\+L\+::\+Game}}
+\subsubsection{\texorpdfstring{Game()}{Game()}}
+{\footnotesize\ttfamily Game\+S\+F\+M\+L\+::\+Game\+::\+Game (\begin{DoxyParamCaption}\item[{const string \&}]{title = {\ttfamily \char`\"{}Space~Invaders\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+The constructor initializes the S\+F\+ML window and initializes the first level of the game. The Transformation singleton class gets the correct screen sizes (minus the borders of the screen) 
+\begin{DoxyParams}{Parameters}
+{\em title} & Gives the title of the window \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classGameSFML_1_1Game_a79da94cd442e1b622b7880fc8862ed9e}\label{classGameSFML_1_1Game_a79da94cd442e1b622b7880fc8862ed9e}} 
+\index{Game\+S\+F\+M\+L\+::\+Game@{Game\+S\+F\+M\+L\+::\+Game}!initialize\+Level@{initialize\+Level}}
+\index{initialize\+Level@{initialize\+Level}!Game\+S\+F\+M\+L\+::\+Game@{Game\+S\+F\+M\+L\+::\+Game}}
+\subsubsection{\texorpdfstring{initialize\+Level()}{initializeLevel()}}
+{\footnotesize\ttfamily void Game\+S\+F\+M\+L\+::\+Game\+::initialize\+Level (\begin{DoxyParamCaption}\item[{int}]{level\+Number }\end{DoxyParamCaption})}
+
+Function initializes a new level by calling the \hyperlink{classGameSFML_1_1Level}{Level} Parser 
+\begin{DoxyParams}{Parameters}
+{\em level\+File} & the name of the json file of the new level \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGameSFML_1_1Game_aa6817ce272ba3c2007b0c5957ef69fdd}\label{classGameSFML_1_1Game_aa6817ce272ba3c2007b0c5957ef69fdd}} 
+\index{Game\+S\+F\+M\+L\+::\+Game@{Game\+S\+F\+M\+L\+::\+Game}!is\+Last\+Level@{is\+Last\+Level}}
+\index{is\+Last\+Level@{is\+Last\+Level}!Game\+S\+F\+M\+L\+::\+Game@{Game\+S\+F\+M\+L\+::\+Game}}
+\subsubsection{\texorpdfstring{is\+Last\+Level()}{isLastLevel()}}
+{\footnotesize\ttfamily bool Game\+S\+F\+M\+L\+::\+Game\+::is\+Last\+Level (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns whether the current level is the last level. \begin{DoxyReturn}{Returns}
+True if current level is the last level. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGameSFML_1_1Game_a4a16f6dac8a77cefae6ff58622791525}\label{classGameSFML_1_1Game_a4a16f6dac8a77cefae6ff58622791525}} 
+\index{Game\+S\+F\+M\+L\+::\+Game@{Game\+S\+F\+M\+L\+::\+Game}!run@{run}}
+\index{run@{run}!Game\+S\+F\+M\+L\+::\+Game@{Game\+S\+F\+M\+L\+::\+Game}}
+\subsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void Game\+S\+F\+M\+L\+::\+Game\+::run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Starts by getting the instance of the stopwatch class, which if this is the first time starts the clock \hyperlink{classGameSFML_1_1Game}{Game} runs in a while loop with the condition of if the game window is still open Inside the loop it checks for events and draws the game accordingly. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+S\+F\+M\+L/\+Include/Game.\+h\item 
+S\+F\+M\+L/src/Game.\+cpp\end{DoxyCompactItemize}

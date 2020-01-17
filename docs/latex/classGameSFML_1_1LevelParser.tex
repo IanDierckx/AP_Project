@@ -1,0 +1,52 @@
+\hypertarget{classGameSFML_1_1LevelParser}{}\section{Game\+S\+F\+ML\+:\+:Level\+Parser Class Reference}
+\label{classGameSFML_1_1LevelParser}\index{Game\+S\+F\+M\+L\+::\+Level\+Parser@{Game\+S\+F\+M\+L\+::\+Level\+Parser}}
+
+
+Class to help parse json files that represent the levels of the game.  
+
+
+
+
+{\ttfamily \#include $<$Level\+Parser.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGameSFML_1_1LevelParser_a0c17b871d137992c985c8b52412af7d6}{Level\+Parser} (const string \&level\+File, Game\+S\+F\+M\+L\+::window\+\_\+ptr window)
+\begin{DoxyCompactList}\small\item\em Constructor of the parser class. \end{DoxyCompactList}\item 
+shared\+\_\+ptr$<$ \hyperlink{classGameSFML_1_1Level}{Game\+S\+F\+M\+L\+::\+Level} $>$ \hyperlink{classGameSFML_1_1LevelParser_a11eb8b7c40e1dad49b88de4d5c05bdbf}{parse\+Json} ()
+\begin{DoxyCompactList}\small\item\em The actual parsing function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGameSFML_1_1LevelParser_a0c17b871d137992c985c8b52412af7d6}\label{classGameSFML_1_1LevelParser_a0c17b871d137992c985c8b52412af7d6}} 
+\index{Game\+S\+F\+M\+L\+::\+Level\+Parser@{Game\+S\+F\+M\+L\+::\+Level\+Parser}!Level\+Parser@{Level\+Parser}}
+\index{Level\+Parser@{Level\+Parser}!Game\+S\+F\+M\+L\+::\+Level\+Parser@{Game\+S\+F\+M\+L\+::\+Level\+Parser}}
+\subsubsection{\texorpdfstring{Level\+Parser()}{LevelParser()}}
+{\footnotesize\ttfamily Game\+S\+F\+M\+L\+::\+Level\+Parser\+::\+Level\+Parser (\begin{DoxyParamCaption}\item[{const string \&}]{level\+File,  }\item[{Game\+S\+F\+M\+L\+::window\+\_\+ptr}]{window }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em level\+File} & name of the json file that contains the level. \\
+\hline
+{\em window} & the current game window. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classGameSFML_1_1LevelParser_a11eb8b7c40e1dad49b88de4d5c05bdbf}\label{classGameSFML_1_1LevelParser_a11eb8b7c40e1dad49b88de4d5c05bdbf}} 
+\index{Game\+S\+F\+M\+L\+::\+Level\+Parser@{Game\+S\+F\+M\+L\+::\+Level\+Parser}!parse\+Json@{parse\+Json}}
+\index{parse\+Json@{parse\+Json}!Game\+S\+F\+M\+L\+::\+Level\+Parser@{Game\+S\+F\+M\+L\+::\+Level\+Parser}}
+\subsubsection{\texorpdfstring{parse\+Json()}{parseJson()}}
+{\footnotesize\ttfamily shared\+\_\+ptr$<$ \hyperlink{classGameSFML_1_1Level}{Game\+S\+F\+M\+L\+::\+Level} $>$ Game\+S\+F\+M\+L\+::\+Level\+Parser\+::parse\+Json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Function parses the json file that was imported in the constructor \begin{DoxyReturn}{Returns}
+Shared pointer to the created \hyperlink{classGameSFML_1_1Level}{Level} 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+S\+F\+M\+L/\+Include/Level\+Parser.\+h\item 
+S\+F\+M\+L/src/Level\+Parser.\+cpp\end{DoxyCompactItemize}

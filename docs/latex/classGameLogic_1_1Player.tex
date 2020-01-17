@@ -1,0 +1,107 @@
+\hypertarget{classGameLogic_1_1Player}{}\section{Game\+Logic\+:\+:Player Class Reference}
+\label{classGameLogic_1_1Player}\index{Game\+Logic\+::\+Player@{Game\+Logic\+::\+Player}}
+
+
+Class to represent the player.  
+
+
+
+
+{\ttfamily \#include $<$Player.\+h$>$}
+
+
+
+Inheritance diagram for Game\+Logic\+:\+:Player\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=183pt]{classGameLogic_1_1Player__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Game\+Logic\+:\+:Player\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=180pt]{classGameLogic_1_1Player__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGameLogic_1_1Player_aeb3e4e8b10bf96de2543cafb683cf279}{Player} (const pair$<$ int, int $>$ \&position, double width, double height)
+\begin{DoxyCompactList}\small\item\em Constructor for the \hyperlink{classGameLogic_1_1Player}{Player}. \end{DoxyCompactList}\item 
+void \hyperlink{classGameLogic_1_1Player_a0595d93baa8c135aec8b9a6febc5d18c}{move\+Left} ()
+\begin{DoxyCompactList}\small\item\em Moves the player left. \end{DoxyCompactList}\item 
+void \hyperlink{classGameLogic_1_1Player_a42e5ab72dddca42e2ea2bbdeed63995e}{move\+Right} ()
+\begin{DoxyCompactList}\small\item\em Moves the player right. \end{DoxyCompactList}\item 
+bool \hyperlink{classGameLogic_1_1Player_a42d847fc003d1085a99aa0e72630aed2}{is\+Destroyed} () const
+\begin{DoxyCompactList}\small\item\em Checks if player is destroyed. \end{DoxyCompactList}\item 
+void \hyperlink{classGameLogic_1_1Player_a1f866a43d2db9e5f3dbeca80cbba28a7}{set\+Destroyed} (bool destroyed)
+\begin{DoxyCompactList}\small\item\em Sets whether or not the player is destroyed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Class represents the game logic version of the player 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGameLogic_1_1Player_aeb3e4e8b10bf96de2543cafb683cf279}\label{classGameLogic_1_1Player_aeb3e4e8b10bf96de2543cafb683cf279}} 
+\index{Game\+Logic\+::\+Player@{Game\+Logic\+::\+Player}!Player@{Player}}
+\index{Player@{Player}!Game\+Logic\+::\+Player@{Game\+Logic\+::\+Player}}
+\subsubsection{\texorpdfstring{Player()}{Player()}}
+{\footnotesize\ttfamily Game\+Logic\+::\+Player\+::\+Player (\begin{DoxyParamCaption}\item[{const pair$<$ int, int $>$ \&}]{position,  }\item[{double}]{width,  }\item[{double}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+The constructor for the \hyperlink{classGameLogic_1_1Player}{Player}. Sets the \hyperlink{classGameLogic_1_1Entity}{Entity} type to \hyperlink{classGameLogic_1_1Player}{Player} and sets the speed to 0.\+01 (speed might need balancing). 
+\begin{DoxyParams}{Parameters}
+{\em position} & The position of the player in the grid \\
+\hline
+{\em width} & The width of the player \\
+\hline
+{\em height} & The height of the player \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classGameLogic_1_1Player_a42d847fc003d1085a99aa0e72630aed2}\label{classGameLogic_1_1Player_a42d847fc003d1085a99aa0e72630aed2}} 
+\index{Game\+Logic\+::\+Player@{Game\+Logic\+::\+Player}!is\+Destroyed@{is\+Destroyed}}
+\index{is\+Destroyed@{is\+Destroyed}!Game\+Logic\+::\+Player@{Game\+Logic\+::\+Player}}
+\subsubsection{\texorpdfstring{is\+Destroyed()}{isDestroyed()}}
+{\footnotesize\ttfamily bool Game\+Logic\+::\+Player\+::is\+Destroyed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Checks if player is destroyed. Which usually ends in game over. \begin{DoxyReturn}{Returns}
+Returns true if player is destroyed. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGameLogic_1_1Player_a0595d93baa8c135aec8b9a6febc5d18c}\label{classGameLogic_1_1Player_a0595d93baa8c135aec8b9a6febc5d18c}} 
+\index{Game\+Logic\+::\+Player@{Game\+Logic\+::\+Player}!move\+Left@{move\+Left}}
+\index{move\+Left@{move\+Left}!Game\+Logic\+::\+Player@{Game\+Logic\+::\+Player}}
+\subsubsection{\texorpdfstring{move\+Left()}{moveLeft()}}
+{\footnotesize\ttfamily void Game\+Logic\+::\+Player\+::move\+Left (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Function moves the player left by decreasing the x value in position and movingX. Checks if player not at the edge of the screen before moving. \mbox{\Hypertarget{classGameLogic_1_1Player_a42e5ab72dddca42e2ea2bbdeed63995e}\label{classGameLogic_1_1Player_a42e5ab72dddca42e2ea2bbdeed63995e}} 
+\index{Game\+Logic\+::\+Player@{Game\+Logic\+::\+Player}!move\+Right@{move\+Right}}
+\index{move\+Right@{move\+Right}!Game\+Logic\+::\+Player@{Game\+Logic\+::\+Player}}
+\subsubsection{\texorpdfstring{move\+Right()}{moveRight()}}
+{\footnotesize\ttfamily void Game\+Logic\+::\+Player\+::move\+Right (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Function moves the player right by increasing the x value in position and movingX. Checks if player not at the edge of the screen before moving. \mbox{\Hypertarget{classGameLogic_1_1Player_a1f866a43d2db9e5f3dbeca80cbba28a7}\label{classGameLogic_1_1Player_a1f866a43d2db9e5f3dbeca80cbba28a7}} 
+\index{Game\+Logic\+::\+Player@{Game\+Logic\+::\+Player}!set\+Destroyed@{set\+Destroyed}}
+\index{set\+Destroyed@{set\+Destroyed}!Game\+Logic\+::\+Player@{Game\+Logic\+::\+Player}}
+\subsubsection{\texorpdfstring{set\+Destroyed()}{setDestroyed()}}
+{\footnotesize\ttfamily void Game\+Logic\+::\+Player\+::set\+Destroyed (\begin{DoxyParamCaption}\item[{bool}]{destroyed }\end{DoxyParamCaption})}
+
+Sets whether or not the player is destroyed. 
+\begin{DoxyParams}{Parameters}
+{\em destroyed} & True if the player is destroyed, false if not (for example if the player gets another life from an upgrade). \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Game\+Logic/\+Include/\+Game\+Logic/Player.\+h\item 
+Game\+Logic/src/Player.\+cpp\end{DoxyCompactItemize}

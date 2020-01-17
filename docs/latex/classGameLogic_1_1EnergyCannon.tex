@@ -1,0 +1,122 @@
+\hypertarget{classGameLogic_1_1EnergyCannon}{}\section{Game\+Logic\+:\+:Energy\+Cannon Class Reference}
+\label{classGameLogic_1_1EnergyCannon}\index{Game\+Logic\+::\+Energy\+Cannon@{Game\+Logic\+::\+Energy\+Cannon}}
+
+
+Class that represents the cannons used for shooting down enemies.  
+
+
+
+
+{\ttfamily \#include $<$Energy\+Cannon.\+h$>$}
+
+
+
+Inheritance diagram for Game\+Logic\+:\+:Energy\+Cannon\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{classGameLogic_1_1EnergyCannon__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Game\+Logic\+:\+:Energy\+Cannon\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{classGameLogic_1_1EnergyCannon__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGameLogic_1_1EnergyCannon_aa2d03f1f31cc13454d958a0f81c241bc}{Energy\+Cannon} (const pair$<$ int, int $>$ \&position, double width, double height)
+\begin{DoxyCompactList}\small\item\em Constructor for the energy cannons. \end{DoxyCompactList}\item 
+bool \hyperlink{classGameLogic_1_1EnergyCannon_a8028f1d9d52870997eae9335e9c494f5}{shoot} ()
+\begin{DoxyCompactList}\small\item\em Shoots the cannon. \end{DoxyCompactList}\item 
+bool \hyperlink{classGameLogic_1_1EnergyCannon_a584235c8d7a30c927338d753ed705968}{auto\+Reload} ()
+\begin{DoxyCompactList}\small\item\em Reloads the cannon if not used for some time. \end{DoxyCompactList}\item 
+bool \hyperlink{classGameLogic_1_1EnergyCannon_aa83309544f619024d575b88745260d8e}{reload} ()
+\begin{DoxyCompactList}\small\item\em Reload the cannon. \end{DoxyCompactList}\item 
+void \hyperlink{classGameLogic_1_1EnergyCannon_a29274434c4a4f12bbf829eb4f6fa2559}{lower\+Delay} ()
+\begin{DoxyCompactList}\small\item\em Lowers the shot\+Delay by 1. \end{DoxyCompactList}\item 
+void \hyperlink{classGameLogic_1_1EnergyCannon_a1499b7d8e1df720b314a263f61e69e7d}{increase\+Time\+Not\+Used} ()
+\begin{DoxyCompactList}\small\item\em Increases the time\+Not\+Used counter by 1. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGameLogic_1_1EnergyCannon_ac08c44df7f23b72b1b99313015026f39}\label{classGameLogic_1_1EnergyCannon_ac08c44df7f23b72b1b99313015026f39}} 
+int {\bfseries remaining\+Bullets} = 8
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Class that represents the cannons used for shooting down enemies. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGameLogic_1_1EnergyCannon_aa2d03f1f31cc13454d958a0f81c241bc}\label{classGameLogic_1_1EnergyCannon_aa2d03f1f31cc13454d958a0f81c241bc}} 
+\index{Game\+Logic\+::\+Energy\+Cannon@{Game\+Logic\+::\+Energy\+Cannon}!Energy\+Cannon@{Energy\+Cannon}}
+\index{Energy\+Cannon@{Energy\+Cannon}!Game\+Logic\+::\+Energy\+Cannon@{Game\+Logic\+::\+Energy\+Cannon}}
+\subsubsection{\texorpdfstring{Energy\+Cannon()}{EnergyCannon()}}
+{\footnotesize\ttfamily Game\+Logic\+::\+Energy\+Cannon\+::\+Energy\+Cannon (\begin{DoxyParamCaption}\item[{const pair$<$ int, int $>$ \&}]{position,  }\item[{double}]{width,  }\item[{double}]{height }\end{DoxyParamCaption})}
+
+Constructor for the energy cannons. 
+\begin{DoxyParams}{Parameters}
+{\em position} & The position in the grid of the cannon. \\
+\hline
+{\em width} & The width of the cannon. \\
+\hline
+{\em height} & The height of the cannon. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classGameLogic_1_1EnergyCannon_a584235c8d7a30c927338d753ed705968}\label{classGameLogic_1_1EnergyCannon_a584235c8d7a30c927338d753ed705968}} 
+\index{Game\+Logic\+::\+Energy\+Cannon@{Game\+Logic\+::\+Energy\+Cannon}!auto\+Reload@{auto\+Reload}}
+\index{auto\+Reload@{auto\+Reload}!Game\+Logic\+::\+Energy\+Cannon@{Game\+Logic\+::\+Energy\+Cannon}}
+\subsubsection{\texorpdfstring{auto\+Reload()}{autoReload()}}
+{\footnotesize\ttfamily bool Game\+Logic\+::\+Energy\+Cannon\+::auto\+Reload (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Reloads the cannon if not used for some time. Returns true if able to reload. \begin{DoxyReturn}{Returns}
+True is able to reload. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGameLogic_1_1EnergyCannon_a1499b7d8e1df720b314a263f61e69e7d}\label{classGameLogic_1_1EnergyCannon_a1499b7d8e1df720b314a263f61e69e7d}} 
+\index{Game\+Logic\+::\+Energy\+Cannon@{Game\+Logic\+::\+Energy\+Cannon}!increase\+Time\+Not\+Used@{increase\+Time\+Not\+Used}}
+\index{increase\+Time\+Not\+Used@{increase\+Time\+Not\+Used}!Game\+Logic\+::\+Energy\+Cannon@{Game\+Logic\+::\+Energy\+Cannon}}
+\subsubsection{\texorpdfstring{increase\+Time\+Not\+Used()}{increaseTimeNotUsed()}}
+{\footnotesize\ttfamily void Game\+Logic\+::\+Energy\+Cannon\+::increase\+Time\+Not\+Used (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Increases the time\+Not\+Used counter by 1. \mbox{\Hypertarget{classGameLogic_1_1EnergyCannon_a29274434c4a4f12bbf829eb4f6fa2559}\label{classGameLogic_1_1EnergyCannon_a29274434c4a4f12bbf829eb4f6fa2559}} 
+\index{Game\+Logic\+::\+Energy\+Cannon@{Game\+Logic\+::\+Energy\+Cannon}!lower\+Delay@{lower\+Delay}}
+\index{lower\+Delay@{lower\+Delay}!Game\+Logic\+::\+Energy\+Cannon@{Game\+Logic\+::\+Energy\+Cannon}}
+\subsubsection{\texorpdfstring{lower\+Delay()}{lowerDelay()}}
+{\footnotesize\ttfamily void Game\+Logic\+::\+Energy\+Cannon\+::lower\+Delay (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Lowers the shot\+Delay by 1. \mbox{\Hypertarget{classGameLogic_1_1EnergyCannon_aa83309544f619024d575b88745260d8e}\label{classGameLogic_1_1EnergyCannon_aa83309544f619024d575b88745260d8e}} 
+\index{Game\+Logic\+::\+Energy\+Cannon@{Game\+Logic\+::\+Energy\+Cannon}!reload@{reload}}
+\index{reload@{reload}!Game\+Logic\+::\+Energy\+Cannon@{Game\+Logic\+::\+Energy\+Cannon}}
+\subsubsection{\texorpdfstring{reload()}{reload()}}
+{\footnotesize\ttfamily bool Game\+Logic\+::\+Energy\+Cannon\+::reload (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Reload the cannon. Returns whether the reload was possible or not. \begin{DoxyReturn}{Returns}
+True if the reload was possible. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGameLogic_1_1EnergyCannon_a8028f1d9d52870997eae9335e9c494f5}\label{classGameLogic_1_1EnergyCannon_a8028f1d9d52870997eae9335e9c494f5}} 
+\index{Game\+Logic\+::\+Energy\+Cannon@{Game\+Logic\+::\+Energy\+Cannon}!shoot@{shoot}}
+\index{shoot@{shoot}!Game\+Logic\+::\+Energy\+Cannon@{Game\+Logic\+::\+Energy\+Cannon}}
+\subsubsection{\texorpdfstring{shoot()}{shoot()}}
+{\footnotesize\ttfamily bool Game\+Logic\+::\+Energy\+Cannon\+::shoot (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+If the cannon has enough bullets it return that is shoots and resets time not used to 0, else it returns false. \begin{DoxyReturn}{Returns}
+Whether the cannon shoots or not. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Game\+Logic/\+Include/\+Game\+Logic/Energy\+Cannon.\+h\item 
+Game\+Logic/src/Energy\+Cannon.\+cpp\end{DoxyCompactItemize}

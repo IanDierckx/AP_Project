@@ -1,0 +1,118 @@
+\hypertarget{classGameLogic_1_1BasicEnemy}{}\section{Game\+Logic\+:\+:Basic\+Enemy Class Reference}
+\label{classGameLogic_1_1BasicEnemy}\index{Game\+Logic\+::\+Basic\+Enemy@{Game\+Logic\+::\+Basic\+Enemy}}
+
+
+\hyperlink{namespaceGameLogic}{Game\+Logic} version of the Basic Enemy class.  
+
+
+
+
+{\ttfamily \#include $<$Basic\+Enemy.\+h$>$}
+
+
+
+Inheritance diagram for Game\+Logic\+:\+:Basic\+Enemy\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGameLogic_1_1BasicEnemy__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Game\+Logic\+:\+:Basic\+Enemy\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{classGameLogic_1_1BasicEnemy__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGameLogic_1_1BasicEnemy_ac89d53201b55edcce7655e30afd204ed}{Basic\+Enemy} (const pair$<$ int, int $>$ \&position, double width, double height)
+\begin{DoxyCompactList}\small\item\em Constructor of Basic Enemy. \end{DoxyCompactList}\item 
+void \hyperlink{classGameLogic_1_1BasicEnemy_a8c51b862c94953e5455c04c2227b6d73}{move} () override
+\begin{DoxyCompactList}\small\item\em Function that moves the Basic Enemy. \end{DoxyCompactList}\item 
+bool \hyperlink{classGameLogic_1_1BasicEnemy_ada4bb368a6af13fbfb1ba83503099f2c}{can\+Shoot} ()
+\begin{DoxyCompactList}\small\item\em Checks if the enemy can shoot. \end{DoxyCompactList}\item 
+int \hyperlink{classGameLogic_1_1BasicEnemy_adec32036fbf44534988bcbc850a3e3a5}{generate\+Shoot\+Interval} ()
+\begin{DoxyCompactList}\small\item\em Generates a random interval for when an enemy can shoot again. \end{DoxyCompactList}\item 
+void \hyperlink{classGameLogic_1_1BasicEnemy_a3d01ac4181b0aaa6058d434195e68830}{handle\+Collision} (const shared\+\_\+ptr$<$ \hyperlink{classGameLogic_1_1Entity}{Entity} $>$ \&other\+Entity) override
+\begin{DoxyCompactList}\small\item\em Handles what happens if the enemy collides with another entity. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\hyperlink{namespaceGameLogic}{Game\+Logic} version of the easiest, most basic enemy 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGameLogic_1_1BasicEnemy_ac89d53201b55edcce7655e30afd204ed}\label{classGameLogic_1_1BasicEnemy_ac89d53201b55edcce7655e30afd204ed}} 
+\index{Game\+Logic\+::\+Basic\+Enemy@{Game\+Logic\+::\+Basic\+Enemy}!Basic\+Enemy@{Basic\+Enemy}}
+\index{Basic\+Enemy@{Basic\+Enemy}!Game\+Logic\+::\+Basic\+Enemy@{Game\+Logic\+::\+Basic\+Enemy}}
+\subsubsection{\texorpdfstring{Basic\+Enemy()}{BasicEnemy()}}
+{\footnotesize\ttfamily Game\+Logic\+::\+Basic\+Enemy\+::\+Basic\+Enemy (\begin{DoxyParamCaption}\item[{const pair$<$ int, int $>$ \&}]{position,  }\item[{double}]{width,  }\item[{double}]{height }\end{DoxyParamCaption})}
+
+The constructor of the \hyperlink{namespaceGameLogic}{Game\+Logic} version of the Basic Enemy class. Sets the type to \hyperlink{classGameLogic_1_1BasicEnemy}{Basic\+Enemy} and gives it health and speed of 1. 
+\begin{DoxyParams}{Parameters}
+{\em position} & The position of the basic enemy in the grid \\
+\hline
+{\em width} & The width of the basic enemy \\
+\hline
+{\em height} & The height of the basic enemy \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classGameLogic_1_1BasicEnemy_ada4bb368a6af13fbfb1ba83503099f2c}\label{classGameLogic_1_1BasicEnemy_ada4bb368a6af13fbfb1ba83503099f2c}} 
+\index{Game\+Logic\+::\+Basic\+Enemy@{Game\+Logic\+::\+Basic\+Enemy}!can\+Shoot@{can\+Shoot}}
+\index{can\+Shoot@{can\+Shoot}!Game\+Logic\+::\+Basic\+Enemy@{Game\+Logic\+::\+Basic\+Enemy}}
+\subsubsection{\texorpdfstring{can\+Shoot()}{canShoot()}}
+{\footnotesize\ttfamily bool Game\+Logic\+::\+Basic\+Enemy\+::can\+Shoot (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Checks if the enemy can shoot. \begin{DoxyReturn}{Returns}
+True if the enemy can shoot. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGameLogic_1_1BasicEnemy_adec32036fbf44534988bcbc850a3e3a5}\label{classGameLogic_1_1BasicEnemy_adec32036fbf44534988bcbc850a3e3a5}} 
+\index{Game\+Logic\+::\+Basic\+Enemy@{Game\+Logic\+::\+Basic\+Enemy}!generate\+Shoot\+Interval@{generate\+Shoot\+Interval}}
+\index{generate\+Shoot\+Interval@{generate\+Shoot\+Interval}!Game\+Logic\+::\+Basic\+Enemy@{Game\+Logic\+::\+Basic\+Enemy}}
+\subsubsection{\texorpdfstring{generate\+Shoot\+Interval()}{generateShootInterval()}}
+{\footnotesize\ttfamily int Game\+Logic\+::\+Basic\+Enemy\+::generate\+Shoot\+Interval (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Generates a random interval for when an enemy can shoot again. \begin{DoxyReturn}{Returns}
+the random interval between 20 and 100 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGameLogic_1_1BasicEnemy_a3d01ac4181b0aaa6058d434195e68830}\label{classGameLogic_1_1BasicEnemy_a3d01ac4181b0aaa6058d434195e68830}} 
+\index{Game\+Logic\+::\+Basic\+Enemy@{Game\+Logic\+::\+Basic\+Enemy}!handle\+Collision@{handle\+Collision}}
+\index{handle\+Collision@{handle\+Collision}!Game\+Logic\+::\+Basic\+Enemy@{Game\+Logic\+::\+Basic\+Enemy}}
+\subsubsection{\texorpdfstring{handle\+Collision()}{handleCollision()}}
+{\footnotesize\ttfamily void Game\+Logic\+::\+Basic\+Enemy\+::handle\+Collision (\begin{DoxyParamCaption}\item[{const shared\+\_\+ptr$<$ \hyperlink{classGameLogic_1_1Entity}{Entity} $>$ \&}]{other\+Entity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Handles what happens if the enemy collides with another entity. 
+\begin{DoxyParams}{Parameters}
+{\em other\+Entity} & the other entity it collides with. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classGameLogic_1_1Entity_af3461a4c6321b1af250821d7a1329ba7}{Game\+Logic\+::\+Entity}.
+
+\mbox{\Hypertarget{classGameLogic_1_1BasicEnemy_a8c51b862c94953e5455c04c2227b6d73}\label{classGameLogic_1_1BasicEnemy_a8c51b862c94953e5455c04c2227b6d73}} 
+\index{Game\+Logic\+::\+Basic\+Enemy@{Game\+Logic\+::\+Basic\+Enemy}!move@{move}}
+\index{move@{move}!Game\+Logic\+::\+Basic\+Enemy@{Game\+Logic\+::\+Basic\+Enemy}}
+\subsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily void Game\+Logic\+::\+Basic\+Enemy\+::move (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Function that moves the Basic Enemy to it\textquotesingle{}s next position in the grid and updates movingX and movingY. The Basic Enemy moves from left to right, then lowers a row before moving from right to left. It then lowers a row again before moving from left to right again. 
+
+Reimplemented from \hyperlink{classGameLogic_1_1Ship_aaab731578b80b9e1920e3f2af2bc2f8c}{Game\+Logic\+::\+Ship}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Game\+Logic/\+Include/\+Game\+Logic/Basic\+Enemy.\+h\item 
+Game\+Logic/src/Basic\+Enemy.\+cpp\end{DoxyCompactItemize}

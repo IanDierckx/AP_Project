@@ -1,0 +1,270 @@
+\hypertarget{classGameLogic_1_1Entity}{}\section{Game\+Logic\+:\+:Entity Class Reference}
+\label{classGameLogic_1_1Entity}\index{Game\+Logic\+::\+Entity@{Game\+Logic\+::\+Entity}}
+
+
+Base \hyperlink{classGameLogic_1_1Entity}{Entity} class Base entity class, most classes will be derived from this.  
+
+
+
+
+{\ttfamily \#include $<$Entity.\+h$>$}
+
+
+
+Inheritance diagram for Game\+Logic\+:\+:Entity\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGameLogic_1_1Entity__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGameLogic_1_1Entity_ace7cd95750149d125c00bb7786527cbf}{Entity} (const pair$<$ int, int $>$ \&position, double width, double height)
+\begin{DoxyCompactList}\small\item\em Constructor of \hyperlink{classGameLogic_1_1Entity}{Entity} Constructor of \hyperlink{classGameLogic_1_1Entity}{Entity}. \end{DoxyCompactList}\item 
+int \hyperlink{classGameLogic_1_1Entity_a1d7c4fa1af58df883ae751c4e536c25d}{getX} ()
+\begin{DoxyCompactList}\small\item\em Function to return the x coordinate Function to get the x position in the grid. \end{DoxyCompactList}\item 
+int \hyperlink{classGameLogic_1_1Entity_a24a56a7da02136fd662b72b04fcf6c30}{getY} ()
+\begin{DoxyCompactList}\small\item\em Function to return the y coordinate Function to get the y position in the grid. \end{DoxyCompactList}\item 
+string \hyperlink{classGameLogic_1_1Entity_a8bdd4210279142027ba149483b89ff01}{get\+Type} ()
+\begin{DoxyCompactList}\small\item\em Function that returns the type Function that returns the type of \hyperlink{classGameLogic_1_1Entity}{Entity} (e.\+g. \end{DoxyCompactList}\item 
+void \hyperlink{classGameLogic_1_1Entity_a570383f8bb12fc3185d136289f2149c8}{setX} (int x)
+\begin{DoxyCompactList}\small\item\em Function to set the x coordinate Function that sets the x coordinate in the grid. \end{DoxyCompactList}\item 
+void \hyperlink{classGameLogic_1_1Entity_a246c3603f576c080df17978b483ada45}{setY} (int y)
+\begin{DoxyCompactList}\small\item\em Function to set the y coordinate Function that sets the y coordinate in the grid. \end{DoxyCompactList}\item 
+void \hyperlink{classGameLogic_1_1Entity_ae0f16e2b996a2654851e757dfa255ba9}{set\+Speed} (double speed)
+\begin{DoxyCompactList}\small\item\em Function that sets the entity\textquotesingle{}s speed Function that sets the speed of the entity. \end{DoxyCompactList}\item 
+double \hyperlink{classGameLogic_1_1Entity_a7c0d8853692bccc978847b658d45fb5e}{get\+Speed} ()
+\begin{DoxyCompactList}\small\item\em Function that gets the entity\textquotesingle{}s speed Function that returns the speed of the entity. \end{DoxyCompactList}\item 
+double \hyperlink{classGameLogic_1_1Entity_a770b837c07c91f3fa72c755d6d77d153}{get\+MovingX} () const
+\begin{DoxyCompactList}\small\item\em Function to return the moving x coordinate Function to get the x position used for fluid movement on screen. \end{DoxyCompactList}\item 
+void \hyperlink{classGameLogic_1_1Entity_a0610847bac56b7ec45dff937f20c048b}{add\+MovingX} (double addedX)
+\begin{DoxyCompactList}\small\item\em Function to add to the moving x coordinate Function to add to the x position used for fluid movement on screen. \end{DoxyCompactList}\item 
+double \hyperlink{classGameLogic_1_1Entity_a5e10708660f91ce9a225c08ebbecf7fd}{get\+MovingY} () const
+\begin{DoxyCompactList}\small\item\em Function to return the moving y coordinate Function to get the y position used for fluid movement on screen. \end{DoxyCompactList}\item 
+void \hyperlink{classGameLogic_1_1Entity_ad46302e582b23b71e250f15c47f59ee0}{add\+MovingY} (double addedY)
+\begin{DoxyCompactList}\small\item\em Function to add to the moving y coordinate Function to add to the y position used for fluid movement on screen. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classGameLogic_1_1Entity_adf23a7036cb99dfc6e33434018131da4}{draw} ()=0
+\begin{DoxyCompactList}\small\item\em Virtual draw function in \hyperlink{classGameLogic_1_1Entity}{Entity}. \end{DoxyCompactList}\item 
+bool \hyperlink{classGameLogic_1_1Entity_ac1521f845aac18a02bc8a2434579919e}{check\+If\+Removable} ()
+\begin{DoxyCompactList}\small\item\em Checks if the entity is removable. \end{DoxyCompactList}\item 
+void \hyperlink{classGameLogic_1_1Entity_a5bfae36adfedd3652d8dd8a807184c5f}{remove} ()
+\begin{DoxyCompactList}\small\item\em Makes the entity ready to be removed. \end{DoxyCompactList}\item 
+double \hyperlink{classGameLogic_1_1Entity_a9a7be1c6095ef036eb91b962cd289dc3}{get\+Width} () const
+\begin{DoxyCompactList}\small\item\em Gets the width of the entity. \end{DoxyCompactList}\item 
+double \hyperlink{classGameLogic_1_1Entity_a8d66c2c0153168c3ad9d345327f2c866}{get\+Height} () const
+\begin{DoxyCompactList}\small\item\em Gets the height of the entity. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classGameLogic_1_1Entity_af3461a4c6321b1af250821d7a1329ba7}{handle\+Collision} (const shared\+\_\+ptr$<$ \hyperlink{classGameLogic_1_1Entity}{Entity} $>$ \&other\+Entity)
+\begin{DoxyCompactList}\small\item\em Virtual function for handling collision. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classGameLogic_1_1Entity_a5333b148dd17e31aafd6e115e0b3b43d}{set\+Type} (string type)
+\begin{DoxyCompactList}\small\item\em Funtion to set the type of the \hyperlink{classGameLogic_1_1Entity}{Entity} Function to set the type of the entity. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGameLogic_1_1Entity_ace7cd95750149d125c00bb7786527cbf}\label{classGameLogic_1_1Entity_ace7cd95750149d125c00bb7786527cbf}} 
+\index{Game\+Logic\+::\+Entity@{Game\+Logic\+::\+Entity}!Entity@{Entity}}
+\index{Entity@{Entity}!Game\+Logic\+::\+Entity@{Game\+Logic\+::\+Entity}}
+\subsubsection{\texorpdfstring{Entity()}{Entity()}}
+{\footnotesize\ttfamily Game\+Logic\+::\+Entity\+::\+Entity (\begin{DoxyParamCaption}\item[{const pair$<$ int, int $>$ \&}]{position,  }\item[{double}]{width,  }\item[{double}]{height }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & The position of the entity in the grid \\
+\hline
+{\em width} & The width of the entity \\
+\hline
+{\em height} & The height of the entity \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classGameLogic_1_1Entity_a0610847bac56b7ec45dff937f20c048b}\label{classGameLogic_1_1Entity_a0610847bac56b7ec45dff937f20c048b}} 
+\index{Game\+Logic\+::\+Entity@{Game\+Logic\+::\+Entity}!add\+MovingX@{add\+MovingX}}
+\index{add\+MovingX@{add\+MovingX}!Game\+Logic\+::\+Entity@{Game\+Logic\+::\+Entity}}
+\subsubsection{\texorpdfstring{add\+Moving\+X()}{addMovingX()}}
+{\footnotesize\ttfamily void Game\+Logic\+::\+Entity\+::add\+MovingX (\begin{DoxyParamCaption}\item[{double}]{addedX }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em movingX} & Double value to be added (or subtracted using a negative value) to the existing moving x value \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGameLogic_1_1Entity_ad46302e582b23b71e250f15c47f59ee0}\label{classGameLogic_1_1Entity_ad46302e582b23b71e250f15c47f59ee0}} 
+\index{Game\+Logic\+::\+Entity@{Game\+Logic\+::\+Entity}!add\+MovingY@{add\+MovingY}}
+\index{add\+MovingY@{add\+MovingY}!Game\+Logic\+::\+Entity@{Game\+Logic\+::\+Entity}}
+\subsubsection{\texorpdfstring{add\+Moving\+Y()}{addMovingY()}}
+{\footnotesize\ttfamily void Game\+Logic\+::\+Entity\+::add\+MovingY (\begin{DoxyParamCaption}\item[{double}]{addedY }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em movingX} & Double value to be added (or subtracted using a negative value) to the existing moving y value \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGameLogic_1_1Entity_ac1521f845aac18a02bc8a2434579919e}\label{classGameLogic_1_1Entity_ac1521f845aac18a02bc8a2434579919e}} 
+\index{Game\+Logic\+::\+Entity@{Game\+Logic\+::\+Entity}!check\+If\+Removable@{check\+If\+Removable}}
+\index{check\+If\+Removable@{check\+If\+Removable}!Game\+Logic\+::\+Entity@{Game\+Logic\+::\+Entity}}
+\subsubsection{\texorpdfstring{check\+If\+Removable()}{checkIfRemovable()}}
+{\footnotesize\ttfamily bool Game\+Logic\+::\+Entity\+::check\+If\+Removable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Checks the value of the removable variable. \begin{DoxyReturn}{Returns}
+the value of the removable variable. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGameLogic_1_1Entity_adf23a7036cb99dfc6e33434018131da4}\label{classGameLogic_1_1Entity_adf23a7036cb99dfc6e33434018131da4}} 
+\index{Game\+Logic\+::\+Entity@{Game\+Logic\+::\+Entity}!draw@{draw}}
+\index{draw@{draw}!Game\+Logic\+::\+Entity@{Game\+Logic\+::\+Entity}}
+\subsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Game\+Logic\+::\+Entity\+::draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Virtual draw function in \hyperlink{classGameLogic_1_1Entity}{Entity}. Virtual function 
+
+Implemented in \hyperlink{classGameSFML_1_1BasicEnemy_a1062ddf1321edb7d069b68b396615626}{Game\+S\+F\+M\+L\+::\+Basic\+Enemy}, \hyperlink{classGameSFML_1_1Player_ac694755fafaffdf9432415452c7b9b5b}{Game\+S\+F\+M\+L\+::\+Player}, \hyperlink{classGameSFML_1_1BasicEnemyBullet_af970b7b86c5a21963daac86822a064a2}{Game\+S\+F\+M\+L\+::\+Basic\+Enemy\+Bullet}, \hyperlink{classGameSFML_1_1EnergyCannon_a9c4c44e9ded9422d790c685d5901cb64}{Game\+S\+F\+M\+L\+::\+Energy\+Cannon}, \hyperlink{classGameSFML_1_1EnergyBullet_a41dd2b4aa08fb8af139870c29fa94c00}{Game\+S\+F\+M\+L\+::\+Energy\+Bullet}, and \hyperlink{classGameSFML_1_1DoubleShotEnemy_a3d30aebbab50ad019207d6ba91ab0b5f}{Game\+S\+F\+M\+L\+::\+Double\+Shot\+Enemy}.
+
+\mbox{\Hypertarget{classGameLogic_1_1Entity_a8d66c2c0153168c3ad9d345327f2c866}\label{classGameLogic_1_1Entity_a8d66c2c0153168c3ad9d345327f2c866}} 
+\index{Game\+Logic\+::\+Entity@{Game\+Logic\+::\+Entity}!get\+Height@{get\+Height}}
+\index{get\+Height@{get\+Height}!Game\+Logic\+::\+Entity@{Game\+Logic\+::\+Entity}}
+\subsubsection{\texorpdfstring{get\+Height()}{getHeight()}}
+{\footnotesize\ttfamily double Game\+Logic\+::\+Entity\+::get\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Gets the height of the entity. \begin{DoxyReturn}{Returns}
+The height of the entity. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGameLogic_1_1Entity_a770b837c07c91f3fa72c755d6d77d153}\label{classGameLogic_1_1Entity_a770b837c07c91f3fa72c755d6d77d153}} 
+\index{Game\+Logic\+::\+Entity@{Game\+Logic\+::\+Entity}!get\+MovingX@{get\+MovingX}}
+\index{get\+MovingX@{get\+MovingX}!Game\+Logic\+::\+Entity@{Game\+Logic\+::\+Entity}}
+\subsubsection{\texorpdfstring{get\+Moving\+X()}{getMovingX()}}
+{\footnotesize\ttfamily double Game\+Logic\+::\+Entity\+::get\+MovingX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+Integer value of the moving x coordinate of the entity 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGameLogic_1_1Entity_a5e10708660f91ce9a225c08ebbecf7fd}\label{classGameLogic_1_1Entity_a5e10708660f91ce9a225c08ebbecf7fd}} 
+\index{Game\+Logic\+::\+Entity@{Game\+Logic\+::\+Entity}!get\+MovingY@{get\+MovingY}}
+\index{get\+MovingY@{get\+MovingY}!Game\+Logic\+::\+Entity@{Game\+Logic\+::\+Entity}}
+\subsubsection{\texorpdfstring{get\+Moving\+Y()}{getMovingY()}}
+{\footnotesize\ttfamily double Game\+Logic\+::\+Entity\+::get\+MovingY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+Integer value of the moving y coordinate of the entity 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGameLogic_1_1Entity_a7c0d8853692bccc978847b658d45fb5e}\label{classGameLogic_1_1Entity_a7c0d8853692bccc978847b658d45fb5e}} 
+\index{Game\+Logic\+::\+Entity@{Game\+Logic\+::\+Entity}!get\+Speed@{get\+Speed}}
+\index{get\+Speed@{get\+Speed}!Game\+Logic\+::\+Entity@{Game\+Logic\+::\+Entity}}
+\subsubsection{\texorpdfstring{get\+Speed()}{getSpeed()}}
+{\footnotesize\ttfamily double Game\+Logic\+::\+Entity\+::get\+Speed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+Double value of the speed of the entity 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGameLogic_1_1Entity_a8bdd4210279142027ba149483b89ff01}\label{classGameLogic_1_1Entity_a8bdd4210279142027ba149483b89ff01}} 
+\index{Game\+Logic\+::\+Entity@{Game\+Logic\+::\+Entity}!get\+Type@{get\+Type}}
+\index{get\+Type@{get\+Type}!Game\+Logic\+::\+Entity@{Game\+Logic\+::\+Entity}}
+\subsubsection{\texorpdfstring{get\+Type()}{getType()}}
+{\footnotesize\ttfamily string Game\+Logic\+::\+Entity\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\hyperlink{classGameLogic_1_1Player}{Player}) \begin{DoxyReturn}{Returns}
+The type of entity 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGameLogic_1_1Entity_a9a7be1c6095ef036eb91b962cd289dc3}\label{classGameLogic_1_1Entity_a9a7be1c6095ef036eb91b962cd289dc3}} 
+\index{Game\+Logic\+::\+Entity@{Game\+Logic\+::\+Entity}!get\+Width@{get\+Width}}
+\index{get\+Width@{get\+Width}!Game\+Logic\+::\+Entity@{Game\+Logic\+::\+Entity}}
+\subsubsection{\texorpdfstring{get\+Width()}{getWidth()}}
+{\footnotesize\ttfamily double Game\+Logic\+::\+Entity\+::get\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Gets the width of the entity. \begin{DoxyReturn}{Returns}
+The width of the entity. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGameLogic_1_1Entity_a1d7c4fa1af58df883ae751c4e536c25d}\label{classGameLogic_1_1Entity_a1d7c4fa1af58df883ae751c4e536c25d}} 
+\index{Game\+Logic\+::\+Entity@{Game\+Logic\+::\+Entity}!getX@{getX}}
+\index{getX@{getX}!Game\+Logic\+::\+Entity@{Game\+Logic\+::\+Entity}}
+\subsubsection{\texorpdfstring{get\+X()}{getX()}}
+{\footnotesize\ttfamily int Game\+Logic\+::\+Entity\+::getX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+Integer value of the x coordinate of the entity in the grid 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGameLogic_1_1Entity_a24a56a7da02136fd662b72b04fcf6c30}\label{classGameLogic_1_1Entity_a24a56a7da02136fd662b72b04fcf6c30}} 
+\index{Game\+Logic\+::\+Entity@{Game\+Logic\+::\+Entity}!getY@{getY}}
+\index{getY@{getY}!Game\+Logic\+::\+Entity@{Game\+Logic\+::\+Entity}}
+\subsubsection{\texorpdfstring{get\+Y()}{getY()}}
+{\footnotesize\ttfamily int Game\+Logic\+::\+Entity\+::getY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+Integer value of the y coordinate of the entity in the grid 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGameLogic_1_1Entity_af3461a4c6321b1af250821d7a1329ba7}\label{classGameLogic_1_1Entity_af3461a4c6321b1af250821d7a1329ba7}} 
+\index{Game\+Logic\+::\+Entity@{Game\+Logic\+::\+Entity}!handle\+Collision@{handle\+Collision}}
+\index{handle\+Collision@{handle\+Collision}!Game\+Logic\+::\+Entity@{Game\+Logic\+::\+Entity}}
+\subsubsection{\texorpdfstring{handle\+Collision()}{handleCollision()}}
+{\footnotesize\ttfamily void Game\+Logic\+::\+Entity\+::handle\+Collision (\begin{DoxyParamCaption}\item[{const shared\+\_\+ptr$<$ \hyperlink{classGameLogic_1_1Entity}{Entity} $>$ \&}]{other\+Entity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Virtual function for handling collision. 
+\begin{DoxyParams}{Parameters}
+{\em other\+Entity} & the other entity it would collide with. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{classGameLogic_1_1BasicEnemy_a3d01ac4181b0aaa6058d434195e68830}{Game\+Logic\+::\+Basic\+Enemy}, \hyperlink{classGameLogic_1_1BasicEnemyBullet_a220f79a5cb5bfb33e63ad232457bad54}{Game\+Logic\+::\+Basic\+Enemy\+Bullet}, and \hyperlink{classGameLogic_1_1EnergyBullet_a5eafebaf5fccf0a3bf3375def4ff32d2}{Game\+Logic\+::\+Energy\+Bullet}.
+
+\mbox{\Hypertarget{classGameLogic_1_1Entity_a5bfae36adfedd3652d8dd8a807184c5f}\label{classGameLogic_1_1Entity_a5bfae36adfedd3652d8dd8a807184c5f}} 
+\index{Game\+Logic\+::\+Entity@{Game\+Logic\+::\+Entity}!remove@{remove}}
+\index{remove@{remove}!Game\+Logic\+::\+Entity@{Game\+Logic\+::\+Entity}}
+\subsubsection{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily void Game\+Logic\+::\+Entity\+::remove (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Sets the removable variable to true. \mbox{\Hypertarget{classGameLogic_1_1Entity_ae0f16e2b996a2654851e757dfa255ba9}\label{classGameLogic_1_1Entity_ae0f16e2b996a2654851e757dfa255ba9}} 
+\index{Game\+Logic\+::\+Entity@{Game\+Logic\+::\+Entity}!set\+Speed@{set\+Speed}}
+\index{set\+Speed@{set\+Speed}!Game\+Logic\+::\+Entity@{Game\+Logic\+::\+Entity}}
+\subsubsection{\texorpdfstring{set\+Speed()}{setSpeed()}}
+{\footnotesize\ttfamily void Game\+Logic\+::\+Entity\+::set\+Speed (\begin{DoxyParamCaption}\item[{double}]{speed }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em speed} & the entity\textquotesingle{}s speed \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGameLogic_1_1Entity_a5333b148dd17e31aafd6e115e0b3b43d}\label{classGameLogic_1_1Entity_a5333b148dd17e31aafd6e115e0b3b43d}} 
+\index{Game\+Logic\+::\+Entity@{Game\+Logic\+::\+Entity}!set\+Type@{set\+Type}}
+\index{set\+Type@{set\+Type}!Game\+Logic\+::\+Entity@{Game\+Logic\+::\+Entity}}
+\subsubsection{\texorpdfstring{set\+Type()}{setType()}}
+{\footnotesize\ttfamily void Game\+Logic\+::\+Entity\+::set\+Type (\begin{DoxyParamCaption}\item[{string}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+The type is used to quickly discern what derived class the entity is 
+\begin{DoxyParams}{Parameters}
+{\em type} & The type this function will set. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGameLogic_1_1Entity_a570383f8bb12fc3185d136289f2149c8}\label{classGameLogic_1_1Entity_a570383f8bb12fc3185d136289f2149c8}} 
+\index{Game\+Logic\+::\+Entity@{Game\+Logic\+::\+Entity}!setX@{setX}}
+\index{setX@{setX}!Game\+Logic\+::\+Entity@{Game\+Logic\+::\+Entity}}
+\subsubsection{\texorpdfstring{set\+X()}{setX()}}
+{\footnotesize\ttfamily void Game\+Logic\+::\+Entity\+::setX (\begin{DoxyParamCaption}\item[{int}]{x }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & the new x coordinate \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGameLogic_1_1Entity_a246c3603f576c080df17978b483ada45}\label{classGameLogic_1_1Entity_a246c3603f576c080df17978b483ada45}} 
+\index{Game\+Logic\+::\+Entity@{Game\+Logic\+::\+Entity}!setY@{setY}}
+\index{setY@{setY}!Game\+Logic\+::\+Entity@{Game\+Logic\+::\+Entity}}
+\subsubsection{\texorpdfstring{set\+Y()}{setY()}}
+{\footnotesize\ttfamily void Game\+Logic\+::\+Entity\+::setY (\begin{DoxyParamCaption}\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & the new y coordinate \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Game\+Logic/\+Include/\+Game\+Logic/Entity.\+h\item 
+Game\+Logic/src/Entity.\+cpp\end{DoxyCompactItemize}

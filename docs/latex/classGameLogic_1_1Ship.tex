@@ -1,0 +1,107 @@
+\hypertarget{classGameLogic_1_1Ship}{}\section{Game\+Logic\+:\+:Ship Class Reference}
+\label{classGameLogic_1_1Ship}\index{Game\+Logic\+::\+Ship@{Game\+Logic\+::\+Ship}}
+
+
+Class that represents all of the ships in game logic.  
+
+
+
+
+{\ttfamily \#include $<$Ship.\+h$>$}
+
+
+
+Inheritance diagram for Game\+Logic\+:\+:Ship\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGameLogic_1_1Ship__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Game\+Logic\+:\+:Ship\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{classGameLogic_1_1Ship__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGameLogic_1_1Ship_a2fabf559fb5b1f1c14c3da133bc42596}{Ship} (const pair$<$ int, int $>$ \&position, double width, double height, int health=1, double speed=1)
+\begin{DoxyCompactList}\small\item\em Constructor of the \hyperlink{classGameLogic_1_1Ship}{Ship} class. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classGameLogic_1_1Ship_aaab731578b80b9e1920e3f2af2bc2f8c}{move} ()
+\begin{DoxyCompactList}\small\item\em Virtual move function in \hyperlink{classGameLogic_1_1Ship}{Ship}. \end{DoxyCompactList}\item 
+int \hyperlink{classGameLogic_1_1Ship_a5529646cead801dc8cc9d47f2f3d1d92}{get\+Health} () const
+\begin{DoxyCompactList}\small\item\em Getter for the health of the ship. \end{DoxyCompactList}\item 
+void \hyperlink{classGameLogic_1_1Ship_af0604b26727de4793a03464753ef443e}{set\+Health} (int health)
+\begin{DoxyCompactList}\small\item\em Setter for the current health of the ship. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Class that represents all of the ships (enemies and player, even though player technically isn\textquotesingle{}t a ship) in game logic. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGameLogic_1_1Ship_a2fabf559fb5b1f1c14c3da133bc42596}\label{classGameLogic_1_1Ship_a2fabf559fb5b1f1c14c3da133bc42596}} 
+\index{Game\+Logic\+::\+Ship@{Game\+Logic\+::\+Ship}!Ship@{Ship}}
+\index{Ship@{Ship}!Game\+Logic\+::\+Ship@{Game\+Logic\+::\+Ship}}
+\subsubsection{\texorpdfstring{Ship()}{Ship()}}
+{\footnotesize\ttfamily Game\+Logic\+::\+Ship\+::\+Ship (\begin{DoxyParamCaption}\item[{const pair$<$ int, int $>$ \&}]{position,  }\item[{double}]{width,  }\item[{double}]{height,  }\item[{int}]{health = {\ttfamily 1},  }\item[{double}]{speed = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+Constructor of the \hyperlink{classGameLogic_1_1Ship}{Ship} class. 
+\begin{DoxyParams}{Parameters}
+{\em position} & position of the ship in the grid \\
+\hline
+{\em width} & width of the ship \\
+\hline
+{\em height} & height of the ship \\
+\hline
+{\em health} & health of the ship \\
+\hline
+{\em speed} & speed of the ship \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classGameLogic_1_1Ship_a5529646cead801dc8cc9d47f2f3d1d92}\label{classGameLogic_1_1Ship_a5529646cead801dc8cc9d47f2f3d1d92}} 
+\index{Game\+Logic\+::\+Ship@{Game\+Logic\+::\+Ship}!get\+Health@{get\+Health}}
+\index{get\+Health@{get\+Health}!Game\+Logic\+::\+Ship@{Game\+Logic\+::\+Ship}}
+\subsubsection{\texorpdfstring{get\+Health()}{getHealth()}}
+{\footnotesize\ttfamily int Game\+Logic\+::\+Ship\+::get\+Health (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Getter for the health of the ship. \begin{DoxyReturn}{Returns}
+The integer value representing the current health of the ship. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGameLogic_1_1Ship_aaab731578b80b9e1920e3f2af2bc2f8c}\label{classGameLogic_1_1Ship_aaab731578b80b9e1920e3f2af2bc2f8c}} 
+\index{Game\+Logic\+::\+Ship@{Game\+Logic\+::\+Ship}!move@{move}}
+\index{move@{move}!Game\+Logic\+::\+Ship@{Game\+Logic\+::\+Ship}}
+\subsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily void Game\+Logic\+::\+Ship\+::move (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Virtual move function in \hyperlink{classGameLogic_1_1Ship}{Ship}. 
+
+Reimplemented in \hyperlink{classGameLogic_1_1BasicEnemy_a8c51b862c94953e5455c04c2227b6d73}{Game\+Logic\+::\+Basic\+Enemy}.
+
+\mbox{\Hypertarget{classGameLogic_1_1Ship_af0604b26727de4793a03464753ef443e}\label{classGameLogic_1_1Ship_af0604b26727de4793a03464753ef443e}} 
+\index{Game\+Logic\+::\+Ship@{Game\+Logic\+::\+Ship}!set\+Health@{set\+Health}}
+\index{set\+Health@{set\+Health}!Game\+Logic\+::\+Ship@{Game\+Logic\+::\+Ship}}
+\subsubsection{\texorpdfstring{set\+Health()}{setHealth()}}
+{\footnotesize\ttfamily void Game\+Logic\+::\+Ship\+::set\+Health (\begin{DoxyParamCaption}\item[{int}]{health }\end{DoxyParamCaption})}
+
+Setter for the current health of the ship. 
+\begin{DoxyParams}{Parameters}
+{\em health} & Integer value representing the new health of the ship. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Game\+Logic/\+Include/\+Game\+Logic/Ship.\+h\item 
+Game\+Logic/src/Ship.\+cpp\end{DoxyCompactItemize}

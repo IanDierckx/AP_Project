@@ -1,0 +1,91 @@
+\hypertarget{classGameSFML_1_1EnergyCannon}{}\section{Game\+S\+F\+ML\+:\+:Energy\+Cannon Class Reference}
+\label{classGameSFML_1_1EnergyCannon}\index{Game\+S\+F\+M\+L\+::\+Energy\+Cannon@{Game\+S\+F\+M\+L\+::\+Energy\+Cannon}}
+
+
+S\+F\+ML version of the \hyperlink{classGameSFML_1_1EnergyCannon}{Energy\+Cannon} class.  
+
+
+
+
+{\ttfamily \#include $<$Energy\+Cannon.\+h$>$}
+
+
+
+Inheritance diagram for Game\+S\+F\+ML\+:\+:Energy\+Cannon\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{classGameSFML_1_1EnergyCannon__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Game\+S\+F\+ML\+:\+:Energy\+Cannon\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{classGameSFML_1_1EnergyCannon__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGameSFML_1_1EnergyCannon_a456f26d38873ce81105fe14657bcbed3}{Energy\+Cannon} (const pair$<$ int, int $>$ \&position, double width, double height, const string \&file\+Name, const window\+\_\+ptr \&window)
+\begin{DoxyCompactList}\small\item\em Constructor of the S\+F\+ML version of \hyperlink{classGameSFML_1_1EnergyCannon}{Energy\+Cannon}. \end{DoxyCompactList}\item 
+void \hyperlink{classGameSFML_1_1EnergyCannon_a9c4c44e9ded9422d790c685d5901cb64}{draw} () override
+\begin{DoxyCompactList}\small\item\em Updates the sprite and draws it to the window. \end{DoxyCompactList}\item 
+void \hyperlink{classGameSFML_1_1EnergyCannon_a2d71ccd7276055f9b5f9e688545d5982}{update\+Sprite} ()
+\begin{DoxyCompactList}\small\item\em Updates the sprite to the current position. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+S\+F\+ML version of the \hyperlink{classGameSFML_1_1EnergyCannon}{Energy\+Cannon} class. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGameSFML_1_1EnergyCannon_a456f26d38873ce81105fe14657bcbed3}\label{classGameSFML_1_1EnergyCannon_a456f26d38873ce81105fe14657bcbed3}} 
+\index{Game\+S\+F\+M\+L\+::\+Energy\+Cannon@{Game\+S\+F\+M\+L\+::\+Energy\+Cannon}!Energy\+Cannon@{Energy\+Cannon}}
+\index{Energy\+Cannon@{Energy\+Cannon}!Game\+S\+F\+M\+L\+::\+Energy\+Cannon@{Game\+S\+F\+M\+L\+::\+Energy\+Cannon}}
+\subsubsection{\texorpdfstring{Energy\+Cannon()}{EnergyCannon()}}
+{\footnotesize\ttfamily Game\+S\+F\+M\+L\+::\+Energy\+Cannon\+::\+Energy\+Cannon (\begin{DoxyParamCaption}\item[{const pair$<$ int, int $>$ \&}]{position,  }\item[{double}]{width,  }\item[{double}]{height,  }\item[{const string \&}]{file\+Name,  }\item[{const window\+\_\+ptr \&}]{window }\end{DoxyParamCaption})}
+
+Constructor of the S\+F\+ML version of \hyperlink{classGameSFML_1_1EnergyCannon}{Energy\+Cannon}. 
+\begin{DoxyParams}{Parameters}
+{\em position} & The position in the grid of the cannon. \\
+\hline
+{\em width} & The width of the cannon. \\
+\hline
+{\em height} & The height of the cannon. \\
+\hline
+{\em file\+Name} & The name of the file that contains the sprite of the cannon. \\
+\hline
+{\em window} & The current game window \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classGameSFML_1_1EnergyCannon_a9c4c44e9ded9422d790c685d5901cb64}\label{classGameSFML_1_1EnergyCannon_a9c4c44e9ded9422d790c685d5901cb64}} 
+\index{Game\+S\+F\+M\+L\+::\+Energy\+Cannon@{Game\+S\+F\+M\+L\+::\+Energy\+Cannon}!draw@{draw}}
+\index{draw@{draw}!Game\+S\+F\+M\+L\+::\+Energy\+Cannon@{Game\+S\+F\+M\+L\+::\+Energy\+Cannon}}
+\subsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Game\+S\+F\+M\+L\+::\+Energy\+Cannon\+::draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Updates the sprite and draws it to the window. 
+
+Implements \hyperlink{classGameLogic_1_1Entity_adf23a7036cb99dfc6e33434018131da4}{Game\+Logic\+::\+Entity}.
+
+\mbox{\Hypertarget{classGameSFML_1_1EnergyCannon_a2d71ccd7276055f9b5f9e688545d5982}\label{classGameSFML_1_1EnergyCannon_a2d71ccd7276055f9b5f9e688545d5982}} 
+\index{Game\+S\+F\+M\+L\+::\+Energy\+Cannon@{Game\+S\+F\+M\+L\+::\+Energy\+Cannon}!update\+Sprite@{update\+Sprite}}
+\index{update\+Sprite@{update\+Sprite}!Game\+S\+F\+M\+L\+::\+Energy\+Cannon@{Game\+S\+F\+M\+L\+::\+Energy\+Cannon}}
+\subsubsection{\texorpdfstring{update\+Sprite()}{updateSprite()}}
+{\footnotesize\ttfamily void Game\+S\+F\+M\+L\+::\+Energy\+Cannon\+::update\+Sprite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Updates the sprite to the current position. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+S\+F\+M\+L/\+Include/Energy\+Cannon.\+h\item 
+S\+F\+M\+L/src/Energy\+Cannon.\+cpp\end{DoxyCompactItemize}

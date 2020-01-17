@@ -1,0 +1,102 @@
+\hypertarget{classGameSFML_1_1Level}{}\section{Game\+S\+F\+ML\+:\+:Level Class Reference}
+\label{classGameSFML_1_1Level}\index{Game\+S\+F\+M\+L\+::\+Level@{Game\+S\+F\+M\+L\+::\+Level}}
+
+
+S\+F\+ML version of the \hyperlink{classGameSFML_1_1Level}{Level} class.  
+
+
+
+
+{\ttfamily \#include $<$Level.\+h$>$}
+
+
+
+Inheritance diagram for Game\+S\+F\+ML\+:\+:Level\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{classGameSFML_1_1Level__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Game\+S\+F\+ML\+:\+:Level\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGameSFML_1_1Level__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGameSFML_1_1Level_a68fb7b46bb5fde22cf16f6530d63efa7}{Level} (window\+\_\+ptr \&window)
+\begin{DoxyCompactList}\small\item\em Constructor of the S\+F\+ML version of \hyperlink{classGameSFML_1_1Level}{Level}. \end{DoxyCompactList}\item 
+void \hyperlink{classGameSFML_1_1Level_a102b4f351a97cde5a71a473b15126847}{draw} ()
+\begin{DoxyCompactList}\small\item\em Calls the draw function of all entities. \end{DoxyCompactList}\item 
+void \hyperlink{classGameSFML_1_1Level_ab98f7a9ceb040bef609c2c96990707ba}{update} () override
+\begin{DoxyCompactList}\small\item\em Extends the \hyperlink{namespaceGameLogic}{Game\+Logic} version of the update function. \end{DoxyCompactList}\item 
+void \hyperlink{classGameSFML_1_1Level_adafff50ab250a1d85f1b1d48c085bac1}{create\+Player\+Bullet} (double y, double x) override
+\begin{DoxyCompactList}\small\item\em Creates a new \hyperlink{classGameSFML_1_1EnergyBullet}{Energy\+Bullet}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+S\+F\+ML version of the \hyperlink{classGameSFML_1_1Level}{Level} class. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGameSFML_1_1Level_a68fb7b46bb5fde22cf16f6530d63efa7}\label{classGameSFML_1_1Level_a68fb7b46bb5fde22cf16f6530d63efa7}} 
+\index{Game\+S\+F\+M\+L\+::\+Level@{Game\+S\+F\+M\+L\+::\+Level}!Level@{Level}}
+\index{Level@{Level}!Game\+S\+F\+M\+L\+::\+Level@{Game\+S\+F\+M\+L\+::\+Level}}
+\subsubsection{\texorpdfstring{Level()}{Level()}}
+{\footnotesize\ttfamily Game\+S\+F\+M\+L\+::\+Level\+::\+Level (\begin{DoxyParamCaption}\item[{window\+\_\+ptr \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Constructor of the S\+F\+ML version of \hyperlink{classGameSFML_1_1Level}{Level}. 
+\begin{DoxyParams}{Parameters}
+{\em window} & the current game window. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classGameSFML_1_1Level_adafff50ab250a1d85f1b1d48c085bac1}\label{classGameSFML_1_1Level_adafff50ab250a1d85f1b1d48c085bac1}} 
+\index{Game\+S\+F\+M\+L\+::\+Level@{Game\+S\+F\+M\+L\+::\+Level}!create\+Player\+Bullet@{create\+Player\+Bullet}}
+\index{create\+Player\+Bullet@{create\+Player\+Bullet}!Game\+S\+F\+M\+L\+::\+Level@{Game\+S\+F\+M\+L\+::\+Level}}
+\subsubsection{\texorpdfstring{create\+Player\+Bullet()}{createPlayerBullet()}}
+{\footnotesize\ttfamily void Game\+S\+F\+M\+L\+::\+Level\+::create\+Player\+Bullet (\begin{DoxyParamCaption}\item[{double}]{y,  }\item[{double}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Creates a new \hyperlink{classGameSFML_1_1EnergyBullet}{Energy\+Bullet}. 
+\begin{DoxyParams}{Parameters}
+{\em y} & The Y coordinate of the cannon that fires the bullet. \\
+\hline
+{\em x} & The X coordinate of the cannon that fires the bullet. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classGameLogic_1_1Level_ad9ac3fbb69cbfe7552a5ce8737a4cfd5}{Game\+Logic\+::\+Level}.
+
+\mbox{\Hypertarget{classGameSFML_1_1Level_a102b4f351a97cde5a71a473b15126847}\label{classGameSFML_1_1Level_a102b4f351a97cde5a71a473b15126847}} 
+\index{Game\+S\+F\+M\+L\+::\+Level@{Game\+S\+F\+M\+L\+::\+Level}!draw@{draw}}
+\index{draw@{draw}!Game\+S\+F\+M\+L\+::\+Level@{Game\+S\+F\+M\+L\+::\+Level}}
+\subsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Game\+S\+F\+M\+L\+::\+Level\+::draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Calls the draw function of all entities. \mbox{\Hypertarget{classGameSFML_1_1Level_ab98f7a9ceb040bef609c2c96990707ba}\label{classGameSFML_1_1Level_ab98f7a9ceb040bef609c2c96990707ba}} 
+\index{Game\+S\+F\+M\+L\+::\+Level@{Game\+S\+F\+M\+L\+::\+Level}!update@{update}}
+\index{update@{update}!Game\+S\+F\+M\+L\+::\+Level@{Game\+S\+F\+M\+L\+::\+Level}}
+\subsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Game\+S\+F\+M\+L\+::\+Level\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Extends the \hyperlink{namespaceGameLogic}{Game\+Logic} version of the update function by creating new bullets if necessary, checking for collisions and removing removable entities. 
+
+Reimplemented from \hyperlink{classGameLogic_1_1Level_a72f5b36a0254821aabaaafa48834998b}{Game\+Logic\+::\+Level}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+S\+F\+M\+L/\+Include/Level.\+h\item 
+S\+F\+M\+L/src/Level.\+cpp\end{DoxyCompactItemize}

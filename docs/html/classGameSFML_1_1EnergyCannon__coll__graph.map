@@ -1,0 +1,4 @@
+<map id="GameSFML::EnergyCannon" name="GameSFML::EnergyCannon">
+<area shape="rect" id="node2" href="$classGameLogic_1_1EnergyCannon.html" title="Class that represents the cannons used for shooting down enemies. " alt="" coords="7,80,190,107"/>
+<area shape="rect" id="node3" href="$classGameLogic_1_1Entity.html" title="Base Entity class Base entity class, most classes will be derived from this. " alt="" coords="33,5,164,32"/>
+</map>

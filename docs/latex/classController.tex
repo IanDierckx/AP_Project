@@ -1,0 +1,99 @@
+\hypertarget{classController}{}\section{Controller Class Reference}
+\label{classController}\index{Controller@{Controller}}
+
+
+\hyperlink{classController}{Controller} class.  
+
+
+
+
+{\ttfamily \#include $<$Controller.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classController_aa89ab5fe861da53f35c48f03005486de}{set\+Current\+Level} (shared\+\_\+ptr$<$ \hyperlink{classGameSFML_1_1Level}{Game\+S\+F\+M\+L\+::\+Level} $>$ new\+Level)
+\begin{DoxyCompactList}\small\item\em Setter for the current level in the game. \end{DoxyCompactList}\item 
+void \hyperlink{classController_a6ecc2df639760a276d0b9bf2f05ad3ab}{set\+Window} (shared\+\_\+ptr$<$ sf\+::\+Render\+Window $>$ window)
+\begin{DoxyCompactList}\small\item\em Setter for the current game window. \end{DoxyCompactList}\item 
+void \hyperlink{classController_aa8caf600ecfb41c59da3df61cd1291b2}{handle\+Input} ()
+\begin{DoxyCompactList}\small\item\em Main function to handle input. \end{DoxyCompactList}\item 
+void \hyperlink{classController_a3742c489d3d26781155fcb7c06b6dfaa}{initialize\+Level} (int level\+Number)
+\begin{DoxyCompactList}\small\item\em Initialize a new level in the game. \end{DoxyCompactList}\item 
+shared\+\_\+ptr$<$ \hyperlink{classGameSFML_1_1Level}{Game\+S\+F\+M\+L\+::\+Level} $>$ \& \hyperlink{classController_ad4126984329d864fcd63b10103c6e138}{get\+Current\+Level} ()
+\begin{DoxyCompactList}\small\item\em Getter for the current level. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static shared\+\_\+ptr$<$ \hyperlink{classController}{Controller} $>$ \hyperlink{classController_a155147647e348dc4c805977e93889512}{get\+Instance} ()
+\begin{DoxyCompactList}\small\item\em Function to get the controller instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class will handle all input of the game. Works on the singleton priciple so only one controller is always active. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classController_ad4126984329d864fcd63b10103c6e138}\label{classController_ad4126984329d864fcd63b10103c6e138}} 
+\index{Controller@{Controller}!get\+Current\+Level@{get\+Current\+Level}}
+\index{get\+Current\+Level@{get\+Current\+Level}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{get\+Current\+Level()}{getCurrentLevel()}}
+{\footnotesize\ttfamily shared\+\_\+ptr$<$ \hyperlink{classGameSFML_1_1Level}{Game\+S\+F\+M\+L\+::\+Level} $>$ \& Controller\+::get\+Current\+Level (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Getter for the current level. \begin{DoxyReturn}{Returns}
+the current level. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classController_a155147647e348dc4c805977e93889512}\label{classController_a155147647e348dc4c805977e93889512}} 
+\index{Controller@{Controller}!get\+Instance@{get\+Instance}}
+\index{get\+Instance@{get\+Instance}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{get\+Instance()}{getInstance()}}
+{\footnotesize\ttfamily shared\+\_\+ptr$<$ \hyperlink{classController}{Controller} $>$ Controller\+::get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Will return the controller instance if one already exists, if not it will create one. \begin{DoxyReturn}{Returns}
+The controller instance 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classController_aa8caf600ecfb41c59da3df61cd1291b2}\label{classController_aa8caf600ecfb41c59da3df61cd1291b2}} 
+\index{Controller@{Controller}!handle\+Input@{handle\+Input}}
+\index{handle\+Input@{handle\+Input}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{handle\+Input()}{handleInput()}}
+{\footnotesize\ttfamily void Controller\+::handle\+Input (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Function will handle all input given to the game window and decide what to do with it, with exception of closing the window using the window\textquotesingle{}s own close button. \mbox{\Hypertarget{classController_a3742c489d3d26781155fcb7c06b6dfaa}\label{classController_a3742c489d3d26781155fcb7c06b6dfaa}} 
+\index{Controller@{Controller}!initialize\+Level@{initialize\+Level}}
+\index{initialize\+Level@{initialize\+Level}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{initialize\+Level()}{initializeLevel()}}
+{\footnotesize\ttfamily void Controller\+::initialize\+Level (\begin{DoxyParamCaption}\item[{int}]{level\+Number }\end{DoxyParamCaption})}
+
+Function initializes a new level by calling the Level Parser 
+\begin{DoxyParams}{Parameters}
+{\em level\+File} & the name of the json file of the new level \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classController_aa89ab5fe861da53f35c48f03005486de}\label{classController_aa89ab5fe861da53f35c48f03005486de}} 
+\index{Controller@{Controller}!set\+Current\+Level@{set\+Current\+Level}}
+\index{set\+Current\+Level@{set\+Current\+Level}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{set\+Current\+Level()}{setCurrentLevel()}}
+{\footnotesize\ttfamily void Controller\+::set\+Current\+Level (\begin{DoxyParamCaption}\item[{shared\+\_\+ptr$<$ \hyperlink{classGameSFML_1_1Level}{Game\+S\+F\+M\+L\+::\+Level} $>$}]{new\+Level }\end{DoxyParamCaption})}
+
+Setter for the current level in the game so the controller knows which entities to affect. 
+\begin{DoxyParams}{Parameters}
+{\em new\+Level} & The new current level. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classController_a6ecc2df639760a276d0b9bf2f05ad3ab}\label{classController_a6ecc2df639760a276d0b9bf2f05ad3ab}} 
+\index{Controller@{Controller}!set\+Window@{set\+Window}}
+\index{set\+Window@{set\+Window}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{set\+Window()}{setWindow()}}
+{\footnotesize\ttfamily void Controller\+::set\+Window (\begin{DoxyParamCaption}\item[{shared\+\_\+ptr$<$ sf\+::\+Render\+Window $>$}]{window }\end{DoxyParamCaption})}
+
+Setter for the current game window so the controller knows where to get it\textquotesingle{}s input from. 
+\begin{DoxyParams}{Parameters}
+{\em window} & The current game window. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Controller.\+h\item 
+Controller.\+cpp\item 
+main.\+cpp\end{DoxyCompactItemize}
