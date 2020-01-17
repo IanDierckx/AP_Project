@@ -2,13 +2,16 @@
 #define AP_PROJECT_STOPWATCH_H
 
 #include <ctime>
+#include <memory>
+
+using namespace std;
 
 namespace GameLogic{
     /** Stopwatch class to make sure the game runs at the same speed on every pc.
      * Stopwatch class to make sure the game runs at the same speed on every pc. Uses the singleton patterns.
      */
     class Stopwatch {
-        static Stopwatch *instance;
+        static shared_ptr<Stopwatch> instance;
         clock_t start_clock;
 
         /** Private constructor so that no objects can be created.
@@ -24,7 +27,7 @@ namespace GameLogic{
          * Will return the stopwatch instance if one already exists, if not it will create one.
          * @return The stopwatch instance
          */
-        static Stopwatch *getInstance();
+        static shared_ptr<Stopwatch> getInstance();
 
         /** Function returns when the clock was last started.
          * Function returns when the clock was last started.

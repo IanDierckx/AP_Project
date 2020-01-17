@@ -6,9 +6,9 @@ namespace GameLogic{
      * Will return the stopwatch instance if one already exists, if not it will create one.
      * @return The stopwatch instance
      */
-    Stopwatch *Stopwatch::getInstance() {
+    shared_ptr<Stopwatch> Stopwatch::getInstance() {
         if (!instance)
-            instance = new Stopwatch;
+            instance = shared_ptr<Stopwatch>(new Stopwatch);
         return instance;
     }
 

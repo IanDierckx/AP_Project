@@ -30,8 +30,8 @@ namespace GameSFML{
      * Inside the loop it checks for events and draws the game accordingly.
      */
     void Game::run() {
-        GameLogic::Stopwatch *watch = GameLogic::Stopwatch::getInstance();
-        Controller *controller = Controller::getInstance();
+        shared_ptr<GameLogic::Stopwatch> watch = GameLogic::Stopwatch::getInstance();
+        shared_ptr<Controller> controller = Controller::getInstance();
         controller->setCurrentLevel(currentLevel);
         controller->setWindow(window);
         double tick = 0.08;

@@ -14,7 +14,7 @@ using namespace std;
  */
 class Controller {
 private:
-    static Controller *instance;
+    static shared_ptr<Controller> instance;
 
     shared_ptr<sf::RenderWindow> window;
     shared_ptr<GameSFML::Level> currentLevel;
@@ -32,7 +32,7 @@ public:
      * Will return the controller instance if one already exists, if not it will create one.
      * @return The controller instance
      */
-    static Controller *getInstance();
+    static shared_ptr<Controller> getInstance();
 
     /** Setter for the current level in the game.
      * Setter for the current level in the game so the controller knows which entities to affect.

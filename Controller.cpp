@@ -8,9 +8,9 @@
  * Will return the controller instance if one already exists, if not it will create one.
  * @return The controller instance
  */
-Controller *Controller::getInstance() {
+shared_ptr<Controller> Controller::getInstance() {
     if (!instance)
-        instance = new Controller;
+        instance = shared_ptr<Controller>(new Controller);
     return instance;
 }
 
